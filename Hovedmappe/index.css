@@ -1,0 +1,106 @@
+
+body{
+    position: absolute;
+    left: 0px; 
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#leftBox{
+    position: absolute;
+    z-index: 10;
+    width: 70%;
+    height: 100%;
+    background-color: black;
+    padding: 0;
+    display:inline-block;
+    margin: 0;
+}
+
+#backgroundLeft{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#rightBox{
+    z-index: 0;
+    position:absolute;
+    background-color: whitesmoke;
+    position: absolute;
+    height: 100%;
+    width: 30%;
+    right: 0px;
+    top: 0px;
+    background-color: rgb(27, 179, 255);
+    padding: 0;
+    margin:0;
+}
+
+#loginField{
+    position: absolute;
+    height: 100%;
+    width: 40%;
+    right: 0px;
+    top: 130px;
+    margin: 0;
+
+}
+
+.inputFields{
+    height: 20px;
+    z-index: 20;
+    margin:0;
+    position: absolute;
+    widows: 150px;
+    border:2px solid white;
+    border-radius:4px;
+    outline:none;
+    padding:8px;
+    text-align: center;
+
+}
+
+#inputUsername{
+    top: 220px;;
+    right: 130px;;
+}
+
+#inputPassword{
+    top:262px;
+    right: 130px;
+}
+
+#loginButton{
+    widows: 150px;
+    width: 100px;
+    border:2px solid white;
+    background-color: white;
+    border-radius:4px;
+    margin:8px 0;
+    outline:none;
+    padding:8px;
+    position: absolute;
+    top: 297px;
+    right: 207px;
+}
+
+
+#signUp{
+    widows: 150px;
+    border:2px solid rgb(20, 270, 20);
+    border-radius:4px;
+    background-color: rgb(20, 270, 20);
+    margin:8px 0;
+    outline:none;
+    padding:8px;
+    position: absolute;
+    top: 297px;
+    width: 75px;
+    right: 130px;
+}
+
+
