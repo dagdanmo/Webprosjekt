@@ -17,5 +17,16 @@ body{
     height: 10%;
     margin: 0;
     background-color: #EEEEEE; 
-    z-index: 2;
+}
+
+#TaskBox1{
+    top: 50%;
+    width: 13%;
+    height: 40%;
+    background-color: #FEC8D8;
+    text-align: center;
+    /*IN-PROGRESS -
+    Normal opacity 0.6-8, on hover, 
+    give full opacity 
+    opacity: 0.6; */
 }

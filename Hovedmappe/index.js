@@ -15,6 +15,10 @@ readSignup.addEventListener("click", function(){
     console.log("Signup klicked");
 });
 
+function createSignupForm(){
+
+};
+
 };
 
                          //Unused elements
