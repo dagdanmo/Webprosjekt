@@ -17,8 +17,14 @@ body{
     height: 10%;
     margin: 0;
     background-color: #EEEEEE; 
-<<<<<<< HEAD
-    z-index: 2;
-=======
->>>>>>> e84f80698590e43cfe70ff8b30bb126ab52084e0
+}
+
+#TaskBox0{
+    top: 50%;
+    width: 13%;
+    height: 40%;
+    margin: 0;
+    background-color: #FEC8D8;    
+    text-align: left;
+    word-wrap: break-word;
 }

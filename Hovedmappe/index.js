@@ -8,6 +8,17 @@ window.onload=function(){
         console.log(fetchUsername.value);
         console.log(fetchPassword.value);
 });
+
+var readSignup = document.getElementById("signUp");
+
+readSignup.addEventListener("click", function(){
+    console.log("Signup klicked");
+});
+
+function createSignupForm(){
+
+};
+
 };
 
                          //Unused elements

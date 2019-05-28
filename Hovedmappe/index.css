@@ -1,4 +1,3 @@
-
 body{
     position: fixed;
     background-color: grey;
@@ -29,7 +28,7 @@ body{
     top: 0px;
     background-color: rgb(27, 179, 255);
     padding: 0;
-    margin:0;
+    margin: 0;
 }
 
 #loginField{
@@ -48,9 +47,9 @@ body{
     position: absolute;
     transform: scale;
     widows: 150px;
-    border:2px solid white;
-    border-radius:4px;
-    outline:none;
+    border: 2px solid white;
+    border-radius: 4px;
+    outline: none;
     padding:8px;
     text-align: center;
 
@@ -96,3 +95,44 @@ body{
 }
 
 
+#signupForm{
+    /*display: hidden;*/
+    z-index: 100;
+    position: absolute;
+    height: 500px;
+    width: 30%;
+    background-color: purple;
+    top: 30%;
+    left: 73%;
+    margin: 0;
+}
+
+
+#inputFirstName_Signup{
+width: 20%;
+height: 2%;
+left: 20%;
+top: 20%;
+}
+#inputLastName_Signup{
+    width: 20%;
+    height: 2%;
+    left: 20%;
+    top: 30%;
+}
+#inputEmail_Signup{
+    width: 25%;
+    height: 10%;
+}
+#inputUsername_Signup{
+    width: 25%;
+    height: 10%;
+}
+#inputPassword_Signup{
+    width: 25%;
+    height: 10%;
+}
+#inputRepeatPassword_Signup{
+    width: 25%;
+    height: 10%;
+}
