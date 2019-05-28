@@ -1,10 +1,24 @@
 body{
     background-color: #FED7B0;
+    z-index: 0;
+}
+
+#MainBox{
+    top: 0px;
+    width: 100%;
+    height: 480px;
+    background-color: #C0C0C0; 
+    z-index: 2;
 }
 
 #UpperNavBox{
+    top: 0px;
     width: 100%;
-    height: 45%;
+    height: 10%;
     margin: 0;
     background-color: #EEEEEE; 
+<<<<<<< HEAD
+    z-index: 2;
+=======
+>>>>>>> e84f80698590e43cfe70ff8b30bb126ab52084e0
 }
