@@ -38,9 +38,6 @@ body{
     left: 80%;
     top: 30%;
     margin: 0;
-
-    transition: top 2s linear;
-    transition: opacity 2s ease-in-out; 
 }
 
 
@@ -100,13 +97,12 @@ body{
 
 
 #signupForm{
-    /*display: hidden;*/
+    opacity: 0.0;
     z-index: 100;
     position: absolute;
     height: 500px;
     width: 30%;
-    background-color: gray;
-    top: 30%;
+    top: 50%;
     left: 73%;
     margin: 0;
 }
