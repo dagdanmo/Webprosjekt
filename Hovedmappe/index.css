@@ -44,8 +44,8 @@ body{
     position: absolute;
     height: 100%;
     width: 40%;
-    right: 0px;
-    top: 130px;
+    right: 30%;
+    top: 60%;
     margin: 0;
 
 }
@@ -65,13 +65,13 @@ body{
 }
 
 #inputUsername{
-    top: 220px;;
-    right: 130px;;
+    top: 0px;;
+    right: 0px;;
 }
 
 #inputPassword{
-    top:262px;
-    right: 130px;
+    top:45px;
+    right: 0px;
 }
 
 #loginButton{
