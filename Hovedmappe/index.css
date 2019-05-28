@@ -1,6 +1,6 @@
 body{
     position: fixed;
-    background-color: grey;
+    background-color: whitesmoke;
     left: 0px; 
     margin: 0;
     padding: 0;
@@ -58,12 +58,14 @@ body{
 
 #inputUsername{
     top: 0px;;
-    left: 0px;;
+    left: 0px;
+    width: 158px;
 }
 
 #inputPassword{
     top:45px;
     left: 0px;
+    width: 158px;
 }
 
 #loginButton{
@@ -103,47 +105,47 @@ body{
     height: 500px;
     width: 30%;
     top: 50%;
-    left: 73%;
+    left: 80%;
     margin: 0;
 }
 
 #inputUsername_Signup{
-    width: 200px;
+    width: 158px;
     height: 20px;
-    left: 100px;
+    left: 0px;
     top: 100px;
     font-size: 20px;
 }
 
 #inputEmail_Signup{
-    width: 200px;
+    width: 158px;
     height: 20px;
-    left: 100px;
+    left: 0px;
     top: 145px;
     font-size: 15px;
 }
 
 #inputPassword_Signup{
-    width: 200px;
+    width: 158px;
     height: 20px;
-    left: 100px;
+    left: 0px;
     top: 190px;
     font-size: 15px;
 }
 
 #inputRepeatPassword_Signup{
-    width: 200px;
+    width: 158px;
     height: 20px;
-    left: 100px;
+    left: 0px;
     top: 235px;
     font-size: 15px;
 }
 
 #register_Signup{
-    width: 220px;
+    width: 178px;
     height: 30px;
     top: 280px;
-    left: 100px;
+    left: 0px;
     border-color: rgb(20, 270, 20);
     background-color: rgb(20, 270, 20);
 }

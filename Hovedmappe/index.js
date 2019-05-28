@@ -17,13 +17,13 @@ readSignup.addEventListener("click", function(){
     //loginField.style.opacity = "0";
     //loginField.style.transition = "0%";
     loginField.style.transitionTimingFunction = "ease-in";
-    loginField.style.transitionDuration = "1s";
+    loginField.style.transitionDuration = "0.5s";
     loginField.style.opacity = "0";
     loginField.style.top = "0%";
 
     signupForm.style.top = "15%";
     signupForm.style.transitionTimingFunction = "ease-in";
-    signupForm.style.transitionDuration = "1s";
+    signupForm.style.transitionDuration = "0.5s";
     signupForm.style.opacity = "1";
 });
 
