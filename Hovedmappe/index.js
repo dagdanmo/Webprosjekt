@@ -16,7 +16,7 @@ readSignup.addEventListener("click", function(){
 });
 
 function createSignupForm(){
-
+    
 };
 
 };
