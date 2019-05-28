@@ -36,8 +36,41 @@ body{
     left: 0;
     text-align: center;
     margin: 0;
-
 }
+.boxes{
+    left: 50px; 
+    position: absolute;
+    height: 150px;
+    width: 300px;
+    border-radius: 15%;
+    z-index: 5;
+    background-color: blue;
+    margin: 0;
+    padding: 1;
+    top: 20%;    
+}
+#box1{
+    position: absolute;
+    top: 0px;
+    left: 390px;
+}
+#box2{
+    position: absolute;
+    top: 0px;
+    left: 740px;
+}
+#box3{
+    position: absolute;
+    top: 0px;
+    left: 1090px;
+}
+#box4{
+    position: absolute;
+    top: 0px;
+    left: 1440px;
+    font-size: 60px;
+}
+ 
 
 
 
