@@ -1,6 +1,6 @@
 
 body{
-    position: absolute;
+    position: fixed;
     left: 0px; 
     margin: 0;
     padding: 0;
