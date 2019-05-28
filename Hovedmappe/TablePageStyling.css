@@ -1,0 +1,10 @@
+body{
+    background-color: #FED7B0;
+}
+
+#UpperNavBox{
+    width: 100%;
+    height: 45%;
+    margin: 0;
+    background-color: #EEEEEE; 
+}
