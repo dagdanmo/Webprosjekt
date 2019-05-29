@@ -30,6 +30,8 @@ readSignup.addEventListener("click", function(){
 var createPassword;
 var confirmPassword;
 
+
+//Signupform
 var signupInputPassword = document.getElementById("inputPassword_Signup");
 var passwordCheckbox = document.getElementById("circle_Signup");
 signupInputPassword.addEventListener("input", function(){
