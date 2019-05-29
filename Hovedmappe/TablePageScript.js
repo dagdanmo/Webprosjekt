@@ -26,6 +26,13 @@ window.onload = function(){
         newTeam.appendChild(newTeamName);
         document.getElementById("MainBox").appendChild(newTeam);
 
+        var newBoxButton = document.createElement("button");
+        newBoxButton.innerHTML = "New Card";
+        newBoxButton.className = "buttons";
+        newBoxButton.id = "NewTeamButton"+teamI;
+        newBoxButton.addEventListener("click",addTaskBarOnClick);
+        newTeam.appendChild(newBoxButton);
+
         teamI++;
     }
     
