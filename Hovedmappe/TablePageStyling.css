@@ -32,7 +32,9 @@ body{
     width: 20%;
     height: 50%;
     margin: 0;
-    background-color: aquamarine;
-    border: dotted black 2px;
+    text-align: center;
+    background-color: gray;
+    border: outset black 2px;
+    border-radius: 25px;
     display: inline-block;
 }
