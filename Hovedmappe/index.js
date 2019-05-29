@@ -86,7 +86,7 @@ email: "dag.danmo@gmail.com",
 {
 
 }];
-user.username[0] = "dragefar";
+//user.username[0] = "dragefar";
 console.log()
 
 
