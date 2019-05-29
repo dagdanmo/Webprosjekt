@@ -1,16 +1,18 @@
-var taskBoxId = 0;
 
 window.onload = function(){
-    var TaskBox = document.getElementById('TaskBox0');
     document.getElementById('AddTaskBarButton').addEventListener("click", addTaskBarOnClick);
-
-    // --CURRENT ISSUE --
-    // Clones everything. 2 turns into 4, 4 to 8 etc
+    var i = 0;
     function addTaskBarOnClick(){
-        taskBoxId++;
-        var newTaskBox = TaskBox.cloneNode(true);
-        TaskBox.appendChild(newTaskBox);
-        console.log("Added bar");
-        console.log(taskBoxId);
-};
+        if(i<4){
+            var newCard = document.createElement("div");
+            newCard.className = 'newCard';
+            newCard.id = 'newCard'+i;
+            var newCardName = document.createTextNode("newCard");
+            newCard.appendChild(newCardName);
+            document.getElementById("TeamBox").appendChild(newCard);
+            i++;
+        } else {
+            alert("Max cars reached for current team");
+        }
+    };
 }
