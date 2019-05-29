@@ -27,6 +27,45 @@ readSignup.addEventListener("click", function(){
     signupForm.style.opacity = "1";
 });
 
+var createPassword;
+var confirmPassword;
+
+var signupInputPassword = document.getElementById("inputPassword_Signup");
+var passwordCheckbox = document.getElementById("circle_Signup");
+signupInputPassword.addEventListener("input", function(){
+    console.log(signupInputPassword.value);
+    createPassword = signupInputPassword.value;
+    if(confirmPassword == createPassword){
+        console.log("Password match!");
+        passwordCheckbox.style.opacity = "1";
+        passwordCheckbox.style.backgroundColor = "green"; 
+    } else{
+        console.log("Password does not match.");
+        passwordCheckbox.style.opacity = "1";
+        passwordCheckbox.style.backgroundColor = "red"; 
+    }
+});
+
+var confirmInputPassword = document.getElementById("inputConfirmPassword_Signup");
+confirmInputPassword.addEventListener("input", function(){
+    confirmPassword = confirmInputPassword.value;
+    console.log(confirmPassword);
+    if(confirmPassword == createPassword){
+        console.log("Password match!");
+        passwordCheckbox.style.opacity = "1";
+        passwordCheckbox.style.backgroundColor = "greenyellow"; 
+
+    } else{
+        console.log("Password does not match.");
+        passwordCheckbox.style.opacity = "1";
+        passwordCheckbox.style.backgroundColor = "red"; 
+    }
+});
+
+
+
+
+
 function createSignupForm(){
 
 };
