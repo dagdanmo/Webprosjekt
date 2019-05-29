@@ -27,6 +27,6 @@ function createSignupForm(){
     function fadeOut(){
         var loginField = document.getElementById('loginField')
         loginField.style.opacity = '0';
-        loginField.style.top = '60%';
+       
     } 
   

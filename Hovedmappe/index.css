@@ -40,7 +40,7 @@ body{
     margin: 0;
 
     transition: top 2s linear;
-    transition: opacity 2s ease-in-out; 
+    transition: opacity 1s ease-in-out; 
 }
 
 
@@ -84,7 +84,7 @@ body{
 }
 
 
-#signUp{
+<!-- #signUp{
     widows: 150px;
     border:2px solid rgb(20, 270, 20);
     border-radius:4px;
@@ -157,4 +157,4 @@ body{
     left: 75px;
     font-size: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  
-}
+} 
