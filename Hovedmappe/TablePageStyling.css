@@ -32,6 +32,7 @@ body{
     width: 20%;
     height: 50%;
     margin: 0;
+    background-color: aquamarine;
     border: dotted black 2px;
     display: inline-block;
 }
