@@ -98,11 +98,21 @@ li.dropDown
 }
 
 .buttons{
+    
+}
+
+#NewTeamButton{
+    position: absolute;
+}
+
+#NewCardButton{
     position: absolute;
     top: 20%;
     height: 5%;
     width: 3%;
 }
+
+
 
 .newCard{
     width: 16%;
