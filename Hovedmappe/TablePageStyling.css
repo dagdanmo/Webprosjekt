@@ -96,6 +96,13 @@ li.dropDown
     border: outset black 1.2px;    
 }
 
+.buttons{
+    position: absolute;
+    top: 20%;
+    height: 10%;
+    width: 5%;
+}
+
 .newCard{
     width: 16%;
     height: 400px;
