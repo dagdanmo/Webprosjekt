@@ -75,6 +75,19 @@ confirmInputPassword.addEventListener("input", function(){
 });
 
 
+var user = [{
+username: "Dagefar",
+email: "dag.danmo@gmail.com",
+
+},
+{
+
+},
+{
+
+}];
+user.username[0] = "dragefar";
+console.log()
 
 
 
