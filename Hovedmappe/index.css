@@ -1,6 +1,6 @@
 body{
     position: fixed;
-    background-color: #e0fbff;
+    background-color: rgb(224,251,255);
     left: 0px; 
     margin: 0;
     padding: 0;
@@ -37,6 +37,15 @@ body{
     left: 80%;
     top: 30%;
     margin: 0;
+}
+
+#logo{
+    height: 300px;
+    position: absolute;
+    top: -230px;
+    left: -80px;
+
+
 }
 
 
@@ -164,4 +173,10 @@ body{
     margin: 0;
     padding: 0;
     opacity: 0.0;
+}
+
+#regFeedback_Signup{
+    position: absolute;
+    top: 300px;
+    left: 20px;
 }
