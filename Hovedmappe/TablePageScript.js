@@ -18,16 +18,19 @@ window.onload = function(){
 
     // creating new teams
     function addNewTeamOnClick(){
+        
         //Creating a new teambox
         var newTeam = document.createElement("div");
         newTeam.className = "TeamBoxContainer";
         newTeam.id = "TeamBox"+teamI;
+        
         //Name of the new team
         var newTeamName = document.createElement("p");
         newTeamName.innerHTML = "New Team " + teamI;
         newTeamName.className = "NewTeamName";
         newTeam.appendChild(newTeamName);
         document.getElementById("MainBox").appendChild(newTeam);
+        
         //New cardbox button added to the teambox
         var newBoxButton = document.createElement("button");
         newBoxButton.innerHTML = "New Card";
