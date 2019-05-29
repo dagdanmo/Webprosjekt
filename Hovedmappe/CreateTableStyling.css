@@ -53,6 +53,9 @@ li.dropDown
     display: block;
     z-index: 100;
 }
+.text1{
+    background-color: #FFa71a;
+}
 .dropDownContent a:hover
 {
     background: #d7d2ff;
@@ -97,6 +100,17 @@ li.dropDown
     text-align: center;
     margin: 0;
 }
+<<<<<<< HEAD
+.TeamBoxContainer{
+    width: 100%;
+    height: 77%;
+    background-color: #FFa71a;    
+    text-align: left;
+    word-wrap: break-word;
+}
+=======
+
+>>>>>>> 4b1e9c7cffbe335d642ae7943818d81e9c3024ce
 .newCard{
     width: 20%;
     height: 60px;
