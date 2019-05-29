@@ -183,6 +183,7 @@ register_Signup.addEventListener("click", function(){
      
     }else{
         signupRegFeedback.innerText = "Missing information.";
+        signupRegFeedback.style.color = "red";
     }
 }); 
 
