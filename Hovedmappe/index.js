@@ -74,7 +74,7 @@ confirmInputPassword.addEventListener("input", function(){
     }
 });
 
-
+/*
 var user = [{
 username: "Dagefar",
 email: "dag.danmo@gmail.com",
@@ -86,10 +86,10 @@ email: "dag.danmo@gmail.com",
 {
 
 }];
-user.username[0] = "dragefar";
+//user.username[0] = "dragefar";
 console.log()
 
-
+*/
 
 function createSignupForm(){
 
@@ -104,9 +104,9 @@ register_Signup.addEventListener("click", function(){
    signupForm.style.transitionTimingFunction = "ease-in";
    signupForm.style.transitionDuration = "0.5s";
    signupForm.style.opacity = "0";
-   signupForm.style.top = "0%";
+   signupForm.style.top = "-50%";
 
-   loginField.style.top = "15%";
+   loginField.style.top = "30%";
    loginField.style.transitionTimingFunction = "ease-in";
    loginField.style.transitionDuration = "0.5s";
    loginField.style.opacity = "1";
