@@ -7,12 +7,13 @@ window.onload = function(){
     var movePerc = 19;
     var i = 0;
     
+    // keep button on the right side of the new card
     function addNewCardButton(){
         document.getElementById("NewCardButton").style.left = movePerc+"%";
         movePerc = movePerc + 19;
     }
     
-    
+    // creating new cards
     function addTaskBarOnClick(){
         if(i<5){
             var newCard = document.createElement("div");
@@ -24,6 +25,7 @@ window.onload = function(){
             var newCardName = document.createTextNode("newCard");
             newCard.appendChild(newCardName);
             document.getElementById("TeamBox").appendChild(newCard);
+            
             i++;
             addNewCardButton();
         } else {
