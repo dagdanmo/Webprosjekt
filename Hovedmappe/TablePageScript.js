@@ -1,20 +1,27 @@
 
 window.onload = function(){
+    
     //document.getElementById('NewCardButton').addEventListener("click", addTaskBarOnClick);
     
-    document.getElementById("NewCardButton").addEventListener("click",addTaskBarOnClick);
+    
+    var newTeamButton = document.createElement("button");
+    newTeamButton.innerHTML = "New Team";
+    newTeamButton.type = "button";
+    newTeamButton.className = "buttons";
+    newTeamButton.id = "NewTeamButton";
+    document.getElementById("MainBox").appendChild(newTeamButton);
     document.getElementById("NewTeamButton").addEventListener("click",addNewTeamOnClick);
-
 
     var movePerc = 19;
     var teamI = 0;
     var boxI = 0;
-    
-    // keep button on the right side of the new card
+
+
+/*     // keep button on the right side of the new card
     function addNewCardButton(){
-        document.getElementById("NewCardButton").style.left = movePerc+"%";
+        document.getElementById("NewCardButton"+ID).style.left = movePerc+"%";
         movePerc = movePerc + 19;
-    }
+    } */
 
     // creating new teams
     function addNewTeamOnClick(){
@@ -22,14 +29,17 @@ window.onload = function(){
         newTeam.className = "TeamBoxContainer";
         newTeam.id = "TeamBox"+teamI;
 
-        var newTeamName = document.createTextNode("New Team " + teamI);
+        //var newTeamName = document.createTextNode("New Team " + teamI);
+        var newTeamName = document.createElement("p");
+        newTeamName.innerHTML = "New Team " + teamI;
+        newTeamName.className = "NewTeamName";
         newTeam.appendChild(newTeamName);
         document.getElementById("MainBox").appendChild(newTeam);
 
         var newBoxButton = document.createElement("button");
         newBoxButton.innerHTML = "New Card";
         newBoxButton.className = "buttons";
-        newBoxButton.id = "NewTeamButton"+teamI;
+        newBoxButton.id = "NewCardButton"+teamI;
         newBoxButton.addEventListener("click",addTaskBarOnClick);
         newTeam.appendChild(newBoxButton);
 
@@ -38,22 +48,30 @@ window.onload = function(){
     
     // creating new cards
     function addTaskBarOnClick(){
-        if(boxI<5){
+        var buttonID = event.target.id;
+        var ID = buttonID[buttonID.length -1];
+        console.log(this);
+        console.log(buttonID);
+        console.log(ID);
+        //if(boxI<5){
             var newCard = document.createElement("div");
-            newCard.className = 'newCard';
-            newCard.id = 'newCard'+boxI;
+            newCard.className = 'NewCard';
+            newCard.id = 'NewCard'+boxI;
             if(boxI != 0){
                 newCard.style.left = movePerc - 19 +"%";
             }
-            var newCardName = document.createTextNode("New Card " + boxI);
+            //var newCardName = document.createTextNode("New Card " + boxI);
+            var newCardName = document.createElement("p");
+            newCardName.innerHTML = "New Card "+ID;
+            newCardName.className = "NewCardName";
             newCard.appendChild(newCardName);
-            document.getElementById("TeamBox").appendChild(newCard);
+            document.getElementById("TeamBox"+ID).appendChild(newCard);
             
-            boxI++;
-            addNewCardButton();
-        } else {
-            alert("Max cards reached for current team");
-        }
+            //boxI++;
+
+        //} else {
+         //   alert("Max cards reached for current team");
+       // }
     };
 
     
