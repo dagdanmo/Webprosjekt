@@ -36,10 +36,16 @@ signupInputPassword.addEventListener("input", function(){
     console.log(signupInputPassword.value);
     createPassword = signupInputPassword.value;
     if(confirmPassword == createPassword){
-        console.log("Password match!");
-        passwordCheckbox.style.opacity = "1";
-        passwordCheckbox.style.backgroundColor = "green"; 
-    } else{
+        if(confirmPassword.length == 0 || createPassword.length == 0){
+            console.log("Password does not match!");
+            passwordCheckbox.style.backgroundColor = "red";
+            passwordCheckbox.style.opacity = "0";
+        }else{
+            console.log("Password match!");
+            passwordCheckbox.style.opacity = "1";
+            passwordCheckbox.style.backgroundColor = "greenyellow";
+        }
+    } else if(confirmPassword != createPassword && confirmPassword != null){
         console.log("Password does not match.");
         passwordCheckbox.style.opacity = "1";
         passwordCheckbox.style.backgroundColor = "red"; 
@@ -49,11 +55,17 @@ signupInputPassword.addEventListener("input", function(){
 var confirmInputPassword = document.getElementById("inputConfirmPassword_Signup");
 confirmInputPassword.addEventListener("input", function(){
     confirmPassword = confirmInputPassword.value;
-    console.log(confirmPassword);
-    if(confirmPassword == createPassword){
-        console.log("Password match!");
-        passwordCheckbox.style.opacity = "1";
-        passwordCheckbox.style.backgroundColor = "greenyellow"; 
+    //console.log(confirmPassword); - for bugtesting
+    if(confirmPassword == createPassword){ 
+        if(confirmPassword.length == 0 || createPassword.length == 0){
+            console.log("Password does not match!");
+            passwordCheckbox.style.backgroundColor = "red";
+            passwordCheckbox.style.opacity = "0";
+        }else{
+            console.log("Password match!");
+            passwordCheckbox.style.opacity = "1";
+            passwordCheckbox.style.backgroundColor = "greenyellow";
+        }
 
     } else{
         console.log("Password does not match.");
@@ -63,6 +75,19 @@ confirmInputPassword.addEventListener("input", function(){
 });
 
 
+var user = [{
+username: "Dagefar",
+email: "dag.danmo@gmail.com",
+
+},
+{
+
+},
+{
+
+}];
+user.username[0] = "dragefar";
+console.log()
 
 
 
