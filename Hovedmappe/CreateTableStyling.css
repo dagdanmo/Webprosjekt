@@ -124,23 +124,32 @@ li.dropDown
     text-decoration: none;     
     cursor: pointer;     
     margin: 0; 
+    border-radius: 4%;
   }
 
-#bigPlusSign:hover {opacity: 1};
+#bigPlusSign:hover {opacity: 1}
 
-#plusOpp{
+#plusHorizontal{
     position: absolute;
-    height: 80px;
-    width: 15px;
+    height: 20px;
+    width: 140px;
     background-color: black;
     z-index: 10000;
+    top: 123px;
+    left: 195px;
+    opacity: 0.6;
 }
-#plusBort{
+#plusVertical{
     position: absolute;;
-    width: 80px;
-    height: 15px;
+    width: 20px;
+    height: 140px;
     background-color: black;
     z-index: 10000;
+    top: 60px;
+    left: 254px;
+    opacity: 0.6;
+
+
 }
 
 
