@@ -3,6 +3,33 @@ body{
     background-color: black;
     z-index: 0;
 }
+nav {
+    padding: 5px;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav a {
+    display: block;
+    width: 60px;
+
+}
+
+.nav-left {
+    float: left;
+}
+.nav-left ul li {
+    float: left;
+}
+.nav-right ul li {
+    float: right;
+}
+
+
 ul
 {
     list-style-type: none;
@@ -12,11 +39,8 @@ ul
     background: #03acef;
     z-index: 100;
 }
-li
-{
-    float: left;
-    z-index: 100;
-}
+
+
 li a, .dropBtn
 {
     display:inline-block;
@@ -62,10 +86,6 @@ li.dropDown
 {
     display: block;
     z-index: 100;
-}
-.buttons{
-    left: 50%;
-
 }
 #header{
     position: absolute;
