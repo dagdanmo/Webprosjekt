@@ -115,13 +115,14 @@ li.dropDown
 }
 
 #bigPlusSign {     
-    left: 49%;     
+    left: 37%;     
     position: absolute;     
     background-color: #f4511e;
-    top:50%;     
+    text-align: center;
+    top: 25%;
     border: none;     
     color: white;     
-    padding: 16px 32px;     
+    padding: 128px 256px;     
     text-align: center;     
     font-size: 16px;     
     opacity: 0.6;     
@@ -130,9 +131,24 @@ li.dropDown
     text-decoration: none;     
     cursor: pointer;     
     margin: 0; 
-  }    
+  }
+
 #bigPlusSign:hover {opacity: 1};
 
+#plusOpp{
+    position: absolute;
+    height: 80px;
+    width: 15px;
+    background-color: black;
+    z-index: 10000;
+}
+#plusBort{
+    position: absolute;;
+    width: 80px;
+    height: 15px;
+    background-color: black;
+    z-index: 10000;
+}
 
 
 
