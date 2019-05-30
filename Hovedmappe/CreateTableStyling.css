@@ -26,7 +26,7 @@ li a, .dropBtn
     display:inline-block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 20px 22px;
     text-decoration: none;
     z-index: 100;
 }
@@ -45,14 +45,14 @@ li.dropDown
     display:none;
     position: absolute;
     background: #333;
-    min-width: 112px;
+    min-width: 124px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 100;
 }
 .dropDownContent a
 {
     color: black;
-    padding: 12px 16px;
+    padding: 20px 22px;
     text-decoration: none;
     display: block;
     z-index: 100;
@@ -108,11 +108,11 @@ li.dropDown
 }
 
 #bigPlusSign {     
-    left: 37%;     
+    left: 50%;     
     position: absolute;     
     background-color: #c3f3ff;
     text-align: center;
-    top: 25%;
+    top: 50%;
     border: none;     
     color: white;     
     padding: 128px 256px;     
@@ -125,6 +125,8 @@ li.dropDown
     cursor: pointer;     
     margin: 0; 
     border-radius: 4%;
+    margin-left: -256px;
+    margin-top: -128px;
   }
 
 #bigPlusSign:hover {opacity: 1}
@@ -135,9 +137,11 @@ li.dropDown
     width: 140px;
     background-color: black;
     z-index: 10000;
-    top: 123px;
-    left: 195px;
+    top: 50%;
+    left: 50%;
     opacity: 0.6;
+    margin-left: -70px;
+    margin-top: -10px;
 }
 #plusVertical{
     position: absolute;;
@@ -145,9 +149,11 @@ li.dropDown
     height: 140px;
     background-color: black;
     z-index: 10000;
-    top: 60px;
-    left: 254px;
+    top: 50%;
+    left: 50%;
     opacity: 0.6;
+    margin-left: -10px;
+    margin-top: -70px;
 
 
 }
