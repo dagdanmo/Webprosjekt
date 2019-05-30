@@ -138,52 +138,66 @@ var signupInputUsername = document.getElementById("inputUsername_Signup");
 var signupInputEmail = document.getElementById("inputEmail_Signup");
 var signupRegFeedback = document.getElementById("regFeedback_Signup");
 
+var isTaken = false;
+var isReady = false;
 // var readSignup = document.getElementById("signUp");
 register_Signup.addEventListener("click", function(){
-
-    if(signupInputUsername.value != null && signupInputEmail != null && passwordReady){
-        var i = 0;
+    isTaken = false;
+    var i = 0;
+    console.log(signupInputUsername.value, signupInputEmail.value);
+    if(signupInputUsername.value != null && signupInputEmail.value != null && passwordReady){
+        console.log(signupInputUsername.value, signupInputEmail.value);
+    
         for(i = 0; i < users.length; i++){
             if(signupInputUsername.value == users[i].username){
                 signupRegFeedback.innerText = "Username is taken.";
                 signupRegFeedback.style.color = "red";
-                i = users.length;
+                isTaken = true;
+                i = 0;
+                break;
+
             }else if(signupInputEmail.value == users[i].email){
                 signupRegFeedback.innerText = "E-mail is already in use.";
                 signupRegFeedback.style.color = "red";
-                i = users.length;
+                isTaken = true;
+                i = 0;
+                break;
             }else{
-
-                users.push({username: signupInputUsername.value, email: signupInputEmail.value, password: signupInputPassword.value });
-                console.log(users);
-
-                signupRegFeedback.innerText = "Registration complete!"
-                signupRegFeedback.style.color = "green";
-                console.log("Register clicked");
-                fetchUsername.value = signupInputUsername.value;
-                fetchPassword.value = signupInputPassword.value;
-                //loginField.style.opacity = "0";
-                //loginField.style.transition = "0%";
-                signupForm.style.transitionTimingFunction = "ease-in";
-                signupForm.style.transitionDuration = "0.5s";
-                signupForm.style.transitionDelay = "3s";
-                signupForm.style.opacity = "0";
-                signupForm.style.top = "120%";
-            
-                loginField.style.top = "30%";
-                loginField.style.transitionTimingFunction = "ease-in";
-                loginField.style.transitionDuration = "0.5s";
-                loginField.style.transitionDelay = "3s";
-                loginField.style.opacity = "1";
-                i = users.length;
+                isTaken = false;
+                isReady = true;
             }
-
+            
         };
 
-     
     }else{
         signupRegFeedback.innerText = "Missing information.";
         signupRegFeedback.style.color = "red";
     }
+    if(isTaken == false && isReady){
+
+        users.push({username: signupInputUsername.value, email: signupInputEmail.value, password: signupInputPassword.value });
+        console.log(users);
+
+        signupRegFeedback.innerText = "Registration complete!"
+        signupRegFeedback.style.color = "green";
+        console.log("Register clicked");
+        fetchUsername.value = signupInputUsername.value;
+        fetchPassword.value = signupInputPassword.value;
+        //loginField.style.opacity = "0";
+        //loginField.style.transition = "0%";
+        signupForm.style.transitionTimingFunction = "ease-in";
+        signupForm.style.transitionDuration = "0.5s";
+        signupForm.style.transitionDelay = "3s";
+        signupForm.style.opacity = "0";
+        signupForm.style.top = "120%";
+    
+        loginField.style.top = "30%";
+        loginField.style.transitionTimingFunction = "ease-in";
+        loginField.style.transitionDuration = "0.5s";
+        loginField.style.transitionDelay = "3s";
+        loginField.style.opacity = "1";
+
+    }
+
 }); 
 
