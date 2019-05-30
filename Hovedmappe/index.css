@@ -42,10 +42,10 @@ body{
 #logo{
     height: 300px;
     position: absolute;
-    top: -170px;
-    left: -30px;
-
-
+    top: -180px;
+    left: -38px;
+    height: 222px;
+    width: 222px;
 }
 
 
