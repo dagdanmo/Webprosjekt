@@ -9,7 +9,7 @@ ul
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background: #333;
+    background: #03acef;
     z-index: 100;
 }
 li
@@ -70,7 +70,7 @@ li.dropDown
 #header{
     position: absolute;
     top: 0px;
-    background-color:#333;
+    background-color:#03acef;
     width: 100%;
     left: 0px;
     text-align: center;
@@ -82,7 +82,7 @@ li.dropDown
 #center{
     position: absolute;
     top: 4%;
-    background-color: white;
+    background-color: #ffffff;
     width: 100%;
     height: 60%;
     left: 0px;
@@ -93,7 +93,7 @@ li.dropDown
 #footer{
     position: absolute;
     bottom: 0px;
-    background-color: #FFa71a;
+    background-color: #e0fbff;
     width: 100%;
     height: 40%;
     left: 0;
@@ -104,9 +104,10 @@ li.dropDown
 .newCard{
     position: relative;
     width: 20%;
+    height: 60px;
     margin: 0;
     text-align: center;
-    background-color: gray;
+    background-color:#CCf3ff;
     border: outset black 2px;
     border-radius: 25px;
     display: inline-block;
