@@ -126,15 +126,16 @@ li.dropDown
     z-index: 1000;
 }
 
-#bigPlusSign {     
+#createNewTable {     
     left: 50%;     
     position: absolute;     
     background-color: #c3f3ff;
     text-align: center;
     top: 50%;
     border: none;     
-    color: white;     
-    padding: 128px 256px;     
+    color: white;
+    width: 650px;
+    height: 300px;      
     text-align: center;     
     font-size: 16px;     
     opacity: 0.6;     
@@ -143,36 +144,72 @@ li.dropDown
     text-decoration: none;     
     cursor: pointer;     
     margin: 0; 
-    border-radius: 4%;
-    margin-left: -256px;
-    margin-top: -128px;
+    border-radius: 15px 15px 15px 15px;
+    margin-left: -325px;
+    margin-top: -150px;
   }
 
-#bigPlusSign:hover {opacity: 1}
+#createNewTable:hover {opacity: 1}
+
+#inputTableName{
+    z-index: 1200;
+    height: 70px;
+    width: 400px;
+    left: 70px;
+    top: 110px;
+    position: absolute;
+    border: none;
+    border-radius: 10px 20px 10px 20px;
+    outline: none;
+    text-align: center;
+    font-size: 40px;
+    opacity: 0;
+}
+
+#confirmTableName{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: none;
+    color: black;
+    background-color: white;
+    font-size: 80px;
+    position: absolute;
+    left: 500px;
+    top: 95px;
+    outline: none;
+    opacity: 0;
+}
+
+#plusSign{
+    z-index: 100;
+}
 
 #plusHorizontal{
     position: absolute;
     height: 20px;
     width: 140px;
     background-color: black;
-    z-index: 10000;
+    z-index: 120;
     top: 50%;
     left: 50%;
-    opacity: 0.6;
+    opacity: 1;
     margin-left: -70px;
     margin-top: -10px;
+    border-radius: 7px 7px 7px 7px;
 }
 #plusVertical{
     position: absolute;;
     width: 20px;
     height: 140px;
     background-color: black;
-    z-index: 10000;
+    z-index: 120;
     top: 50%;
     left: 50%;
-    opacity: 0.6;
+    opacity: 1;
     margin-left: -10px;
     margin-top: -70px;
+    border-radius: 7px 7px 7px 7px;
 
 
 }
