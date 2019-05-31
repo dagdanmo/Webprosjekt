@@ -29,17 +29,20 @@ createNewTable.addEventListener("click", function(){
         tableNamed = inputTableName.value;
     });
 
+    var idIncrement = 0;
+
     confirmTableName.addEventListener("click", function(){
 
-        var i = 0;
         if(tableNamed != null){
             var newCard = document.createElement("div");
-            newCard.className = 'newCard';
-            newCard.id = 'newCard'+i;
+            newCard.className = "newCard";
+            newCard.id = "newCard" + idIncrement;
             var newCardName = document.createTextNode(inputTableName.value);
             newCard.appendChild(newCardName);
             document.getElementById("TeamBox").appendChild(newCard);
-            i++;
+            idIncrement++;
+            console.log(newCard.className, newCard.id);
+            
         }else{
             console.log("Insert table name.")
         }

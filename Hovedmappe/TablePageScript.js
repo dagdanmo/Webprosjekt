@@ -74,11 +74,12 @@ window.onload = function(){
         // creating a new card
         var newCard = document.createElement("div");
         newCard.className = 'NewCard';
-        newCard.id = 'NewCard'+boxI;
+        newCard.id = 'NewCard' + boxI;
+        boxI++;
 
         // name of the card
         var newCardName = document.createElement("p");
-        newCardName.innerHTML = "New Card "+ID;
+        newCardName.innerHTML = "New Card " + boxI;
         newCardName.className = "NewCardName";
         newCard.appendChild(newCardName);
         document.getElementById("TeamBox"+ID).appendChild(newCard);
