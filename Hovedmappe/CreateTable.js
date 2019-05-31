@@ -8,7 +8,7 @@ createNewTable.addEventListener("click", function(){
     createNewTable.style.transitionDuration = "0.5s";
     createNewTable.style.top = "200px";
     createNewTable.style.opacity = "1";
-    
+
     inputTableName.style.opacity = "1";
     inputTableName.style.transitionTimingFunction = "ease-in";
     inputTableName.style.transitionDuration = "0.5s";
@@ -24,22 +24,26 @@ createNewTable.addEventListener("click", function(){
     plusSign.style.transitionDuration = "0.5s";
 });
 
-        cardId = 0;
-    
+    var tableNamed;
+    inputTableName.addEventListener("input", function(){
+        tableNamed = inputTableName.value;
+    });
+
     confirmTableName.addEventListener("click", function(){
 
-       
-        console.log(cardId);
-        var newCard = document.createElement("div");
-        newCard.className = 'newCard';
-        newCard.id = 'newCard' + cardId;
-        var newCardName = document.createTextNode(inputTableName.value);
-        newCard.appendChild(newCardName);
-        document.getElementById("TeamBox").appendChild(newCard);
-        cardId++;
-        console.log(cardId);
-        console.log(newCard.id);
+        var i = 0;
+        if(tableNamed != null){
+            var newCard = document.createElement("div");
+            newCard.className = 'newCard';
+            newCard.id = 'newCard'+i;
+            var newCardName = document.createTextNode(inputTableName.value);
+            newCard.appendChild(newCardName);
+            document.getElementById("TeamBox").appendChild(newCard);
+            i++;
+        }else{
+            console.log("Insert table name.")
+        }
+
 
 
     });
-        
