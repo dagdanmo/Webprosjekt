@@ -114,7 +114,7 @@ body{
     height: 20px;
     left: 0px;
     top: 100px;
-    font-size: 20px;
+    
 }
 
 #inputEmail_Signup{
@@ -122,7 +122,7 @@ body{
     height: 20px;
     left: 0px;
     top: 145px;
-    font-size: 15px;
+    
 }
 
 #inputPassword_Signup{
@@ -130,7 +130,7 @@ body{
     height: 20px;
     left: 0px;
     top: 190px;
-    font-size: 15px;
+    
 }
 
 #inputRepeatPassword_Signup{
@@ -138,7 +138,7 @@ body{
     height: 20px;
     left: 0px;
     top: 235px;
-    font-size: 15px;
+
 }
 
 #register_Signup{
@@ -150,9 +150,8 @@ body{
     background-color: rgb(20, 270, 20);
 }
 #registerText{
-    top: -18px;
+    top: -11px;
     position: absolute;
-    left: 75px;
-    font-size: 20px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  
+    left: 60px;
+    font-size: 15px;
 }
