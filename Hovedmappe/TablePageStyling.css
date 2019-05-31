@@ -119,10 +119,15 @@ li.dropDown
     height: 5%;
     width: 3%;
 }
+.NewTeamButton{
+    position: relative;
+    align-self: center;
+    height: 5%;
+    width: 10%;
+}
 
 .NewCard{
     width: 250px;
-
     margin-left: 3%;
     text-align: center;
     background-color: #E0FBFF;
