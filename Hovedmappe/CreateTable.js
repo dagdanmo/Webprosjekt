@@ -24,13 +24,15 @@ createNewTable.addEventListener("click", function(){
     plusSign.style.transitionDuration = "0.5s";
 });
 
-    
+    var tableNamed;
+    inputTableName.addEventListener("input", function(){
+        tableNamed = inputTableName.value;
+    });
     
     confirmTableName.addEventListener("click", function(){
 
         var i = 0;
-
-        if(i<4){
+        if(tableNamed != null){
             var newCard = document.createElement("div");
             newCard.className = 'newCard';
             newCard.id = 'newCard'+i;
@@ -38,10 +40,9 @@ createNewTable.addEventListener("click", function(){
             newCard.appendChild(newCardName);
             document.getElementById("TeamBox").appendChild(newCard);
             i++;
-        } else {
-            alert("Max cards reached for current team");
+        }else{
+            console.log("Insert table name.")
         }
-
 
 
 
