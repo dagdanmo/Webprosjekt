@@ -187,14 +187,14 @@ register_Signup.addEventListener("click", function(){
         //loginField.style.transition = "0%";
         signupForm.style.transitionTimingFunction = "ease-in";
         signupForm.style.transitionDuration = "0.5s";
-        signupForm.style.transitionDelay = "3s";
+        signupForm.style.transitionDelay = "1.5s";
         signupForm.style.opacity = "0";
         signupForm.style.top = "120%";
     
         loginField.style.top = "30%";
         loginField.style.transitionTimingFunction = "ease-in";
         loginField.style.transitionDuration = "0.5s";
-        loginField.style.transitionDelay = "3s";
+        loginField.style.transitionDelay = "1.5s";
         loginField.style.opacity = "1";
 
     }
