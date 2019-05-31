@@ -211,31 +211,31 @@ li.dropDown
 
 #blue{
     left: 180px;
-    background-color: blue;
+    background-color: #1aabd8;
     opacity: 0;
 }
 
 #red{
     left: 120px;
-    background-color: red;
+    background-color: #ef5181;
     opacity: 0;
 }
 
 #orange{
     left: 240px;
-    background-color: orange;
+    background-color: #fcb71e;
     opacity: 0;
 }
 
 #purple{
     left: 300px;
-    background-color: purple;
+    background-color: #8e56a1;
     opacity: 0;
 }
 
 #green{
     left: 360px;
-    background-color: green;
+    background-color: #bdd549;
     opacity: 0;
 }
 

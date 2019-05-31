@@ -57,7 +57,7 @@ createNewTable.addEventListener("click", function(){
 var selectColor;
 
         colorRed.addEventListener("click", function(){
-            selectColor = "red";
+            selectColor = "#ef5181";
             console.log("red selected!")
             createNewTable.style.backgroundColor = selectColor;
             borderRemover();
@@ -65,7 +65,7 @@ var selectColor;
         });
 
         colorBlue.addEventListener("click", function(){
-            selectColor = "blue";
+            selectColor = "#1aabd8";
             console.log("Blue selected!");
             createNewTable.style.backgroundColor = selectColor;
             borderRemover();
@@ -73,21 +73,21 @@ var selectColor;
         });
         
         colorOrange.addEventListener("click", function(){
-            selectColor = "orange";
+            selectColor = "#fcb71e";
             createNewTable.style.backgroundColor = selectColor;
             borderRemover();
             colorOrange.style.border = "2px solid black";
         });
         
         colorPurple.addEventListener("click", function(){
-            selectColor = "purple";
+            selectColor = "#8e56a1";
             createNewTable.style.backgroundColor = selectColor;
             borderRemover();
             colorPurple.style.border = "2px solid black";
         });
         
         colorGreen.addEventListener("click", function(){
-            selectColor = "green";
+            selectColor = "#bdd549";
             createNewTable.style.backgroundColor = selectColor;
             borderRemover();
             colorGreen.style.border = "2px solid black";
