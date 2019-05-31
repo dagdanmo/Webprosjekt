@@ -24,23 +24,23 @@ createNewTable.addEventListener("click", function(){
     plusSign.style.transitionDuration = "0.5s";
 });
 
-    
+       var cardId = 0;
     
     confirmTableName.addEventListener("click", function(){
 
-        var i = 0;
-
-        if(i<4){
-            var newCard = document.createElement("div");
-            newCard.className = 'newCard';
-            newCard.id = 'newCard'+i;
-            var newCardName = document.createTextNode(inputTableName.value);
-            newCard.appendChild(newCardName);
-            document.getElementById("TeamBox").appendChild(newCard);
-            i++;
-        } else {
-            alert("Max cards reached for current team");
-        }
+       
+        console.log(cardId);
+        var newCard = document.createElement("div");
+        newCard.className = 'newCard';
+        newCard.id = 'newCard' + cardId;
+        var newCardName = document.createTextNode(inputTableName.value);
+        newCard.appendChild(newCardName);
+        document.getElementById("TeamBox").appendChild(newCard);
+        cardId++;
+        console.log(cardId);
+        console.log(newCard.id);
+                
+    
 
 
 
