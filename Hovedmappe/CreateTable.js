@@ -24,7 +24,7 @@ createNewTable.addEventListener("click", function(){
     plusSign.style.transitionDuration = "0.5s";
 });
 
-       var cardId = 0;
+        cardId = 0;
     
     confirmTableName.addEventListener("click", function(){
 
@@ -39,10 +39,6 @@ createNewTable.addEventListener("click", function(){
         cardId++;
         console.log(cardId);
         console.log(newCard.id);
-                
-    
-
-
 
 
     });
