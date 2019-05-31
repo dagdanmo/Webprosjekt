@@ -1,30 +1,143 @@
 body{
-    background-color: #FED7B0;
+    background-color: white;
     z-index: 0;
 }
 
-#MainBox{
-    top: 0px;
-    width: 100%;
-    height: 480px;
-    background-color: #C0C0C0; 
-    z-index: 2;
-}
-
-#UpperNavBox{
-    top: 0px;
-    width: 100%;
-    height: 10%;
+ul
+{
+    list-style-type: none;
     margin: 0;
-    background-color: #EEEEEE; 
+    padding: 0;
+    overflow: hidden;
+    background: #03acef;
+    z-index: 100;
 }
-
-#TaskBox0 div{
-    top: 50%;
-    width: 13%;
-    height: 50%;
+li
+{
+    float: left;
+    z-index: 100;
+}
+li a, .dropBtn
+{
+    display:inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    z-index: 100;
+}
+li a:hover, .dropDown:hover .dropBtn
+{
+    background: #786BDE;
+    z-index: 100;
+}
+li.dropDown
+{
+    display: inline-block;
+    z-index: 100;
+}
+.dropDownContent
+{
+    display:none;
+    position: absolute;
+    background: #E0FBFF;
+    min-width: 107px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+.dropDownContent a
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    z-index: 100;
+}
+.dropDownContent a:hover
+{
+    background: #d7d2ff;
+    z-index: 100;
+}
+.dropDown:hover .dropDownContent
+{
+    display: block;
+    z-index: 100;
+}
+#header{
+    position: relative;
+    top: 0px;
+    background-color:#03acef;
+    width: 100%;
+    left: 0px;
+    text-align: center;
+    font-size: 15px;
+    z-index: 100;
     margin: 0;
-    background-color: #FEC8D8;    
-    text-align: left;
+    height: 4%;
+}
+.TeamBoxContainer{
+    width: 98%;
+    /*height: 70%;*/
+    margin-top: 1%;
+    padding: 1%;
+    background-color: #D6E0D6; 
+    text-align: justify;
     word-wrap: break-word;
+    position: relative;
+    display: inline-block;
+}
+*/
+
+#MainBox{
+    position: absolute;
+    top: 50px;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF; 
+    z-index: 2;
+    border: outset black 1.2px;    
+    display: flex;
+}
+
+.buttons{
+    position: relative;
+    display: inline-block;
+}
+
+.NewTeamButton{
+    align-self: auto;
+}
+
+.NewTeamName{
+    margin: 1%;
+};
+
+.NewCardButton{
+    position: relative;
+    align-self: center;
+    height: 5%;
+    width: 3%;
+}
+.NewTeamButton{
+    position: relative;
+    align-self: center;
+    height: 5%;
+    width: 10%;
+}
+
+.NewCard{
+    width: 250px;
+    margin-left: 3%;
+    text-align: center;
+    background-color: #E0FBFF;
+    border: outset black 1px;
+    border-radius: 10px;
+    display: flex;
+    float: left;
+}
+
+.NewCardName{
+    position: relative;
+    left: 25%;
 }

@@ -7,14 +7,27 @@
     <title>Enter company name here</title>
     <link rel="Stylesheet" href="TablePageStyling.css">
     <script src="TablePageScript.js"></script>
+    
 </head>
 <body>
+        <div id = "header">
+                <ul>
+                   <li><a href="index.html">Home</a></li>
+                   <li><a href="#">About</a></li>
+                   <li class="dropDown">
+                       <a href="#" class="dropBtn">Drop Down</a>
+                       <div class="dropDownContent">
+                           <a href="#">Link 1</a>
+                           <a href="#">Link 2</a>
+                           <a href="#">Link 3</a>    
+                       </div>
+                   </li>
+               </ul>
+           </div>
+
     <div id="MainBox">
-        <div id="UpperNavBox">I'm the nav-bar</div>
-        <button type="button" id="AddTaskBarButton">[+]</button> <!-- IN-PROGRESS, button to add an instance of a task Div -->
-        <div id="TaskBox0">In progress
-            <p id="TaskBoxText">Placeholder</p>
-        </div>
+        <!-- MainBox is used as a container for all the elements created in the JS file -->
     </div>
+    <script src="TablePageScript.js"></script>
 </body>
 </html> 

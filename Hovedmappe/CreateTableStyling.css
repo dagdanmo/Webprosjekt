@@ -1,25 +1,81 @@
 body{
+    font-family: sans-serif;
     background-color: black;
     z-index: 0;
 }
-
-#header{
+ul
+{
     position: absolute;
-    top: 0px;
-    background-color: purple;
-    width: 100%;
+    top: -10px;
     left: 0px;
-    text-align: center;
-    font-size: 15px;
-    z-index: 2;
-    margin: 0;
+    width: 100%;
     height: 6%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background: #03acef;
+    z-index: 100;
+}
+li
+{
+    float: left;
+    z-index: 100;
+}
+li a, .dropBtn
+{
+    display:inline-block;
+    color: white;
+    text-align: center;
+    padding: 20px 22px;
+    text-decoration: none;
+    z-index: 100;
+}
+li a:hover, .dropDown:hover .dropBtn
+{
+    background: #786BDE;
+    z-index: 100;
+}
+li.dropDown
+{
+    display: inline-block;
+    z-index: 100;
+}
+.dropDownContent
+{
+    display:none;
+    position: absolute;
+    background: #333;
+    min-width: 124px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+.dropDownContent a
+{
+    color: black;
+    padding: 20px 22px;
+    text-decoration: none;
+    display: block;
+    z-index: 100;
+}
+.dropDownContent a:hover
+{
+    background: #d7d2ff;
+    z-index: 100;
+}
+.dropDown:hover .dropDownContent
+{
+    display: block;
+    z-index: 100;
+}
+.buttons{
+    left: 50%;
+
 }
 
 #center{
     position: absolute;
-    top: 6%;
-    background-color: red;
+    top: 4%;
+    background-color: #ffffff;
     width: 100%;
     height: 60%;
     left: 0px;
@@ -30,50 +86,114 @@ body{
 #footer{
     position: absolute;
     bottom: 0px;
-    background-color: antiquewhite;
+    background-color: #e0fbff;
     width: 100%;
-    height: 34%;
+    height: 40%;
     left: 0;
     text-align: center;
     margin: 0;
+    z-index: 100;
 }
-.boxes{
-    left: 50px; 
-    position: absolute;
-    height: 150px;
-    width: 300px;
-    border-radius: 15%;
-    z-index: 5;
-    background-color: blue;
+.newCard{
+    position: relative;
+    width: 20%;
+    height: 60px;
     margin: 0;
-    padding: 1;
-    top: 20%;    
+    text-align: center;
+    background-color:#CCf3ff;
+    border: outset black 2px;
+    border-radius: 25px;
+    display: inline-block;
+    z-index: 1000;
 }
-#box1{
+
+#createNewTable {     
+    left: 50%;     
+    position: absolute;     
+    background-color: #c3f3ff;
+    text-align: center;
+    top: 50%;
+    border: none;     
+    color: white;
+    width: 650px;
+    height: 300px;      
+    text-align: center;     
+    font-size: 16px;     
+    opacity: 0.6;     
+    transition: 0.3s;     
+    display: inline-block;     
+    text-decoration: none;     
+    cursor: pointer;     
+    margin: 0; 
+    border-radius: 15px 15px 15px 15px;
+    margin-left: -325px;
+    margin-top: -150px;
+  }
+
+#createNewTable:hover {opacity: 1}
+
+#inputTableName{
+    z-index: 1200;
+    height: 70px;
+    width: 400px;
+    left: 70px;
+    top: 110px;
     position: absolute;
-    top: 0px;
-    left: 390px;
+    border: none;
+    border-radius: 10px 20px 10px 20px;
+    outline: none;
+    text-align: center;
+    font-size: 40px;
+    opacity: 0;
 }
-#box2{
+
+#confirmTableName{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: none;
+    color: black;
+    background-color: white;
+    font-size: 80px;
     position: absolute;
-    top: 0px;
-    left: 740px;
+    left: 500px;
+    top: 95px;
+    outline: none;
+    opacity: 0;
 }
-#box3{
+
+#plusSign{
+    z-index: 100;
+}
+
+#plusHorizontal{
     position: absolute;
-    top: 0px;
-    left: 1090px;
+    height: 20px;
+    width: 140px;
+    background-color: black;
+    z-index: 120;
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+    margin-left: -70px;
+    margin-top: -10px;
+    border-radius: 7px 7px 7px 7px;
 }
-#box4{
-    position: absolute;
-    top: 0px;
-    left: 1440px;
-    font-size: 60px;
-}
- 
+#plusVertical{
+    position: absolute;;
+    width: 20px;
+    height: 140px;
+    background-color: black;
+    z-index: 120;
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+    margin-left: -10px;
+    margin-top: -70px;
+    border-radius: 7px 7px 7px 7px;
 
 
-
+}
 
 
 

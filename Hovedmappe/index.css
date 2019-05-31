@@ -1,6 +1,6 @@
 body{
     position: fixed;
-    background-color: whitesmoke;
+    background-color: rgb(224,251,255);
     left: 0px; 
     margin: 0;
     padding: 0;
@@ -20,13 +20,12 @@ body{
 #rightBox{
     z-index: 0;
     position:absolute;
-    background-color: whitesmoke;
+    background-color: #e0fbff;
     position: absolute;
     height: 100%;
     width: 30%;
     left: 70%;
     top: 0px;
-    background-color: rgb(27, 179, 255);
     padding: 0;
     margin: 0;
 }
@@ -38,6 +37,15 @@ body{
     left: 80%;
     top: 30%;
     margin: 0;
+}
+
+#logo{
+    height: 300px;
+    position: absolute;
+    top: -180px;
+    left: -38px;
+    height: 222px;
+    width: 222px;
 }
 
 
@@ -83,7 +91,7 @@ body{
 }
 
 
-#signUp{
+<!-- #signUp{
     widows: 150px;
     border:2px solid rgb(20, 270, 20);
     border-radius:4px;
@@ -102,7 +110,6 @@ body{
     opacity: 0.0;
     z-index: 100;
     position: absolute;
-    height: 500px;
     width: 30%;
     top: 50%;
     left: 80%;
@@ -114,7 +121,6 @@ body{
     height: 20px;
     left: 0px;
     top: 100px;
-    
 }
 
 #inputEmail_Signup{
@@ -122,7 +128,6 @@ body{
     height: 20px;
     left: 0px;
     top: 145px;
-    
 }
 
 #inputPassword_Signup{
@@ -130,15 +135,14 @@ body{
     height: 20px;
     left: 0px;
     top: 190px;
-    
 }
 
-#inputRepeatPassword_Signup{
+#inputConfirmPassword_Signup{
     width: 158px;
     height: 20px;
     left: 0px;
     top: 235px;
-
+    
 }
 
 #register_Signup{
@@ -150,8 +154,29 @@ body{
     background-color: rgb(20, 270, 20);
 }
 #registerText{
-    top: -11px;
+    top: -19px;
     position: absolute;
-    left: 60px;
-    font-size: 15px;
+    left: 50px;
+    font-size: 20px;  
+}
+
+#circle_Signup{
+    z-index: 100;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    position: absolute;
+    left: 155px;
+    top: 250px;
+    z-index: 1000;
+    background-color: red;
+    margin: 0;
+    padding: 0;
+    opacity: 0.0;
+}
+
+#regFeedback_Signup{
+    position: absolute;
+    top: 300px;
+    left: 20px;
 }

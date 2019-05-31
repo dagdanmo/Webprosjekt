@@ -2,27 +2,43 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="CreateTableStyling.css" type="text/css">
-    <script src="index.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>CreateTable sida</title>
 </head>
 <body>
-    <img src="images/pappeske.png" id="boxes">
-    <div id = "header"><h1>Hei jeg er headeren på siden/navbaren</h1></div>
-    <div id = "center"><h2><br><br><br><br><br><br><br>Jeg er TASKIT</h2></div>
-    <div id = "footer"><h3>Jeg er nederst på siden jippi</h3>
-        <div class = "boxes"><h3>Hei jeg er boks 1</h3>
-        <div class = "boxes" id = "box1"><h3>hei jeg er boks 2</h3></div>
-        <div class = "boxes" id = "box2"><h3>hei jeg er boks 3</h3></div>
-        <div class = "boxes" id = "box3"><h3>hei jeg er boks 4</h3></div>
-        <div class = "boxes" id = "box4"><button>[+]</button></div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li class="dropDown">
+                <a href="#" class="dropBtn">Drop Down</a>
+                <div class="dropDownContent">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>    
+                </div>
+            </li>
+        </ul>
 
+    <div id = "center">
+        <div id = "createNewTable">
+            <input id="inputTableName" placeholder="Enter table name...">
+            <button id="confirmTableName">+</button>
+            <div id ="plusSign">
+                <box id="plusHorizontal"></box>
+                <box id="plusVertical"></box>
+            </div>
+        </div>
 
-        </div>        
-                     
+    </div>
+    <div id = "footer">
+             <!-- IN-PROGRESS, button to add an instance of a task Div -->
+            <div class="TeamBoxContainer" id="TeamBox">
+                <p id="TeamBox"></p>
+            </div>
     </div>
     
+    <script src="CreateTable.js"></script>
 </body>
 </html>

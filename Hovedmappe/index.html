@@ -3,19 +3,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <head>
         <link rel="stylesheet" href="index.css" type="text/css">
-        <script src="index.js"></script>
+        <link rel="icon" type="image/png" href="images/Logo-small.png">
+    
        
     </head>
     <body>   
-        
-                <img src="images/placeholder-mind.jpg" id="backgroundLeft">
+
+                
+                <img src="images/business_people.png" id="backgroundLeft">
             <box id="loginField">
+                <img id="logo" src="images/Logo-post.png">
                 <input class="inputFields" id="inputUsername" placeholder="Enter e-mail or username"></input>
                 <input class="inputFields" id="inputPassword" placeholder="Password" type="password"></input>
                 <button id="loginButton">Login</button>
                 <button id="signUp" type="button">Sign up</button>
             </box>
-            
+        
             <box id="signupForm">
 
 
@@ -25,10 +28,17 @@
 
                 <input class="inputFields" id="inputPassword_Signup" placeholder="Password" type="password">
 
-                <input class="inputFields" id="inputRepeatPassword_Signup" placeholder="Confirm password" type="password">
+                <div id="circle_Signup"></div>
 
-                <button class="inputFields" id="register_Signup"><p id="registerText">Register</p></button>
+                <input class="inputFields" id="inputConfirmPassword_Signup" placeholder="Confirm password" type="password">
 
-            </box> 
+                <button type="button" class="inputFields" id="register_Signup"><p id="registerText">Register</p></button>
+                <p id ="regFeedback_Signup"></p>
+                
+            </box>
+
+            
     </body>
+    <script src="index.js"></script>
+
 </html>
