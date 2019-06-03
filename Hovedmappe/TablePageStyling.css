@@ -64,6 +64,22 @@ li.dropDown
     display: block;
     z-index: 100;
 }
+#profileImgDiv{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    z-index: 10;
+}
+#profileImg{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+#profile {
+    top: 16px;
+    position: absolute;
+    border-radius: 50%;
+}
 #header{
     position: relative;
     top: 0px;
