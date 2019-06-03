@@ -14,9 +14,26 @@ window.onload = function(){
     newTeamButton.className = "buttons";
     newTeamButton.id = "NewTeamButton";
     document.getElementById("MainBox").appendChild(newTeamButton); */
-    document.getElementById("AssignTilSisteKnapp").addEventListener("click",addNewTeamOnClick);
-
+    var teamName = document.getElementById("teamName");
+    var newTeamButton = document.getElementById("newTeamButton");
+    var confirmTeamName = document.getElementById("confirmTeamName")
+    confirmTeamName.addEventListener("click",addNewTeamOnClick);
+    var createTeamText = document.getElementById("createTeamText");
     
+
+    newTeamButton.addEventListener("click", function(){
+        newTeamButton.style.opacity = "1";
+        newTeamButton.style.transitionDuration = "1s";
+        createTeamText.style.opacity = "0";
+        createTeamText.style.transitionDuration = "1s";
+        teamName.style.opacity = "1";
+        teamName.style.transitionDuration = "1s";
+        confirmTeamName.style.opacity = "1";
+        confirmTeamName.style.transition = "1s";
+        
+    
+    });
+
 
     // init
     var teamI = 0;
@@ -29,10 +46,11 @@ window.onload = function(){
         var newTeam = document.createElement("div");
         newTeam.className = "TeamBoxContainer";
         newTeam.id = "TeamBox"+teamI;
+        console.log(teamName.value);
         
         //Name of the new team
         var newTeamName = document.createElement("p");
-        newTeamName.innerHTML = "New Team " + teamI;
+        newTeamName.innerHTML = teamName.value;
         newTeamName.className = "NewTeamName";
         newTeamName.id = "TeamName"+teamI;
         newTeam.appendChild(newTeamName);

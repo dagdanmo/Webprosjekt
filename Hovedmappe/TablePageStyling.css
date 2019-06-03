@@ -87,27 +87,78 @@ li.dropDown
     position: relative;
     display: inline-block;
 }
-*/
+
 
 #MainBox{
-    position: absolute;
-    top: 50px;
-    left: 100%;
+    position: relative;
+    top: 0px;
     width: 100%;
     height: 100%;
     background-color: #FFFFFF; 
-    z-index: 2;
-    border: outset black 1.2px;    
+    z-index: 2;   
     display: flex;
+    flex-direction: column;
 }
 
 #newTeamButton{
-    width: 98.98%;
-    height: 100px;
+    margin-top: 17px;
+    width: 100%;
+    height: 20%;
     position: absolute;
-    background-color: black;
+    background-color: #e0fbff;
     z-index: 10;
+    opacity: 0.6;
+    transition: 0.3s;
+    outline: dashed;
+    outline-width: 1px;
+    cursor: pointer;
 }
+
+
+#createTeamText{
+    font-size: 100px;
+    margin: 0;
+    position: absolute;
+    top: 10px;
+    left: 18%;
+    cursor: pointer;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+#teamName{
+    border-radius: 10px 10px 10px 10px;
+    outline: none;
+    border: none;
+    height: 60px;
+    width: 450px;
+    position: absolute;
+    left: 500px;
+    top: 35px;
+    font-size: 30px;
+    text-align: center;
+    background-color: white;
+    opacity: 0;
+}
+
+#confirmTeamName{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: none;
+    color: black;
+    background-color: white;
+    font-size: 60px;
+    position: absolute;
+    left: 980px;
+    top: 24px;
+    outline: none;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+    text-align: center;
+}
+
 
 .buttons{
     position: relative;

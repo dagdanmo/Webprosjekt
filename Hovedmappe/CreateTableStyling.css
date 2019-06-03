@@ -130,6 +130,7 @@ li.dropDown
     border-radius: 15px 15px 15px 15px;
     margin-left: -325px;
     margin-top: -150px;
+    cursor: pointer;
   }
 
 #createNewTable:hover {opacity: 1}
@@ -162,13 +163,16 @@ li.dropDown
     top: 95px;
     outline: none;
     opacity: 0;
+    cursor: pointer;
 }
 
 #plusSign{
     z-index: 100;
+    cursor: pointer;
 }
 
 #plusHorizontal{
+    cursor: pointer;
     position: absolute;
     height: 20px;
     width: 140px;
@@ -182,6 +186,7 @@ li.dropDown
     border-radius: 7px 7px 7px 7px;
 }
 #plusVertical{
+    cursor: pointer;
     position: absolute;;
     width: 20px;
     height: 140px;
