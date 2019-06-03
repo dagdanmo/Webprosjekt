@@ -13,7 +13,6 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1rem 0;
-    width: 100%;
   }
 #profile {
     border-radius: 50%;
@@ -43,7 +42,7 @@ nav {
     flex: 0 1 100%;
 }
 nav a {
-    color: white;
+    color: red;
     text-decoration: none;
 }
 nav a:hover {
@@ -80,6 +79,23 @@ button:hover {
     background: white;
     color: #aaa;
     cursor: pointer;
+    opacity: 0.5;
+}
+#profileImgDiv{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    z-index: 10;
+}
+#profileImg{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+#profile {
+    top: 16px;
+    position: absolute;
+    border-radius: 50%;
 }
 .teamBoxContainer{
     width: 98%;
