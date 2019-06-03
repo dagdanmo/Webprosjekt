@@ -271,7 +271,7 @@ window.onload = function(){
         newWork.addEventListener("click",test);
     
         boxIterator++;
-        newCard.draggable = true;
+        
     }
 
     function test(){
@@ -282,8 +282,19 @@ window.onload = function(){
         newWorkOrder.innerHTML = newWorkOrderName;
         newWorkOrder.className = "newWorkOrder";
         newWorkOrder.id = "newWorkOrder" + getCard[getCard.length -2] + getCard[getCard.length -1];
-        document.getElementById("newCard" + getCard[getCard.length -2] + getCard[getCard.length -1]).appendChild(newWorkOrder);
+        newWorkOrder.draggable = true;
+        newWorkOrderId = document.getElementById("newCard" + getCard[getCard.length -2] + getCard[getCard.length -1]);
+        newWorkOrderId.appendChild(newWorkOrder);
 
+    }
 
+    var infoButton = document.getElementById("infoButtonImg");
+    var infoText = document.getElementById("hoverInfoText");
+
+    infoButton.addEventListener("mouseover", showInfoText);
+
+    function showInfoText(){
+        console.log("Hovering over infoButton");
+        infoText.innerText="Hehe";
     }
 };
