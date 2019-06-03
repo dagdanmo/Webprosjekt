@@ -4,7 +4,7 @@ body{
     z-index: 0;
 }
 
-#split {
+#header {
     background: #ccc;
     display: flex;
     flex-wrap: wrap;
@@ -14,24 +14,24 @@ body{
   }
   
   @media (min-width: 550px) {
-    #split {
+    #header {
       padding: 0 1rem;
     }
   }
-  .branding {
+  .kanban {
     flex: 0 1 100%;
   }
-  .branding h1 {
+  .kanban h1 {
     margin: 0;
   }
   
   @media (min-width: 550px) {
-    .branding {
+    .kanban {
       flex: 0 1 60%;
     }
   }
   @media (min-width: 1300px) {
-    .branding {
+    .kanban {
       flex: 0 1 75%;
     }
   }
