@@ -1,4 +1,5 @@
 window.onload = function(){
+    
 
 
 
@@ -19,106 +20,20 @@ window.onload = function(){
     var confirmTeamName = document.getElementById("confirmTeamName")
     confirmTeamName.addEventListener("click",addNewTeamOnClick);
     var createTeamText = document.getElementById("createTeamText");
-    var colors = document.getElementsByClassName("color");
-    var colorRed = document.getElementById("red");
-    var colorBlue = document.getElementById("blue");
-    var colorOrange = document.getElementById("orange");
-    var colorPurple = document.getElementById("purple");
-    var colorGreen = document.getElementById("green");
+    
 
     newTeamButton.addEventListener("click", function(){
         newTeamButton.style.opacity = "1";
-        newTeamButton.style.transitionDuration = "0.5s";
-        newTeamButton.style.transitionTimingFunction = "ease-in-ease-out";
-        newTeamButton.style.backgroundColor = "#c3f3ff";
-        
+        newTeamButton.style.transitionDuration = "1s";
         createTeamText.style.opacity = "0";
-        createTeamText.style.transitionDuration = "0.5s";
-        createTeamText.style.transitionTimingFunction = "ease-in-ease-out";
-        
+        createTeamText.style.transitionDuration = "1s";
         teamName.style.opacity = "1";
-        teamName.style.transitionTimingFunction = "ease-in-ease-out";
-        teamName.style.transitionDuration = "0.5s";
-        teamName.style.transitionDelay = "0.4s";
-
+        teamName.style.transitionDuration = "1s";
         confirmTeamName.style.opacity = "1";
-        confirmTeamName.style.transitionTimingFunction = "ease-in-ease-out";
-        confirmTeamName.style.transition = "0.5s";
-        confirmTeamName.style.transitionDelay = "0.4s";
-
-        
-        colorRed.style.opacity = "1";
-        colorRed.style.transitionDuration = "0.5s";
-        colorRed.style.transitionDelay = "0.4s";
-        colorRed.style.transitionTimingFunction = "ease-in-ease-out";
-
-        colorBlue.style.opacity = "1";
-        colorBlue.style.transitionDuration = "0.5s";
-        colorBlue.style.transitionDelay = "0.4s";
-        colorBlue.style.transitionTimingFunction = "ease-in-ease-out";
-        
-        colorOrange.style.opacity = "1";
-        colorOrange.style.transitionDuration = "0.5s";
-        colorOrange.style.transitionDelay = "0.4s";
-        colorOrange.style.transitionTimingFunction = "ease-in-ease-out";
-        
-        colorPurple.style.opacity = "1";
-        colorPurple.style.transitionDuration = "0.5s";
-        colorPurple.style.transitionDelay = "0.4s";
-        colorPurple.style.transitionTimingFunction = "ease-in-ease-out";
-
-        colorGreen.style.opacity = "1";
-        colorGreen.style.transitionDuration = "0.5s";
-        colorGreen.style.transitionDelay = "0.4s";
-        colorGreen.style.transitionTimingFunction = "ease-in-ease-out";
+        confirmTeamName.style.transition = "1s";
+1
     });
 
-    var selectColor;
-
-        colorRed.addEventListener("click", function(){
-            selectColor = "#ef5181";
-            console.log("red selected!")
-            newTeamButton.style.backgroundColor = selectColor;
-            borderRemover();
-            colorRed.style.border = "2px solid black";
-        });
-
-        colorBlue.addEventListener("click", function(){
-            selectColor = "#1aabd8";
-            console.log("Blue selected!");
-            newTeamButton.style.backgroundColor = selectColor;
-            borderRemover();
-            colorBlue.style.border = "2px solid black";
-        });
-        
-        colorOrange.addEventListener("click", function(){
-            selectColor = "#fcb71e";
-            newTeamButton.style.backgroundColor = selectColor;
-            borderRemover();
-            colorOrange.style.border = "2px solid black";
-        });
-        
-        colorPurple.addEventListener("click", function(){
-            selectColor = "#8e56a1";
-            newTeamButton.style.backgroundColor = selectColor;
-            borderRemover();
-            colorPurple.style.border = "2px solid black";
-        });
-        
-        colorGreen.addEventListener("click", function(){
-            selectColor = "#bdd549";
-            newTeamButton.style.backgroundColor = selectColor;
-            borderRemover();
-            colorGreen.style.border = "2px solid black";
-        });
-
-        function borderRemover(){
-            colorRed.style.border = "0px";
-            colorBlue.style.border = "0px";
-            colorOrange.style.border = "0px";
-            colorPurple.style.border = "0px";
-            colorGreen.style.border = "0px";
-        }
 
     // init
     var teamIterator = 0;
@@ -134,7 +49,6 @@ window.onload = function(){
         var newTeam = document.createElement("div");
         newTeam.className = "teamBoxContainer";
         newTeam.id = "newTeam"+teamIterator;
-        newTeam.style.backgroundColor = selectColor;
         //teamArray.push({teamIterator, boxIterator});
         
         //Name of the new team
@@ -149,24 +63,13 @@ window.onload = function(){
         //New cardbox button added to the teambox
         var newCardButton = document.createElement("button");
         newCardButton.innerHTML = "[ + ]";
-        newCardButton.style.backgroundColor = "blue";
-        newCardButton.style.outline = "none";
-        newCardButton.style.border = "none";
-        newCardButton.style.borderRadius = "10px 10px 10px 10px";
-        newCardButton.style.width = "200px";
-        newCardButton.style.height = "80px";
         newCardButton.className = "newCardButton";
         newCardButton.id = "newCardButton"+teamIterator;
         newCardButton.addEventListener("click",addTaskBarOnClick);
         newTeam.appendChild(newCardButton);
-
-        var newCardInput = document.createElement("input");
-        newCardButton.appendChild(newCardInput);
-        newCardInput.style.borderRadius = "5px 5px 5px 5px";
-        newCardInput.style.border = "none";
         
-        //console.log(newTeamName.id);
-        //console.log(teamArray);
+        console.log(newTeamName.id);
+        console.log(teamArray);
         
         teamIterator++;
  
@@ -208,7 +111,6 @@ window.onload = function(){
         var newCardName = document.createElement("p");
         newCardName.innerHTML = "New Card " + getButtonId + teamArray[boxIterator].boxIterator;
         newCardName.className = "newCardName";
-      
         newCard.appendChild(newCardName);
 
         // new workorder
@@ -220,9 +122,9 @@ window.onload = function(){
         newWork.addEventListener("click",test);
     
         boxIterator++;
-
+        newCard.draggable = true;
     }
-    
+
     function test(){
         console.log(this);
         var getCard = event.target.id;
@@ -231,16 +133,17 @@ window.onload = function(){
         newWorkOrder.innerHTML = newWorkOrderName;
         newWorkOrder.className = "newWorkOrder";
         newWorkOrder.id = "newWorkOrder" + getCard[getCard.length -2] + getCard[getCard.length -1];
-        var newCardId = document.getElementById("newCard" + getCard[getCard.length -2] + getCard[getCard.length -1]);
-  
-        newWorkOrder.draggable = true;
-        
-        newCardId.appendChild(newWorkOrder);
-        
-        
+        document.getElementById("newCard" + getCard[getCard.length -2] + getCard[getCard.length -1]).appendChild(newWorkOrder);
     }
-    
-    
-    // DRAGGABLE TESTING
-    
+
+    /* IN PROGRESS
+    var infoButton = document.getElementById("infoButtonImg");
+    var infoText = document.getElementById("hoverInfoText");
+    infoButton.addEventListener("hover", showTextOnHover);
+
+    function showTextOnHover(){
+        hoverInfoText.innerHTML="Meme";
+        console.log("Hover");
+    }
+    */
 };
