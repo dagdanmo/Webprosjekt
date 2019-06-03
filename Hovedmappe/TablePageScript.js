@@ -72,12 +72,12 @@ window.onload = function(){
         console.log(teamArray);
         
         teamIterator++;
-/* 
+ 
         // Change name of team
         var changeTeamNameButton = document.createElement("button");
         changeTeamNameButton.innerHTML = "Change team name";
         changeTeamNameButton.className = "buttons";
-        changeTeamNameButton.id = "ChangeTeamNameButton"+teamI;
+        changeTeamNameButton.id = "ChangeTeamNameButton" + teamIterator;
         changeTeamNameButton.addEventListener("click",changeTeamName);
         newTeamName.appendChild(changeTeamNameButton);
 
@@ -89,7 +89,7 @@ window.onload = function(){
         document.getElementById(newTeamName.id);
         newTeamName.innerHTML = newValue;
         }
-     */
+    
     }
 
 
