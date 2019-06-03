@@ -74,6 +74,7 @@ window.onload = function(){
 
     var selectColor;
 
+
         colorRed.addEventListener("click", function(){
             selectColor = "#ef5181";
             console.log("red selected!")
@@ -129,15 +130,57 @@ window.onload = function(){
             colorGreen.style.border = "0px";
         }
 
+        function elementHider(){
+        newTeamButton.style.opacity = "0.6";
+        newTeamButton.style.transitionDuration = "0.5s";
+        newTeamButton.style.transitionDelay = "0.4s";
+        newTeamButton.style.transitionTimingFunction = "ease-in-ease-out";
+        
+        createTeamText.style.opacity = "1";
+        createTeamText.style.transitionDuration = "0.5s";
+        createTeamText.style.transitionDelay = "0.4s";
+        createTeamText.style.transitionTimingFunction = "ease-in-ease-out";
+        
+        teamName.style.opacity = "0";
+        teamName.style.transitionTimingFunction = "ease-in-ease-out";
+        teamName.style.transitionDuration = "0.5s";
+
+        confirmTeamName.style.opacity = "0";
+        confirmTeamName.style.transitionTimingFunction = "ease-in-ease-out";
+        confirmTeamName.style.transition = "0.5s";
+    
+        colorRed.style.opacity = "0";
+        colorRed.style.transitionDuration = "0.5s";
+        colorRed.style.transitionTimingFunction = "ease-in-ease-out";
+
+        colorBlue.style.opacity = "0";
+        colorBlue.style.transitionDuration = "0.5s";
+        colorBlue.style.transitionTimingFunction = "ease-in-ease-out";
+        
+        colorOrange.style.opacity = "0";
+        colorOrange.style.transitionDuration = "0.5s";
+        colorOrange.style.transitionTimingFunction = "ease-in-ease-out";
+        
+        colorPurple.style.opacity = "0";
+        colorPurple.style.transitionDuration = "0.5s";
+        colorPurple.style.transitionTimingFunction = "ease-in-ease-out";
+
+        colorGreen.style.opacity = "0";
+        colorGreen.style.transitionDuration = "0.5s";
+        colorGreen.style.transitionTimingFunction = "ease-in-ease-out";
+        }
+
     // init
     var teamIterator = 0;
     var boxIterator = 0;
 
     var teamArray=[];
-
+    
     // creating new teams
     function addNewTeamOnClick(){
-        
+        elementHider();
+        borderRemover();
+        newTeamButton.style.backgroundColor = "#c3f3ff"
         //var teamName = prompt("Enter teamname");
         //Creating a new teambox
         var newTeam = document.createElement("div");
@@ -201,7 +244,7 @@ window.onload = function(){
 
     // creating new cards
     function addTaskBarOnClick(){
-        
+
         // getting the ID from the button pressed (the buttons are called ex. NewCardButton2 pointing to team2)
         var getButton = event.target.id;
         var getButtonId = getButton[getButton.length -1];

@@ -8,6 +8,8 @@ var colorOrange = document.getElementById("orange");
 var colorPurple = document.getElementById("purple");
 var colorGreen = document.getElementById("green");
 
+console.log(localStorage);
+
 createNewTable.addEventListener("click", function(){
     createNewTable.style.transitionTimingFunction = "ease-in-ease-out";
     createNewTable.style.transitionDuration = "0.5s";
