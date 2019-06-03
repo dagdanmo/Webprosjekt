@@ -111,6 +111,7 @@ window.onload = function(){
         var newCardName = document.createElement("p");
         newCardName.innerHTML = "New Card " + getButtonId + teamArray[boxIterator].boxIterator;
         newCardName.className = "newCardName";
+      
         newCard.appendChild(newCardName);
 
         // new workorder
@@ -122,9 +123,9 @@ window.onload = function(){
         newWork.addEventListener("click",test);
     
         boxIterator++;
-        newCard.draggable = true;
-    }
 
+    }
+    
     function test(){
         console.log(this);
         var getCard = event.target.id;
@@ -133,8 +134,16 @@ window.onload = function(){
         newWorkOrder.innerHTML = newWorkOrderName;
         newWorkOrder.className = "newWorkOrder";
         newWorkOrder.id = "newWorkOrder" + getCard[getCard.length -2] + getCard[getCard.length -1];
-        document.getElementById("newCard" + getCard[getCard.length -2] + getCard[getCard.length -1]).appendChild(newWorkOrder);
-
-
+        var newCardId = document.getElementById("newCard" + getCard[getCard.length -2] + getCard[getCard.length -1]);
+  
+        newWorkOrder.draggable = true;
+        
+        newCardId.appendChild(newWorkOrder);
+        
+        
     }
+    
+    
+    // DRAGGABLE TESTING
+    
 };
