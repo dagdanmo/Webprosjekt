@@ -12,7 +12,8 @@ body{
     align-items: center;
     padding: 1rem 1rem 0;
   }
-#pikk{
+
+#profileImgDiv{
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -95,6 +96,53 @@ button:hover {
     opacity: 0.5;
     margin: 0;
     padding: 0;
+}
+
+li a, .dropBtn
+{
+    display:inline-block;
+    color: white;
+    text-align: center;
+    padding: 20px 22px;
+    text-decoration: none;
+    z-index: 100;
+}
+li a:hover, .dropDown:hover .dropBtn
+{
+    background: #786BDE;
+    z-index: 100;
+}
+li.dropDown
+{
+    display: inline-block;
+    z-index: 100;
+}
+.dropDownContent
+{
+    display:none;
+    position: absolute;
+    background: #333;
+    min-width: 124px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+.dropDownContent a
+{
+    color: black;
+    padding: 20px 22px;
+    text-decoration: none;
+    display: block;
+    z-index: 100;
+}
+.dropDownContent a:hover
+{
+    background: #d7d2ff;
+    z-index: 100;
+}
+.dropDown:hover .dropDownContent
+{
+    display: block;
+    z-index: 100;
 }
 
 #center{
