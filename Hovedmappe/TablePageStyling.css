@@ -76,7 +76,7 @@ li.dropDown
     margin: 0;
     height: 4%;
 }
-.TeamBoxContainer{
+.teamBoxContainer{
     width: 98%;
     /*height: 70%;*/
     margin-top: 1%;
@@ -165,29 +165,32 @@ li.dropDown
     display: inline-block;
 }
 
-.NewTeamButton{
+.newTeamButton{
     align-self: auto;
 }
 
-.NewTeamName{
+.teamName{
+    position: relative;
     margin: 1%;
 };
 
-.NewCardButton{
+.newCardButton{
     position: relative;
-    align-self: center;
-    height: 5%;
-    width: 3%;
+    width: 25px;
+    height: 25px;
+    float: right;
 }
-.NewTeamButton{
+
+.newTeamButton{
     position: relative;
     align-self: center;
     height: 5%;
     width: 10%;
 }
 
-.NewCard{
-    width: 250px;
+.newCard{
+    position: relative;
+    width: 200px;
     margin-left: 3%;
     text-align: center;
     background-color: #E0FBFF;
@@ -195,9 +198,28 @@ li.dropDown
     border-radius: 10px;
     display: flex;
     float: left;
+    flex-direction: column;
 }
 
-.NewCardName{
+.newCardName{
     position: relative;
-    left: 25%;
+    align-self: center;
+}
+
+.newWork{
+    position: relative;
+    align-self: center;
+    width: 100%;
+    height: 25px;
+    color: black;
+    margin-bottom: 1%;
+}
+
+.newWorkOrder{
+    position: relative;
+    width: 100%;
+    height: 25px;
+    background-color: gray;
+    margin-bottom: 1%;
+
 }
