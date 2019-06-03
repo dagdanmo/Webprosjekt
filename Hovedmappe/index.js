@@ -9,11 +9,11 @@
             if(fetchUsername.value == users[i].username && fetchPassword.value == users[i].password){
                 setTimeout(function () {
                     window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
-                 }, 2000);
+                 }, 1000);
             }else if(fetchUsername.value == users[i].email && fetchPassword.value == users[i].password){
                 setTimeout(function () {
                     window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
-                 }, 2000);
+                 }, 1000);
             }else{
                 console.log("Feil brukernavn eller passord.");
             }
@@ -104,7 +104,8 @@ confirmInputPassword.addEventListener("input", function(){
 var users = [{
     username: "Dag",
     email: "dag@taskit.com",
-    password: "Dag123"
+    password: "Dag123",
+    score: 0
 },
 {
     username: "Daniel",

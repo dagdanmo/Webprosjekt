@@ -1,6 +1,7 @@
 body{
     background-color: white;
     z-index: 0;
+    margin: 0;
 }
 
 ul
@@ -98,6 +99,14 @@ li.dropDown
     z-index: 2;
     border: outset black 1.2px;    
     display: flex;
+}
+
+#newTeamButton{
+    width: 98.98%;
+    height: 100px;
+    position: absolute;
+    background-color: black;
+    z-index: 10;
 }
 
 .buttons{

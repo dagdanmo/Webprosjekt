@@ -1,15 +1,22 @@
 window.onload = function(){
+
+
+
     
+
+
     //document.getElementById('NewCardButton').addEventListener("click", addTaskBarOnClick);
     
     // first create team button.
-    var newTeamButton = document.createElement("button");
+    /* var newTeamButton = document.createElement("button");
     newTeamButton.innerHTML = "New Team";
     newTeamButton.type = "button";
     newTeamButton.className = "buttons";
     newTeamButton.id = "NewTeamButton";
-    document.getElementById("MainBox").appendChild(newTeamButton);
-    document.getElementById("NewTeamButton").addEventListener("click",addNewTeamOnClick);
+    document.getElementById("MainBox").appendChild(newTeamButton); */
+    document.getElementById("AssignTilSisteKnapp").addEventListener("click",addNewTeamOnClick);
+
+    
 
     // init
     var teamI = 0;
@@ -79,10 +86,14 @@ window.onload = function(){
 
         // name of the card
         var newCardName = document.createElement("p");
+
+        //NAME - Placeholder
         newCardName.innerHTML = "New Card " + boxI;
         newCardName.className = "NewCardName";
         newCard.appendChild(newCardName);
         document.getElementById("TeamBox"+ID).appendChild(newCard);
         }
+
+
 
     };
