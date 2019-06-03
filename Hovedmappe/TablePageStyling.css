@@ -313,3 +313,9 @@ button:hover {
     width: 400px;
     position: relative;
   }
+
+  #infoButtonImg{
+      width: 1.5%;
+      height: 1.5;
+      
+  }
