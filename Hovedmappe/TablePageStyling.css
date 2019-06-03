@@ -4,77 +4,82 @@ body{
     margin: 0;
 }
 
-ul
-{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background: #03acef;
-    z-index: 100;
-}
-li
-{
-    float: left;
-    z-index: 100;
-}
-li a, .dropBtn
-{
-    display:inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    z-index: 100;
-}
-li a:hover, .dropDown:hover .dropBtn
-{
-    background: #786BDE;
-    z-index: 100;
-}
-li.dropDown
-{
-    display: inline-block;
-    z-index: 100;
-}
-.dropDownContent
-{
-    display:none;
-    position: absolute;
-    background: #E0FBFF;
-    min-width: 107px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 100;
-}
-.dropDownContent a
-{
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    z-index: 100;
-}
-.dropDownContent a:hover
-{
-    background: #d7d2ff;
-    z-index: 100;
-}
-.dropDown:hover .dropDownContent
-{
-    display: block;
-    z-index: 100;
-}
-#header{
-    position: relative;
+#header {
     top: 0px;
-    background-color:#03acef;
-    width: 100%;
-    left: 0px;
-    text-align: center;
-    font-size: 15px;
-    z-index: 100;
     margin: 0;
-    height: 4%;
+    background: #03acef;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem 0;
+    width: 100%;
+  }
+#profile {
+    border-radius: 50%;
+}
+@media (min-width: 550px) {
+    #header {
+      padding: 0 1rem;
+    }
+  }
+.kanban {
+    flex: 0 1 100%;
+  }
+.kanban h1 {
+    margin: 0;
+  }
+@media (min-width: 550px) {
+    .kanban {
+      flex: 0 1 60%;
+    }
+}
+@media (min-width: 1300px) {
+    .kanban {
+      flex: 0 1 75%;
+    }
+}
+nav {
+    flex: 0 1 100%;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+}
+nav a:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media (min-width: 550px) {
+    nav {
+      flex: 0 1 40%;
+    }
+    nav ul {
+      justify-content: space-around;
+    }
+}
+@media (min-width: 1300px) {
+    nav {
+      flex: 0 1 25%;
+    }
+}
+button {
+    background: transparent;
+    border: 1px solid white;
+    width: 60px;
+    height: 60px;
+    color: white;
+}
+button:hover {
+    background: white;
+    color: #aaa;
+    cursor: pointer;
 }
 .teamBoxContainer{
     width: 98%;

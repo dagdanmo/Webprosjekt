@@ -2,81 +2,100 @@ body{
     font-family: sans-serif;
     background-color: #e0fbff;
     z-index: 0;
+    margin: 0;
 }
-
 #header {
-    background: #ccc;
+    top: 0px;
+    margin: 0;
+    background: #03acef;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1rem 0;
+    width: 100%;
   }
-  
-  @media (min-width: 550px) {
+
+#pikk{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    z-index: 10;
+}
+#profileImg{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+#profile {
+    top: 16px;
+    position: absolute;
+    border-radius: 50%;
+}
+@media (min-width: 550px) {
     #header {
       padding: 0 1rem;
     }
   }
-  .kanban {
+.kanban {
     flex: 0 1 100%;
   }
-  .kanban h1 {
+.kanban h1 {
     margin: 0;
   }
-  
-  @media (min-width: 550px) {
+@media (min-width: 550px) {
     .kanban {
       flex: 0 1 60%;
     }
-  }
-  @media (min-width: 1300px) {
+}
+@media (min-width: 1300px) {
     .kanban {
       flex: 0 1 75%;
     }
-  }
-  nav {
+}
+nav {
     flex: 0 1 100%;
-  }
-  nav a {
+}
+nav a {
     color: white;
     text-decoration: none;
-  }
-  nav a:hover {
+}
+nav a:hover {
     color: rgba(255, 255, 255, 0.7);
-  }
-  nav ul {
+}
+nav ul {
     list-style: none;
     padding: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  @media (min-width: 550px) {
+}
+@media (min-width: 550px) {
     nav {
       flex: 0 1 40%;
     }
     nav ul {
       justify-content: space-around;
     }
-  }
-  @media (min-width: 1300px) {
+}
+@media (min-width: 1300px) {
     nav {
       flex: 0 1 25%;
     }
-  }
-  button {
+}
+button {
     background: transparent;
     border: 1px solid white;
-    padding: 10px;
+    width: 60px;
+    height: 60px;
     color: white;
-  }
-  button:hover {
+}
+button:hover {
     background: white;
     color: #aaa;
     cursor: pointer;
-  }
+    opacity: 0.5;
+}
 
 #center{
     position: absolute;
