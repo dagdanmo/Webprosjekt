@@ -10,21 +10,21 @@
     
 </head>
 <body>
-        <div id = "header">
+        <header id = "header">
+            <div class = "kanban">
+                <h1>slajdna></h1>
+            </div>
+            <nav>
                 <ul>
-                   <li><a href="index.html">Home</a></li>
-                   <li><a href="#">About</a></li>
-                   <li class="dropDown">
-                       <a href="#" class="dropBtn">Drop Down</a>
-                       <div class="dropDownContent">
-                           <a href="#">Link 1</a>
-                           <a href="#">Link 2</a>
-                           <a href="#">Link 3</a>
-                       </div>
-                   </li>
-               </ul>
-           </div>
-
+                    <li> <a href = "#"> Link 1</a></li>
+                    <li> <a href = "#"> Link 2</a></li>
+                    <li> <a href = "#"> Link 3</a></li>
+                    <li>
+                    <button id = "profile" href="#">Sign up</button>
+                    </li>
+                </ul>
+            </nav>
+        </header>
     <div id="MainBox">
         <!-- MainBox is used as a container for all the elements created in the JS file -->
     </div>
@@ -32,6 +32,11 @@
         <h2 id="createTeamText">CREATE NEW TEAM</h2>
         <input id="teamName" placeholder="Team name">
        <button id="confirmTeamName">+</button>
+        <div class="color" id="red"></div>
+        <div class="color" id="green"></div>
+        <div class="color" id="blue"></div>
+        <div class="color" id="orange"></div>
+        <div class="color" id="purple"></div>
     </div>
     <script src="TablePageScript.js"></script>
 </body>

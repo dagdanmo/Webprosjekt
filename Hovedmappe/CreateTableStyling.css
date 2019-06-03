@@ -275,15 +275,14 @@ li.dropDown
 }
 
 
-
-
 .color{
     position: absolute;
     border-radius: 50%;
     height: 50px;
     width: 50px;
     z-index: 100;
-    top: 190px;
+    top: 0px;
+    z-index: 100;
 }
 
 #blue{

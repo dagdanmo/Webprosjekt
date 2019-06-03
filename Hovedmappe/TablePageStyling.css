@@ -4,65 +4,82 @@ body{
     margin: 0;
 }
 
-ul
-{
-    list-style-type: none;
+#header {
+    top: 0px;
     margin: 0;
-    padding: 0;
-    overflow: hidden;
     background: #03acef;
-    z-index: 100;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem 0;
+  }
+#profile {
+    border-radius: 50%;
 }
-li
-{
-    float: left;
-    z-index: 100;
+@media (min-width: 550px) {
+    #header {
+      padding: 0 1rem;
+    }
+  }
+.kanban {
+    flex: 0 1 100%;
+  }
+.kanban h1 {
+    margin: 0;
+  }
+@media (min-width: 550px) {
+    .kanban {
+      flex: 0 1 60%;
+    }
 }
-li a, .dropBtn
-{
-    display:inline-block;
+@media (min-width: 1300px) {
+    .kanban {
+      flex: 0 1 75%;
+    }
+}
+nav {
+    flex: 0 1 100%;
+}
+nav a {
     color: white;
-    text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
-    z-index: 100;
 }
-li a:hover, .dropDown:hover .dropBtn
-{
-    background: #786BDE;
-    z-index: 100;
+nav a:hover {
+    color: rgba(255, 255, 255, 0.7);
 }
-li.dropDown
-{
-    display: inline-block;
-    z-index: 100;
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.dropDownContent
-{
-    display:none;
-    position: absolute;
-    background: #E0FBFF;
-    min-width: 107px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 100;
+@media (min-width: 550px) {
+    nav {
+      flex: 0 1 40%;
+    }
+    nav ul {
+      justify-content: space-around;
+    }
 }
-.dropDownContent a
-{
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    z-index: 100;
+@media (min-width: 1300px) {
+    nav {
+      flex: 0 1 25%;
+    }
 }
-.dropDownContent a:hover
-{
-    background: #d7d2ff;
-    z-index: 100;
+button {
+    background: transparent;
+    border: 1px solid white;
+    width: 60px;
+    height: 60px;
+    color: white;
 }
-.dropDown:hover .dropDownContent
-{
-    display: block;
-    z-index: 100;
+button:hover {
+    background: white;
+    color: #aaa;
+    cursor: pointer;
+    opacity: 0.5;
 }
 #profileImgDiv{
     width: 60px;
@@ -80,24 +97,12 @@ li.dropDown
     position: absolute;
     border-radius: 50%;
 }
-#header{
-    position: relative;
-    top: 0px;
-    background-color:#03acef;
-    width: 100%;
-    left: 0px;
-    text-align: center;
-    font-size: 15px;
-    z-index: 100;
-    margin: 0;
-    height: 4%;
-}
 .teamBoxContainer{
     width: 98%;
     /*height: 70%;*/
     margin-top: 1%;
     padding: 1%;
-    background-color: #D6E0D6; 
+    background-color: #c3f3ff; 
     text-align: justify;
     word-wrap: break-word;
     position: relative;
@@ -118,25 +123,26 @@ li.dropDown
 
 #newTeamButton{
     margin-top: 17px;
-    width: 100%;
-    height: 20%;
+    width: 400px;
+    border-radius: 0px 10px 10px 0px;
+    height: 140px;
     position: absolute;
-    background-color: #e0fbff;
+    background-color: #c3f3ff;
     z-index: 10;
     opacity: 0.6;
     transition: 0.3s;
-    outline: dashed;
+    outline: 10px;
     outline-width: 1px;
     cursor: pointer;
 }
 
 
 #createTeamText{
-    font-size: 100px;
+    font-size: 30px;
     margin: 0;
     position: absolute;
-    top: 10px;
-    left: 18%;
+    top: 50px;
+    left: 30px;
     cursor: pointer;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -147,10 +153,10 @@ li.dropDown
     outline: none;
     border: none;
     height: 60px;
-    width: 450px;
+    width: 240px;
     position: absolute;
-    left: 500px;
-    top: 35px;
+    left: 15px;
+    top: 15px;
     font-size: 30px;
     text-align: center;
     background-color: white;
@@ -158,22 +164,60 @@ li.dropDown
 }
 
 #confirmTeamName{
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     border: none;
     color: black;
     background-color: white;
-    font-size: 60px;
+    font-size: 80px;
     position: absolute;
-    left: 980px;
-    top: 24px;
+    left: 280px;
+    top: 20px;
     outline: none;
     opacity: 0;
     z-index: 100;
     cursor: pointer;
     text-align: center;
 }
+
+.color{
+    position: absolute;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    z-index: 100;
+    top: 85px;
+    opacity: 0;
+}
+
+
+#blue{
+    left: 65px;
+    background-color: #1aabd8; 
+}
+
+#red{
+    left: 20px;
+    background-color: #ef5181;
+
+}
+
+#orange{
+    left: 110px;
+    background-color: #fcb71e;
+}
+
+#purple{
+    left: 155px;
+    background-color: #8e56a1;
+}
+
+#green{
+    left: 200px;
+    background-color: #bdd549;
+}
+
 
 
 .buttons{
@@ -237,5 +281,35 @@ li.dropDown
     height: 25px;
     background-color: gray;
     margin-bottom: 1%;
-
+    cursor: pointer;
 }
+
+
+.held {
+    border: solid 10px black;
+    background-color: black;
+  }
+  
+  .holder {
+    height: 110px;
+    width: 110px;
+    margin: 10px;
+    border: solid 5px black;
+    background-color: white;
+    display: inline-block;
+  }
+  
+  .hovered {
+    border: dotted 5px black;
+  }
+  
+  .invisible {
+    display: none;
+  }
+  
+  #container {
+    margin: auto;
+    top: 100px;
+    width: 400px;
+    position: relative;
+  }
