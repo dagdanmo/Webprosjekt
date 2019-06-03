@@ -31,7 +31,6 @@ window.onload = function(){
         teamName.style.transitionDuration = "1s";
         confirmTeamName.style.opacity = "1";
         confirmTeamName.style.transition = "1s";
-1
     });
 
 
