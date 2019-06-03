@@ -1,8 +1,8 @@
 body{
     margin: 0;
     font-family: sans-serif;
-    background: #E0FBFF;
-    font-weight: 400;
+    background-color: #e0fbff;
+    z-index: 0;
 }
 .container {
     width: 80%;
@@ -91,14 +91,16 @@ nav a:hover {
 .newCard{
     position: relative;
     width: 20%;
-    height: 60px;
+    height: 120px;
     margin: 0;
     text-align: center;
     background-color:#CCf3ff;
     border: outset black 2px;
-    border-radius: 25px;
+    border-radius: 10px 10px 10px 10px;
     display: inline-block;
     z-index: 1000;
+    font-size: 30px;
+    overflow: hidden;
 }
 
 #createNewTable {     
@@ -192,4 +194,42 @@ nav a:hover {
 */
 
 
+.color{
+    position: absolute;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    z-index: 100;
+    top: 190px;
+}
+
+#blue{
+    left: 180px;
+    background-color: #1aabd8;
+    opacity: 0;
+}
+
+#red{
+    left: 120px;
+    background-color: #ef5181;
+    opacity: 0;
+}
+
+#orange{
+    left: 240px;
+    background-color: #fcb71e;
+    opacity: 0;
+}
+
+#purple{
+    left: 300px;
+    background-color: #8e56a1;
+    opacity: 0;
+}
+
+#green{
+    left: 360px;
+    background-color: #bdd549;
+    opacity: 0;
+}
 

@@ -7,9 +7,13 @@
         
         for(var i = 0; i < users.length; i++){
             if(fetchUsername.value == users[i].username && fetchPassword.value == users[i].password){
-                console.log("Logget inn!");
+                setTimeout(function () {
+                    window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
+                 }, 2000);
             }else if(fetchUsername.value == users[i].email && fetchPassword.value == users[i].password){
-                console.log("Logget inn!");
+                setTimeout(function () {
+                    window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
+                 }, 2000);
             }else{
                 console.log("Feil brukernavn eller passord.");
             }
@@ -121,10 +125,11 @@ var users = [{
     username: "Mathias",
     email: "mathias@taskit.com",
     password: "Mathias123"
+},{
+    username: "admin",
+    email: "admin@taskit.com",
+    password: "admin"
 }];
-
-
-console.log()
 
 
 function createSignupForm(){

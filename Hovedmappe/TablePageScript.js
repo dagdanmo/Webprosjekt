@@ -40,23 +40,27 @@ window.onload = function(){
         newBoxButton.addEventListener("click",addTaskBarOnClick);
         newTeam.appendChild(newBoxButton);
 
-        // Change name of team button
+        // Change name of team
         var changeTeamNameButton = document.createElement("button");
         changeTeamNameButton.innerHTML = "Change team name";
         changeTeamNameButton.className = "buttons";
         changeTeamNameButton.id = "ChangeTeamNameButton"+teamI;
         changeTeamNameButton.addEventListener("click",changeTeamName);
-        newTeam.appendChild(changeTeamNameButton);
+        newTeamName.appendChild(changeTeamNameButton);
 
         teamI++;
-    }
 
-    // IN PROGRESS
-    function changeTeamName(){
+            // IN PROGRESS
+        function changeTeamName(){
         var newValue = prompt("Enter a new name for the card: ");
-        
+        console.log(newValue);
+        document.getElementById(newTeamName.id);
+        newTeamName.innerHTML = newValue;
         }
     
+    }
+
+
     // creating new cards
     function addTaskBarOnClick(){
         
@@ -70,11 +74,12 @@ window.onload = function(){
         // creating a new card
         var newCard = document.createElement("div");
         newCard.className = 'NewCard';
-        newCard.id = 'NewCard'+boxI;
+        newCard.id = 'NewCard' + boxI;
+        boxI++;
 
         // name of the card
         var newCardName = document.createElement("p");
-        newCardName.innerHTML = "New Card "+ID;
+        newCardName.innerHTML = "New Card " + boxI;
         newCardName.className = "NewCardName";
         newCard.appendChild(newCardName);
         document.getElementById("TeamBox"+ID).appendChild(newCard);
