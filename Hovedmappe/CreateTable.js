@@ -121,13 +121,14 @@ var selectColor;
             console.log(newCard.className, newCard.id);
             inputTableName.value = "";
             tableNamed = inputTableName.value;
-
             newCard.style.backgroundColor = selectColor;
 
+            borderRemover();
+            createNewTable.style.color = "#e0fbff";
 
-           /* setTimeout(function () {
+           setTimeout(function () {
                 window.location.href = "TablePage.html"; //will redirect to your blog page (an ex: blog.html)
-             }, 2000);*/
+             }, 2000);
 
             
         }else{
