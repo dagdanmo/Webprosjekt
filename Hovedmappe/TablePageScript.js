@@ -243,4 +243,14 @@ window.onload = function(){
 
 
     }
+
+    var infoButton = document.getElementById("infoButtonImg");
+    var infoText = document.getElementById("hoverInfoText");
+
+    infoButton.addEventListener("mouseover", showInfoText);
+
+    function showInfoText(){
+        console.log("Hovering over infoButton");
+        infoText.innerText="Hehe";
+    }
 };
