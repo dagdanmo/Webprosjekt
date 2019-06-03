@@ -62,6 +62,8 @@ var selectColor;
             createNewTable.style.backgroundColor = selectColor;
             borderRemover();
             colorRed.style.border = "2px solid black";
+            colorRed.style.height = "46px";
+            colorRed.style.width = "46px";
         });
 
         colorBlue.addEventListener("click", function(){
@@ -70,6 +72,8 @@ var selectColor;
             createNewTable.style.backgroundColor = selectColor;
             borderRemover();
             colorBlue.style.border = "2px solid black";
+            colorBlue.style.height = "46px";
+            colorBlue.style.width = "46px";
         });
         
         colorOrange.addEventListener("click", function(){
@@ -77,6 +81,8 @@ var selectColor;
             createNewTable.style.backgroundColor = selectColor;
             borderRemover();
             colorOrange.style.border = "2px solid black";
+            colorOrange.style.height = "46px";
+            colorOrange.style.width = "46px";
         });
         
         colorPurple.addEventListener("click", function(){
@@ -84,6 +90,8 @@ var selectColor;
             createNewTable.style.backgroundColor = selectColor;
             borderRemover();
             colorPurple.style.border = "2px solid black";
+            colorPurple.style.height = "46px";
+            colorPurple.style.width = "46px";
         });
         
         colorGreen.addEventListener("click", function(){
@@ -91,6 +99,8 @@ var selectColor;
             createNewTable.style.backgroundColor = selectColor;
             borderRemover();
             colorGreen.style.border = "2px solid black";
+            colorGreen.style.height = "46px";
+            colorGreen.style.width = "46px";
         });
 
         function borderRemover(){

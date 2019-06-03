@@ -30,7 +30,6 @@ window.onload = function(){
         newTeamButton.style.opacity = "1";
         newTeamButton.style.transitionDuration = "0.5s";
         newTeamButton.style.transitionTimingFunction = "ease-in-ease-out";
-        newTeamButton.style.backgroundColor = "#c3f3ff";
         
         createTeamText.style.opacity = "0";
         createTeamText.style.transitionDuration = "0.5s";
@@ -46,7 +45,7 @@ window.onload = function(){
         confirmTeamName.style.transition = "0.5s";
         confirmTeamName.style.transitionDelay = "0.4s";
 
-        
+    
         colorRed.style.opacity = "1";
         colorRed.style.transitionDuration = "0.5s";
         colorRed.style.transitionDelay = "0.4s";
@@ -81,6 +80,8 @@ window.onload = function(){
             newTeamButton.style.backgroundColor = selectColor;
             borderRemover();
             colorRed.style.border = "2px solid black";
+            colorRed.style.height = "38px";
+            colorRed.style.width = "38px";
         });
 
         colorBlue.addEventListener("click", function(){
@@ -89,6 +90,8 @@ window.onload = function(){
             newTeamButton.style.backgroundColor = selectColor;
             borderRemover();
             colorBlue.style.border = "2px solid black";
+            colorBlue.style.height = "38px";
+            colorBlue.style.width = "38px";
         });
         
         colorOrange.addEventListener("click", function(){
@@ -96,6 +99,8 @@ window.onload = function(){
             newTeamButton.style.backgroundColor = selectColor;
             borderRemover();
             colorOrange.style.border = "2px solid black";
+            colorOrange.style.height = "38px";
+            colorOrange.style.width = "38px";
         });
         
         colorPurple.addEventListener("click", function(){
@@ -103,6 +108,8 @@ window.onload = function(){
             newTeamButton.style.backgroundColor = selectColor;
             borderRemover();
             colorPurple.style.border = "2px solid black";
+            colorPurple.style.height = "38px";
+            colorPurple.style.width = "38px";
         });
         
         colorGreen.addEventListener("click", function(){
@@ -110,6 +117,8 @@ window.onload = function(){
             newTeamButton.style.backgroundColor = selectColor;
             borderRemover();
             colorGreen.style.border = "2px solid black";
+            colorGreen.style.height = "38px";
+            colorGreen.style.width = "38px";
         });
 
         function borderRemover(){
