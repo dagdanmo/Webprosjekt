@@ -5,18 +5,14 @@ body{
     margin: 0;
 }
 #header {
-    top: 0px;
-    margin: 0;
     background: #03acef;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1rem 0;
-  }
-
-
-#profilePic{
+    padding: 8px 1px 0;
+}
+#profileImgDiv{
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -30,64 +26,84 @@ button {
     height: 60px;
     color: white;
 }
-button:hover {
-    background: white;
-    color: #aaa;
-    cursor: pointer;
+#homeImgDiv{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    z-index: 10;
+}
+#homeImg{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+#homeImg:hover{
     opacity: 0.5;
+    cursor: pointer;
+}
+#profileImg:hover{
+    opacity: 0.5;
+    cursor: pointer;
 }
 @media (min-width: 550px) {
     #header {
-      padding: 0 1rem;
+      padding: 0 16px;
     }
-  }
-.kanban {
+}
+.headerElements {
     flex: 0 1 100%;
-  }
-.kanban h1 {
+}
+.headerElements h1 {
     margin: 0;
-  }
+}
 @media (min-width: 550px) {
-    .kanban {
-      flex: 0 1 60%;
+    .headerElements {
+      flex: 0 1 50%;
     }
 }
 @media (min-width: 1300px) {
-    .kanban {
-      flex: 0 1 75%;
+    .headerElements {
+      flex: 0 1 50%;
     }
 }
 nav {
     flex: 0 1 100%;
 }
-nav a {
-    color: white;
-    text-decoration: none;
-}
-nav a:hover {
-    color: rgba(255, 255, 255, 0.7);
-}
 nav ul {
     list-style: none;
     padding: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
 }
 @media (min-width: 550px) {
     nav {
-      flex: 0 1 40%;
+      flex: 0 1 50%;
     }
-    nav ul {
-      justify-content: space-around;
-    }
+    
 }
 @media (min-width: 1300px) {
     nav {
-      flex: 0 1 25%;
+      flex: 0 1 50%;
     }
 }
-
+button {
+    background: transparent;
+    border: 1px solid red;
+    width: 60px;
+    height: 60px;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+button:hover {
+    background: white;
+    color: #aaa;
+    cursor: pointer;
+    opacity: 0.5;
+    margin: 0;
+    padding: 0;
+}
 
 li a, .dropBtn
 {
@@ -138,11 +154,10 @@ li.dropDown
 
 #center{
     position: absolute;
-    top: 20%;
+    top: 10%;
     background-color: #ffffff;
     width: 100%;
     height: 60%;
-    left: 0px;
     z-index: 3;
     text-align: center;
     margin: 0;
@@ -265,15 +280,13 @@ li.dropDown
 
 
 }
-
-
 .color{
     position: absolute;
     border-radius: 50%;
     height: 50px;
     width: 50px;
     z-index: 100;
-    top: 0px;
+    top: 200px;
     z-index: 100;
 }
 

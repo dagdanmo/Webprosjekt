@@ -3,6 +3,7 @@
     var fetchPassword = document.getElementById("inputPassword");    
     var loginButtonTest = document.getElementById("loginButton");
 
+
     loginButtonTest.addEventListener("click", function(){
         
         for(var i = 0; i < users.length; i++){
@@ -144,6 +145,8 @@ var signupInputUsername = document.getElementById("inputUsername_Signup");
 var signupInputEmail = document.getElementById("inputEmail_Signup");
 var signupRegFeedback = document.getElementById("regFeedback_Signup");
 
+
+
 var isTaken = false;
 var isReady = false;
 // var readSignup = document.getElementById("signUp");
@@ -183,6 +186,8 @@ register_Signup.addEventListener("click", function(){
 
         users.push({username: signupInputUsername.value, email: signupInputEmail.value, password: signupInputPassword.value });
         console.log(users);
+
+        localStorage.setItem("username", signupInputUsername.value);
 
         signupRegFeedback.innerText = "Registration complete!"
         signupRegFeedback.style.color = "green";

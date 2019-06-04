@@ -64,11 +64,6 @@ li.dropDown
     display: block;
     z-index: 100;
 }
-#profilePic{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-}
 #header{
     position: relative;
     top: 0px;
