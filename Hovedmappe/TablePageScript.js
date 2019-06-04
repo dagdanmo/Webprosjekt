@@ -20,6 +20,7 @@ popCardEnter.addEventListener("click", createNewCard);
 // open popup window for new card
 function newCardPopUp(){
     newCardPopContainer.style.display = "block";
+    getCardName.focus();
 }
 
 // close popup window for new card
