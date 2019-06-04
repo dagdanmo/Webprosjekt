@@ -138,7 +138,7 @@ function editCardPop(e){
     editWindow.innerHTML = e.target;
     editPop.append(editWindow);
     body.append(editPop);
-
+    
     console.log(currentCard);
 }
 
