@@ -16,12 +16,15 @@ body{
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    z-index: 10;
 }
-#profileImg{
+
+button {
+    top: 16px;
+    background: transparent;
+    border: 1px solid white;
     width: 60px;
     height: 60px;
-    border-radius: 50%;
+    color: white;
 }
 #homeImgDiv{
     width: 60px;
