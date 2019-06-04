@@ -27,43 +27,6 @@ li a, .dropBtn
     text-decoration: none;
     z-index: 100;
 }
-li a:hover, .dropDown:hover .dropBtn
-{
-    background: #786BDE;
-    z-index: 100;
-}
-li.dropDown
-{
-    display: inline-block;
-    z-index: 100;
-}
-.dropDownContent
-{
-    display:none;
-    position: absolute;
-    background: #E0FBFF;
-    min-width: 107px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 100;
-}
-.dropDownContent a
-{
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    z-index: 100;
-}
-.dropDownContent a:hover
-{
-    background: #d7d2ff;
-    z-index: 100;
-}
-.dropDown:hover .dropDownContent
-{
-    display: block;
-    z-index: 100;
-}
 #header{
     position: relative;
     top: 0px;
