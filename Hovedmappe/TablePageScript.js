@@ -161,10 +161,10 @@ function editCardPop(e){
     editPop.style.display = "block";
     const editWindow = document.createElement("div");
     editWindow.className = "editPop";
-    editWindow.innerHTML = e.target;
+    editWindow.innerHTML;
     editPop.append(editWindow);
     body.append(editPop);
-
+    
     console.log(currentCard);
 }
 
