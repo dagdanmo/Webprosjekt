@@ -24,6 +24,25 @@ body{
     height: 60px;
     border-radius: 50%;
 }
+#homeImgDiv{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    z-index: 10;
+}
+#homeImg{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+#homeImg:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+#profileImg:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
 @media (min-width: 550px) {
     #header {
       padding: 0 1rem;
