@@ -10,7 +10,8 @@ body{
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    padding: 8px 1px 0;
+    padding: 0px 16px;
+    height: 90px;
 }
 #profileImgDiv{
     width: 60px;
@@ -47,9 +48,7 @@ button {
 }
 #profileImg:hover{
     opacity: 0.5;
-    cursor: pointer; {
-        
-    }
+    cursor: pointer; 
 }
 #txtMiddle{
     width: 100px;
@@ -61,20 +60,15 @@ button {
     opacity: 0.5;
     cursor: pointer;
 }
-@media (min-width: 550px) {
-    #header {
-      padding: 0 16px;
-    }
-}
 .headerElements {
     flex: 0 1 100%;
 }
 .headerElements h1 {
     margin: 0;
 }
-@media (min-width: 550px) {
+@media (min-width: 450px) {
     .headerElements {
-      flex: 0 1 48%;
+      flex: 0 1 44%;
     }
 }
 @media (min-width: 1300px) {
@@ -91,11 +85,11 @@ nav ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 50;
+    margin: 0;
 }
-@media (min-width: 550px) {
+@media (min-width: 450px) {
     nav {
-      flex: 0 1 52%;
+      flex: 0 1 56%;
     }
     
 }
@@ -170,7 +164,7 @@ li.dropDown
 }
 #center{
     position: absolute;
-    top: 9.5%;
+    top: 90px;
     background-color: #ffffff;
     width: 100%;
     height: 60%;
@@ -226,7 +220,7 @@ li.dropDown
     margin-left: -325px;
     margin-top: -150px;
     cursor: pointer;
-  }
+}
 
 #createNewTable:hover {opacity: 1}
 
