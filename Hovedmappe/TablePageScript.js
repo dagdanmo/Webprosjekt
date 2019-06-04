@@ -5,6 +5,7 @@ let orderDrag;
 
 // main container
 const table = document.getElementById("container");
+const body = document.body;
 
 // newCardButton
 const newCardButton = document.getElementById("newCardButtonContainer");
@@ -19,6 +20,7 @@ popCardEnter.addEventListener("click", createNewCard);
 // open popup window for new card
 function newCardPopUp(){
     newCardPopContainer.style.display = "block";
+    getCardName.focus();
 }
 
 // close popup window for new card
@@ -89,6 +91,7 @@ function cardGenerator(){
         editCard.className = "edit";
         editCard.id = "cardEdit"+cardI;
         editCard.innerHTML = "&#9998;";
+        editCard.addEventListener("click", editCardPop);
         newCard.append(editCard);
 
         // Order input init
@@ -124,9 +127,24 @@ function cardGenerator(){
     }
 }
 
+function editCardPop(e){
+    const cardId = e.target.id.substr(e.target.id.length -1);
+    const currentCard = document.getElementById("card"+cardId);
+    const editPop = document.createElement("div");
+    editPop.className = "editPopContainer";
+    editPop.style.display = "block";
+    const editWindow = document.createElement("div");
+    editWindow.className = "editPop";
+    editWindow.innerHTML = e.target;
+    editPop.append(editWindow);
+    body.append(editPop);
+
+    console.log(currentCard);
+}
+
 // Dragging
-function dragStart(){
-    const target = getDiv (event.target);
+function dragStart(e){
+    const target = getDiv (e.target);
     orderDrag = target;
     orderDrag.className += " hold";
     setTimeout(() => (this.className = "invisible"), 0);
@@ -174,10 +192,10 @@ function dragDrop(e){
     // check to place order above or below target
     if ( target.style['border-bottom'] !== '' && e.target.className !== "cards") {
         target.style['border-bottom'] = '';
-        target.parentNode.insertBefore(orderDrag, event.target.nextSibling);
+        target.parentNode.insertBefore(orderDrag, e.target.nextSibling);
     } else if ( target.style['border-top'] !== '' && e.target.className !== "cards"){
         target.style['border-top'] = '';
-        target.parentNode.insertBefore(orderDrag, event.target);
+        target.parentNode.insertBefore(orderDrag, e.target);
     } else if (e.target.className == "cards" ||  e.target.parentNode.className == "orderInputContainer" || e.target.className == "edit"){
         this.append(orderDrag);
     } else {
