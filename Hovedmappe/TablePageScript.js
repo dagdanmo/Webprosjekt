@@ -17,7 +17,6 @@ window.onload = function(){
     var teamName = document.getElementById("teamName");
     var newTeamButton = document.getElementById("newTeamButton");
     var confirmTeamName = document.getElementById("confirmTeamName")
-    confirmTeamName.addEventListener("click",addNewTeamOnClick);
     var createTeamText = document.getElementById("createTeamText");
     var colors = document.getElementsByClassName("color");
     var colorRed = document.getElementById("red");
@@ -73,6 +72,19 @@ window.onload = function(){
     });
 
     var selectColor;
+
+
+        var teamNamed;
+        var getTeamName = document.getElementById("teamName");
+        getTeamName.addEventListener("input", function(){
+            teamNamed = getTeamName.value;
+            console.log(getTeamName.value);
+            console.log(teamNamed);
+        });
+
+        /* if(teamNamed != null && teamNamed != ""){
+             */confirmTeamName.addEventListener("click",addNewTeamOnClick);
+        
 
 
         colorRed.addEventListener("click", function(){
@@ -177,6 +189,7 @@ window.onload = function(){
     var teamArray=[];
     
     // creating new teams
+
     function addNewTeamOnClick(){
         elementHider();
         borderRemover();
@@ -240,6 +253,7 @@ window.onload = function(){
         }
     
     }
+
 
 
     // creating new cards
