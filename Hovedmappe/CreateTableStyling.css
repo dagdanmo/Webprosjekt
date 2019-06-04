@@ -15,21 +15,26 @@ body{
     padding: 1rem 1rem 0;
   }
 
-#profileImgDiv{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    z-index: 10;
-}
-#profileImg{
+
+#profilePic{
     width: 60px;
     height: 60px;
     border-radius: 50%;
 }
-#profile {
+
+button {
     top: 16px;
-    position: absolute;
-    border-radius: 50%;
+    background: transparent;
+    border: 1px solid white;
+    width: 60px;
+    height: 60px;
+    color: white;
+}
+button:hover {
+    background: white;
+    color: #aaa;
+    cursor: pointer;
+    opacity: 0.5;
 }
 @media (min-width: 550px) {
     #header {
@@ -82,19 +87,7 @@ nav ul {
       flex: 0 1 25%;
     }
 }
-button {
-    background: transparent;
-    border: 1px solid white;
-    width: 60px;
-    height: 60px;
-    color: white;
-}
-button:hover {
-    background: white;
-    color: #aaa;
-    cursor: pointer;
-    opacity: 0.5;
-}
+
 
 li a, .dropBtn
 {
