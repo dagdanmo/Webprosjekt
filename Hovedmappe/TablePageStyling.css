@@ -179,6 +179,7 @@ button:hover {
     z-index: 100;
     cursor: pointer;
     text-align: center;
+    z-index: 100;
 }
 
 .color{
@@ -316,6 +317,6 @@ button:hover {
 
   #infoButtonImg{
       width: 1.5%;
-      height: 1.5;
-      
+      height: 1.5%;
+
   }
