@@ -8,18 +8,11 @@ body{
     background: #03acef;
     display: flex;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 8px 1px 0;
 }
-#dropdown{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    position: relative;
-    display: inline-block;
-}
-#profileImg{
+#profileImgDiv{
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -48,15 +41,20 @@ button {
     opacity: 0.5;
     cursor: pointer;
 }
-#profileImg:hover{
-    opacity: 0.5;
-    cursor: pointer; 
-        
-    }
+#profileBtn{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border-color: #03acef;
+}
 #profileBtnImg{
     width: 55px;
     height: 55px;
     border-radius: 50%;
+}
+#dropDown{
+    position: relative;
+    display: inline-block;
 }
 #dropDownContent{
     display: none;
@@ -187,9 +185,10 @@ li.dropDown
     display: block;
     z-index: 100;
 }
+
 #center{
     position: absolute;
-    top: 9.5%;
+    top: 10%;
     background-color: #ffffff;
     width: 100%;
     height: 60%;
