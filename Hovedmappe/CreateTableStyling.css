@@ -13,7 +13,7 @@ body{
     padding: 0px 16px;
     height: 90px;
 }
-#dropdown{
+#profileImgDiv{
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -25,15 +25,6 @@ body{
     height: 60px;
     border-radius: 50%;
 }
-
-button {
-    top: 16px;
-    background: transparent;
-    border: 1px solid white;
-    width: 60px;
-    height: 60px;
-    color: white;
-}
 #homeImgDiv{
     width: 60px;
     height: 60px;
@@ -41,8 +32,8 @@ button {
     z-index: 10;
 }
 #homeImg{
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
 }
 #homeImg:hover{
@@ -57,6 +48,10 @@ button {
     width: 100px;
     height: 60px;
     border-radius: 50%;
+}
+#txtMiddle:hover{
+    opacity: 0.5;
+    cursor: pointer;
 }
 #dropDownContent{
     display: none;
@@ -94,7 +89,7 @@ button {
 }
 @media (min-width: 1300px) {
     .headerElements {
-      flex: 0 1 50%;
+      flex: 0 1 48%;
     }
 }
 nav {
@@ -104,7 +99,7 @@ nav ul {
     list-style: none;
     padding: 0;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     margin: 0;
 }
@@ -116,8 +111,16 @@ nav ul {
 }
 @media (min-width: 1300px) {
     nav {
-      flex: 0 1 50%;
+      flex: 0 1 52%;
     }
+}
+button {
+    top: 16px;
+    background: transparent;
+    border: 1px solid white;
+    width: 60px;
+    height: 60px;
+    color: white;
 }
 button {
     background: transparent;
@@ -178,7 +181,7 @@ li.dropDown
     background: #d7d2ff;
     z-index: 100;
 }
-.dropDown:hover .dropDownContent
+.profileImgDiv:hover .dropDownContent
 {
     display: block;
     z-index: 100;
@@ -214,7 +217,7 @@ li.dropDown
     border: outset black 2px;
     border-radius: 10px 10px 10px 10px;
     display: inline-block;
-    z-index: 1000;
+    z-index: 12;
     font-size: 30px;
     overflow: hidden;
 }
@@ -246,7 +249,7 @@ li.dropDown
 #createNewTable:hover {opacity: 1}
 
 #inputTableName{
-    z-index: 1200;
+    z-index: 13;
     height: 70px;
     width: 400px;
     left: 70px;
@@ -277,7 +280,7 @@ li.dropDown
 }
 
 #plusSign{
-    z-index: 100;
+    z-index: 10;
     cursor: pointer;
 }
 
@@ -287,7 +290,7 @@ li.dropDown
     height: 20px;
     width: 140px;
     background-color: black;
-    z-index: 120;
+    z-index: 12;
     top: 50%;
     left: 50%;
     opacity: 1;
@@ -301,7 +304,7 @@ li.dropDown
     width: 20px;
     height: 140px;
     background-color: black;
-    z-index: 120;
+    z-index: 12;
     top: 50%;
     left: 50%;
     opacity: 1;
@@ -316,9 +319,8 @@ li.dropDown
     border-radius: 50%;
     height: 50px;
     width: 50px;
-    z-index: 100;
+    z-index: 10;
     top: 200px;
-    z-index: 100;
 }
 
 #blue{

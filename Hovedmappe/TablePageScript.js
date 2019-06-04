@@ -1,3 +1,29 @@
+// Declaring variables to reference the HTMl elements.
+var homeSign = document.getElementById("homeImgDiv");
+var txtMiddle = document.getElementById("txtMiddle");
+var profileSign = document.getElementById("profileImgDiv");
+
+
+// Click functions to the header elements to go into the other sites
+homeSign.addEventListener("click", function(){
+
+    setTimeout(function () {
+        window.location.href = "index.html"; //will redirect to your blog page (an ex: blog.html)
+     }, 1000);
+});
+txtMiddle.addEventListener("click", function(){
+
+    setTimeout(function () {
+        window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
+     }, 1000);
+});
+profileSign.addEventListener("click", function(){
+
+    setTimeout(function () {
+        window.location.href = "TablePage.html"; //will redirect to your blog page (an ex: blog.html)
+     }, 1000);
+});
+
 // init
 let cardI = 0;
 let orderI = 0;

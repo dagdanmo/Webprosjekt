@@ -70,9 +70,9 @@ body{
 .headerElements h1 {
     margin: 0;
 }
-@media (min-width: 550px) {
+@media (min-width: 450px) {
     .headerElements {
-      flex: 0 1 48%;
+      flex: 0 1 44%;
     }
 }
 @media (min-width: 1300px) {
@@ -90,9 +90,9 @@ nav ul {
     justify-content: space-between;
     align-items: center;
 }
-@media (min-width: 550px) {
+@media (min-width: 450px) {
     nav {
-      flex: 0 1 52%;
+      flex: 0 1 56%;
     }
     
 }
