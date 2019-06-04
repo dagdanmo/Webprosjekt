@@ -11,15 +11,16 @@
                 setTimeout(function () {
                     window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
                  }, 1000);
+                 localStorage.setItem("username", fetchUsername.value);
             }else if(fetchUsername.value == users[i].email && fetchPassword.value == users[i].password){
                 setTimeout(function () {
+                    localStorage.setItem("username", fetchUsername.value);
                     window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
                  }, 1000);
             }else{
                 console.log("Feil brukernavn eller passord.");
             }
-        };
-        
+        };     
 });
 
 //Function for going from login to signup.
@@ -52,26 +53,27 @@ var passwordReady;
 //If they match, a green circle is displayed in the bottom input-field. If not, a red circle is displayed. The passwords matching also sets
 // variable passwordReady to true, which allows for us to make sure that password match is fullfilled before letting user finish registration.
 var signupInputPassword = document.getElementById("inputPassword_Signup");
-var passwordCheckbox = document.getElementById("circle_Signup");
+var wrongPassword = document.getElementById("wrong_Signup");
+var correctPassword = document.getElementById("correct_Signup");
+
 signupInputPassword.addEventListener("input", function(){
     console.log(signupInputPassword.value);
     createPassword = signupInputPassword.value;
     if(confirmPassword == createPassword){
         if(confirmPassword.length == 0 || createPassword.length == 0){
             console.log("Password does not match!");
-            passwordCheckbox.style.backgroundColor = "red";
-            passwordCheckbox.style.opacity = "0";
             passwordReady = false;
+            correctPassword.style.opacity = "0";
         }else{
             console.log("Password match!");
-            passwordCheckbox.style.opacity = "1";
-            passwordCheckbox.style.backgroundColor = "greenyellow";
+            correctPassword.style.opacity = "1";
+            wrongPassword.style.opacity ="0";
             passwordReady = true;
         }
     } else if(confirmPassword != createPassword && confirmPassword != null){
         console.log("Password does not match.");
-        passwordCheckbox.style.opacity = "1";
-        passwordCheckbox.style.backgroundColor = "red";
+        wrongPassword.style.opacity = "1";
+        correctPassword.style.opacity = "0";
         passwordReady = false; 
     }
 });
@@ -83,20 +85,19 @@ confirmInputPassword.addEventListener("input", function(){
     if(confirmPassword == createPassword){ 
         if(confirmPassword.length == 0 || createPassword.length == 0){
             console.log("Password does not match!");
-            passwordCheckbox.style.backgroundColor = "red";
-            passwordCheckbox.style.opacity = "0";
+            wrongPassword.style.opacity = "0";
             passwordReady = false;
         }else{
             console.log("Password match!");
-            passwordCheckbox.style.opacity = "1";
-            passwordCheckbox.style.backgroundColor = "greenyellow";
+            correctPassword.style.opacity = "1";
+            wrongPassword.style.opacity = "0";
             passwordReady = true;
         }
 
     } else{
         console.log("Password does not match.");
-        passwordCheckbox.style.opacity = "1";
-        passwordCheckbox.style.backgroundColor = "red"; 
+        wrongPassword.style.opacity = "1"; 
+        correctPassword.style.opacity = "0";
         passwordReady = false;
     }
 });
@@ -154,7 +155,7 @@ register_Signup.addEventListener("click", function(){
     isTaken = false;
     var i = 0;
     console.log(signupInputUsername.value, signupInputEmail.value);
-    if(signupInputUsername.value != null && signupInputEmail.value != null && passwordReady){
+    if(signupInputUsername.value != null && signupInputEmail.value != null && passwordReady && signupInputPassword.value != "" && signupInputEmail.value != ""){
         console.log(signupInputUsername.value, signupInputEmail.value);
     
         for(i = 0; i < users.length; i++){

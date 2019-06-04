@@ -1,188 +1,201 @@
 body{
-    background-color: white;
+    background-color: #CCF3FF;
     z-index: 0;
-    margin: 0;
-}
-
-ul
-{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background: #03acef;
-    z-index: 100;
-}
-li
-{
-    float: left;
-    z-index: 100;
-}
-li a, .dropBtn
-{
-    display:inline-block;
-    color: white;
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    z-index: 100;
+    font-family: Arial, Helvetica, sans-serif;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
-#header{
-    position: relative;
-    top: 0px;
-    background-color:#03acef;
-    width: 100%;
-    left: 0px;
-    text-align: center;
-    font-size: 15px;
-    z-index: 100;
-    margin: 0;
-    height: 4%;
-}
-.teamBoxContainer{
-    width: 98%;
-    /*height: 70%;*/
-    margin-top: 1%;
-    padding: 1%;
-    background-color: #D6E0D6; 
-    text-align: justify;
-    word-wrap: break-word;
-    position: relative;
-    display: inline-block;
+
+.text{
+    
 }
 
 
-#MainBox{
-    position: relative;
-    top: 0px;
+/* Popup Start */
+.popupContainer{
+    display: none;
+    position: fixed;
+    
+    padding-top: 5%;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    background-color: #FFFFFF; 
-    z-index: 2;   
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    
+}
+
+.popupWindow{
+    background-color: #EDFBFF;
+    margin: auto;
+    padding: 1.1%;
+    border: 1px solid #888;
+    border-radius: 15px;
+    width: 300px;
+    height: 45px;
+}
+
+.popInput{
+    width: 240px;
+    height: 41px;
+    float: left;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.enter{ 
+    padding-right: 3.5%;
+    color: #aaaaaa;
+    float: left;
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.enter:hover,
+.enter:focus{
+    color: #33CC00;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close{
+    color:#aaaaaa;
+    float: right;
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus{
+    color: #FF0000;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Popup End */
+
+#newCardButtonContainer{
+    width: 110px;
+    height: 110px;
+    margin: 5px;
     display: flex;
     flex-direction: column;
 }
 
-#newTeamButton{
-    margin-top: 17px;
-    width: 100%;
-    height: 20%;
-    position: absolute;
-    background-color: #e0fbff;
-    z-index: 10;
-    opacity: 0.6;
-    transition: 0.3s;
-    outline: dashed;
-    outline-width: 1px;
-    cursor: pointer;
-}
-
-
-#createTeamText{
+#newCardButton{
     font-size: 100px;
-    margin: 0;
+}
+
+.tableContainer{
     position: absolute;
-    top: 10px;
-    left: 18%;
-    cursor: pointer;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #CCF3FF;
+    
+    padding: 10px;
+    width: 90%;
+    left: 5%;
+    
+    display: flex;
+    flex-wrap: wrap;
 }
 
-
-#teamName{
-    border-radius: 10px 10px 10px 10px;
-    outline: none;
-    border: none;
-    height: 60px;
-    width: 450px;
-    position: absolute;
-    left: 500px;
-    top: 35px;
-    font-size: 30px;
-    text-align: center;
-    background-color: white;
-    opacity: 0;
-}
-
-#confirmTeamName{
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: none;
-    color: black;
-    background-color: white;
-    font-size: 60px;
-    position: absolute;
-    left: 980px;
-    top: 24px;
-    outline: none;
-    opacity: 0;
-    z-index: 100;
-    cursor: pointer;
-    text-align: center;
-}
-
-
-.buttons{
+.cards{
     position: relative;
-    display: inline-block;
-}
-
-.newTeamButton{
-    align-self: auto;
-}
-
-.teamName{
-    position: relative;
-    margin: 1%;
-};
-
-.newCardButton{
-    position: relative;
-    width: 25px;
-    height: 25px;
-    float: right;
-}
-
-.newTeamButton{
-    position: relative;
-    align-self: center;
-    height: 5%;
-    width: 10%;
-}
-
-.newCard{
-    position: relative;
-    width: 200px;
-    margin-left: 3%;
-    text-align: center;
-    background-color: #E0FBFF;
-    border: outset black 1px;
+    background-color: #ffffff;
+    border: 1px solid #888;
     border-radius: 10px;
+    
+    margin: 1%;
+    padding: 1%;
+    width: 225px;
+    height: 100%; 
+
+    font-size: 20px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.orderInputContainer{
+    position: relative;
+    
+    margin-top: 5px;
+    /* margin-bottom: 5px; */
+    height: 35px;
+    width: 100%;
+
     display: flex;
     float: left;
+    text-align: center;
+}
+
+.orderInput{
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    text-align: center;
+}
+
+#orderEnter0,
+#orderEnter1,
+#orderEnter2,
+#orderEnter3,
+#orderEnter4{
+    position: relative;
+    font-size: 200%;
+    padding-left: 1%;
+    bottom: 18%;
+}
+
+.orders{
+    position: relative;
+    background-color: #EBFFC1;
+    border: 1px solid #888;
+    border-radius: 5px;
+
+    margin-top: 3%;
+    padding: 1%;
+    width: 97.5%;
+    height: 40px;
+
+    text-align: left;
+
+    display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 
-.newCardName{
-    position: relative;
-    align-self: center;
+.edit{
+    position: absolute;
+    align-self: flex-end;
+    top: 6px;
+    font-size: 25px;
 }
 
-.newWork{
-    position: relative;
-    align-self: center;
-    width: 100%;
-    height: 25px;
-    color: black;
-    margin-bottom: 1%;
+.edit:hover{
+    color: #888;
+    cursor: pointer;
 }
 
-.newWorkOrder{
-    position: relative;
-    width: 100%;
-    height: 25px;
-    background-color: gray;
-    margin-bottom: 1%;
+.hold{
+    border: dashed 2px #888;
+}
 
+.hovered {
+    border-color: #888;
+    border-style: dashed;
+}
+
+.invisible{
+    display: none;
 }
