@@ -1,0 +1,201 @@
+body{
+    background-color: #CCF3FF;
+    z-index: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.text{
+    
+}
+
+
+/* Popup Start */
+.popupContainer{
+    display: none;
+    position: fixed;
+    
+    padding-top: 5%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    
+}
+
+.popupWindow{
+    background-color: #EDFBFF;
+    margin: auto;
+    padding: 1.1%;
+    border: 1px solid #888;
+    border-radius: 15px;
+    width: 300px;
+    height: 45px;
+}
+
+.popInput{
+    width: 240px;
+    height: 41px;
+    float: left;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.enter{ 
+    padding-right: 3.5%;
+    color: #aaaaaa;
+    float: left;
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.enter:hover,
+.enter:focus{
+    color: #33CC00;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close{
+    color:#aaaaaa;
+    float: right;
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus{
+    color: #FF0000;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Popup End */
+
+#newCardButtonContainer{
+    width: 110px;
+    height: 110px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+#newCardButton{
+    font-size: 100px;
+}
+
+.tableContainer{
+    position: absolute;
+    background-color: #CCF3FF;
+    
+    padding: 10px;
+    width: 90%;
+    left: 5%;
+    
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cards{
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #888;
+    border-radius: 10px;
+    
+    margin: 1%;
+    padding: 1%;
+    width: 225px;
+    height: 100%; 
+
+    font-size: 20px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.orderInputContainer{
+    position: relative;
+    
+    margin-top: 5px;
+    /* margin-bottom: 5px; */
+    height: 35px;
+    width: 100%;
+
+    display: flex;
+    float: left;
+    text-align: center;
+}
+
+.orderInput{
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    text-align: center;
+}
+
+#orderEnter0,
+#orderEnter1,
+#orderEnter2,
+#orderEnter3,
+#orderEnter4{
+    position: relative;
+    font-size: 200%;
+    padding-left: 1%;
+    bottom: 18%;
+}
+
+.orders{
+    position: relative;
+    background-color: #EBFFC1;
+    border: 1px solid #888;
+    border-radius: 5px;
+
+    margin-top: 3%;
+    padding: 1%;
+    width: 97.5%;
+    height: 40px;
+
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.edit{
+    position: absolute;
+    align-self: flex-end;
+    top: 6px;
+    font-size: 25px;
+}
+
+.edit:hover{
+    color: #888;
+    cursor: pointer;
+}
+
+.hold{
+    border: dashed 2px #888;
+}
+
+.hovered {
+    border-color: #888;
+    border-style: dashed;
+}
+
+.invisible{
+    display: none;
+}
