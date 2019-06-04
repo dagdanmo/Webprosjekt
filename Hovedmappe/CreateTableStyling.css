@@ -24,11 +24,7 @@ body{
     height: 60px;
     border-radius: 50%;
 }
-#profile {
-    top: 16px;
-    position: absolute;
-    border-radius: 50%;
-}
+
 @media (min-width: 550px) {
     #header {
       padding: 0 1rem;
