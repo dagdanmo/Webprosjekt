@@ -12,8 +12,21 @@ body{
     align-items: center;
     padding: 8px 1px 0;
 }
+<<<<<<< HEAD
 
 
+=======
+#profileImgDiv{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+#profileImg{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+>>>>>>> b810169cc2ecbf0170c5a48bc0aba07030f1f56a
 button {
     top: 16px;
     background: transparent;
@@ -57,6 +70,16 @@ button {
 #dropDown:hover #dropDownContent{
     display: block;
 }
+#txtMiddle{
+    width: 100px;
+    height: 60px;
+    border-radius: 50%;
+    z-index: 10;
+}
+#txtMiddle:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
 @media (min-width: 550px) {
     #header {
       padding: 0 16px;
@@ -70,12 +93,12 @@ button {
 }
 @media (min-width: 550px) {
     .headerElements {
-      flex: 0 1 50%;
+      flex: 0 1 48%;
     }
 }
 @media (min-width: 1300px) {
     .headerElements {
-      flex: 0 1 50%;
+      flex: 0 1 48%;
     }
 }
 nav {
@@ -85,18 +108,19 @@ nav ul {
     list-style: none;
     padding: 0;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
+    margin: 50;
 }
 @media (min-width: 550px) {
     nav {
-      flex: 0 1 50%;
+      flex: 0 1 52%;
     }
     
 }
 @media (min-width: 1300px) {
     nav {
-      flex: 0 1 50%;
+      flex: 0 1 52%;
     }
 }
 button {
