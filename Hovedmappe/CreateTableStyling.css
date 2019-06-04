@@ -8,18 +8,21 @@ body{
     background: #03acef;
     display: flex;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: space-center;
     align-items: center;
     padding: 8px 1px 0;
 }
-#profileImgDiv{
+#dropdown{
     width: 60px;
     height: 60px;
     border-radius: 50%;
+    position: relative;
+    display: inline-block;
 }
 #profileImg{
     width: 60px;
-    'he
+    height: 60px;
+    border-radius: 50%;
 }
 
 button {
@@ -55,10 +58,6 @@ button {
     width: 55px;
     height: 55px;
     border-radius: 50%;
-}
-#dropDown{
-    position: relative;
-    display: inline-block;
 }
 #dropDownContent{
     display: none;
