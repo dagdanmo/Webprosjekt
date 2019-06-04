@@ -7,58 +7,81 @@ body{
 #header {
     background: #03acef;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1rem 0;
-  }
-
+    padding: 8px 1px 0;
+}
 #profileImgDiv{
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    z-index: 10;
 }
 #profileImg{
     width: 60px;
     height: 60px;
     border-radius: 50%;
 }
-#profile {
+button {
     top: 16px;
-    position: absolute;
+    background: transparent;
+    border: 1px solid white;
+    width: 60px;
+    height: 60px;
+    color: white;
+}
+#homeImgDiv{
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
+    z-index: 10;
+}
+#homeImg{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+#homeImg:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+#profileImg:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+#txtMiddle{
+    width: 100px;
+    height: 60px;
+    border-radius: 50%;
+    z-index: 10;
+}
+#txtMiddle:hover{
+    opacity: 0.5;
+    cursor: pointer;
 }
 @media (min-width: 550px) {
     #header {
-      padding: 0 1rem;
+      padding: 0 16px;
     }
-  }
-.kanban {
+}
+.headerElements {
     flex: 0 1 100%;
-  }
-.kanban h1 {
+}
+.headerElements h1 {
     margin: 0;
-  }
+}
 @media (min-width: 550px) {
-    .kanban {
-      flex: 0 1 60%;
+    .headerElements {
+      flex: 0 1 48%;
     }
 }
 @media (min-width: 1300px) {
-    .kanban {
-      flex: 0 1 75%;
+    .headerElements {
+      flex: 0 1 48%;
     }
 }
 nav {
     flex: 0 1 100%;
-}
-nav a {
-    color: white;
-    text-decoration: none;
-}
-nav a:hover {
-    color: rgba(255, 255, 255, 0.7);
 }
 nav ul {
     list-style: none;
@@ -66,18 +89,17 @@ nav ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 50;
 }
 @media (min-width: 550px) {
     nav {
-      flex: 0 1 40%;
+      flex: 0 1 52%;
     }
-    nav ul {
-      justify-content: space-around;
-    }
+    
 }
 @media (min-width: 1300px) {
     nav {
-      flex: 0 1 25%;
+      flex: 0 1 52%;
     }
 }
 button {
@@ -147,7 +169,7 @@ li.dropDown
 
 #center{
     position: absolute;
-    top: 20%;
+    top: 10%;
     background-color: #ffffff;
     width: 100%;
     height: 60%;
