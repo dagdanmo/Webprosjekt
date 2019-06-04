@@ -50,10 +50,9 @@ button {
 }
 #profileImg:hover{
     opacity: 0.5;
-    cursor: pointer; {
+    cursor: pointer; 
         
     }
-}
 #profileBtnImg{
     width: 55px;
     height: 55px;
