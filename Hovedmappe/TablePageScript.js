@@ -178,7 +178,7 @@ function dragDrop(e){
     } else if ( target.style['border-top'] !== '' && e.target.className !== "cards"){
         target.style['border-top'] = '';
         target.parentNode.insertBefore(orderDrag, event.target);
-    } else if ( e.target.className == "cards" || e.target.className == "orderInputContainer"){
+    } else if (e.target.className == "cards" ||  e.target.parentNode.className == "orderInputContainer" || e.target.className == "edit"){
         this.append(orderDrag);
     } else {
         alert("stupid");
