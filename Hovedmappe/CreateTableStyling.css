@@ -13,16 +13,19 @@ body{
     padding: 0px 16px;
     height: 90px;
 }
-#profileImgDiv{
+#dropdown{
     width: 60px;
     height: 60px;
     border-radius: 50%;
+    position: relative;
+    display: inline-block;
 }
 #profileImg{
     width: 60px;
     height: 60px;
     border-radius: 50%;
 }
+
 button {
     top: 16px;
     background: transparent;
@@ -38,8 +41,8 @@ button {
     z-index: 10;
 }
 #homeImg{
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
 }
 #homeImg:hover{
@@ -54,11 +57,29 @@ button {
     width: 100px;
     height: 60px;
     border-radius: 50%;
-    z-index: 10;
 }
-#txtMiddle:hover{
-    opacity: 0.5;
-    cursor: pointer;
+#dropDownContent{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 5;
+}
+#dropDownContent a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+/*#dropDownContent a:hover {background-color: #f1f1f1};*/
+
+#dropDown:hover #dropDownContent{
+    display: block;
+}
+#dropDown:hover #profileBtn{
+    background-color: #3e8e41;
+    
 }
 .headerElements {
     flex: 0 1 100%;
@@ -73,7 +94,7 @@ button {
 }
 @media (min-width: 1300px) {
     .headerElements {
-      flex: 0 1 48%;
+      flex: 0 1 50%;
     }
 }
 nav {
@@ -83,7 +104,7 @@ nav ul {
     list-style: none;
     padding: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     margin: 0;
 }
@@ -95,7 +116,7 @@ nav ul {
 }
 @media (min-width: 1300px) {
     nav {
-      flex: 0 1 52%;
+      flex: 0 1 50%;
     }
 }
 button {
