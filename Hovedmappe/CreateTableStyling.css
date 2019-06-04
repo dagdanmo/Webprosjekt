@@ -17,7 +17,11 @@ body{
     height: 60px;
     border-radius: 50%;
 }
-
+#profileImg{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
 button {
     top: 16px;
     background: transparent;
@@ -47,7 +51,7 @@ button {
 }
 #txtMiddle{
     width: 100px;
-    height: 100px;
+    height: 60px;
     border-radius: 50%;
     z-index: 10;
 }
