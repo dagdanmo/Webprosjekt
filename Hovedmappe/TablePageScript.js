@@ -28,6 +28,7 @@ profileSign.addEventListener("click", function(){
 let cardI = 0;
 let orderI = 0;
 let orderDrag;
+let cardId;
 
 // main container
 const table = document.getElementById("container");
@@ -40,6 +41,12 @@ const newCardPopContainer = document.getElementById("newCardPopContainer");
 const popClose = document.getElementsByClassName("close")[0];
 popClose.addEventListener("click", popDown);
 const getCardName = document.getElementById("getCardName");
+getCardName.addEventListener("keyup", function(){
+    if(event.keyCode == 13){
+        cardGenerator();
+        popDown();
+    }
+});
 const popCardEnter = document.getElementById("cardEnter");
 popCardEnter.addEventListener("click", createNewCard);
 
@@ -60,35 +67,6 @@ function createNewCard(){
     popDown();
 }
 
-// Creating new order
-function createNewOrder(){
-    
-    const cardId = event.target.id.substr(event.target.id.length -1);
-    const orderInput = document.getElementById("orderInput"+cardId);
-    const currentCard = document.getElementById("card"+cardId);
-    
-    const order = document.createElement("div");
-    order.className = "orders";
-    order.id = "order"+orderI;
-    order.draggable = "true";
-
-    if(orderInput.value == ""){
-        order.innerHTML = "New Order "+orderI;
-    } if(orderInput.value != ""){
-        order.innerHTML = orderInput.value;
-    } 
-
-    order.addEventListener("dragstart", dragStart);
-    order.addEventListener("dragend", dragEnd);
-    /* orderMove = document.querySelectorAll(".orders"); */
-    
-    currentCard.append(order);
-
-    /* currentCard.append(document.getElementById("orderInputContainer"+cardId)); */
-
-    orderI++;
-    orderInput.value = "";
-}
 
 // Creating new cards
 function cardGenerator(){
@@ -98,11 +76,17 @@ function cardGenerator(){
         newCard.className = "cards";
         newCard.id = "card"+cardI;
         
+        const newCardName = document.createElement("p");
+        newCardName.className = "newCardName";
+        newCardName.id = "newCardName"+cardI;
+        newCardName.style.pointerEvents = "none";
+        newCard.append(newCardName);
+        
         // checking for input, if no user input cardname = new card + cardI
         if(getCardName.value == ""){
-            newCard.innerHTML = "New Card "+cardI;
+            newCardName.innerHTML = "NEW CARD "+cardI;
         } if(getCardName.value != ""){
-            newCard.innerHTML = getCardName.value;
+            newCardName.innerHTML = getCardName.value.toUpperCase();
         } 
         
         // Adding eventlistener for dragging to new cards
@@ -111,7 +95,7 @@ function cardGenerator(){
         newCard.addEventListener("dragleave", dragLeave);
         newCard.addEventListener("drop", dragDrop);
         table.append(newCard);
-
+        
         // Edit button for cards
         const editCard = document.createElement("span");
         editCard.className = "edit";
@@ -119,7 +103,7 @@ function cardGenerator(){
         editCard.innerHTML = "&#9998;";
         editCard.addEventListener("click", editCardPop);
         newCard.append(editCard);
-
+        
         // Order input init
         let orderInputContainer = document.createElement("div");
         orderInputContainer.className = "orderInputContainer";
@@ -135,37 +119,132 @@ function cardGenerator(){
         getOrderName.className = "orderInput";
         getOrderName.id = "orderInput"+cardI;
         getOrderName.placeholder = "Enter new order name....";
+        getOrderName.addEventListener("keyup", function(){
+            if(event.keyCode == 13){
+                createNewOrder();
+            }
+        });
         
         orderInputContainer.append(orderEnter);
         orderInputContainer.append(getOrderName);
         newCard.append(orderInputContainer);
         table.append(newCardButton);
-
+        
         cardI++;
-
+        
         // max cards
         if(cardI == 5){
             newCardButton.style.display = "none";
         }
-    
+        
     } else {
         alert("erroooor");
     }
 }
 
 function editCardPop(e){
-    const cardId = e.target.id.substr(e.target.id.length -1);
+    
+    cardId = e.target.id.substr(e.target.id.length -1);
     const currentCard = document.getElementById("card"+cardId);
+    
     const editPop = document.createElement("div");
     editPop.className = "editPopContainer";
+    editPop.id = "editPopContainer";
     editPop.style.display = "block";
+    
     const editWindow = document.createElement("div");
     editWindow.className = "editPop";
-    editWindow.innerHTML;
+    
+    const editCardName = document.createElement("p");
+    editCardName.className = "editCardName";
+    editCardName.innerHTML = document.getElementById("newCardName"+cardId).innerHTML;
+    
+    const editEnter = document.createElement("span");
+    editEnter.className = "enter";
+    editEnter.id = "editEnter";
+    editEnter.innerHTML = "&plus;";
+    editEnter.addEventListener("click", editPopEnter);
+    
+    const editClose = document.createElement("span");
+    editClose.className = "close";
+    editClose.id = "editClose";
+    editClose.innerHTML = "&times;";
+    editClose.addEventListener("click", editpopDown);
+    
+    const editName = document.createElement("input");
+    editName.className = "editInput";
+    editName.id = "editName";
+    editName.placeholder = "Enter new cardname";
+
+    const deleteCardContainer = document.createElement("div");
+    deleteCardContainer.className = "editInput";
+    deleteCardContainer.id = "deleteCardContainer";
+
+    const deleteCard = document.createElement("input");
+    deleteCard.className = "editInput";
+    deleteCard.id = "deleteCard";
+    deleteCard.placeholder = "Enter 'DELETE' to confirm";
+
+    
+    editWindow.append(editClose);
+    editWindow.append(editEnter);
+    editWindow.append(editCardName);
+    editWindow.append(editName);
+    editWindow.append(deleteCard);
+    
     editPop.append(editWindow);
     body.append(editPop);
     
     console.log(currentCard);
+}
+
+// Creating new order
+function createNewOrder(){
+    
+    cardId = event.target.id.substr(event.target.id.length -1);
+    const orderInput = document.getElementById("orderInput"+cardId);
+    const currentCard = document.getElementById("card"+cardId);
+    
+    const order = document.createElement("div");
+    order.className = "orders";
+    order.id = "order"+orderI;
+    order.draggable = "true";
+
+    const orderName = document.createElement("div");
+    orderName.className = "orderName";
+    orderName.id = "orderName"+cardId;
+    orderName.style.pointerEvents = "none";
+
+    if(orderInput.value == ""){
+        orderName.innerHTML = "NEW ORDER "+orderI;
+    } if(orderInput.value != ""){
+        orderName.innerHTML = orderInput.value.toUpperCase();
+    } 
+
+    order.addEventListener("dragstart", dragStart);
+    order.addEventListener("dragend", dragEnd);
+    /* orderMove = document.querySelectorAll(".orders"); */
+    
+    order.append(orderName);
+    currentCard.append(order);
+
+    /* currentCard.append(document.getElementById("orderInputContainer"+cardId)); */
+
+    orderI++;
+    orderInput.value = "";
+}
+
+// save edit pop
+function editPopEnter(){
+    if(document.getElementById("editName").value != ""){
+        document.getElementById("newCardName"+cardId).innerHTML = document.getElementById("editName").value.toUpperCase();
+    }
+    body.removeChild(document.getElementById("editPopContainer"));
+}
+
+// close edit pop
+function editpopDown(){
+    body.removeChild(document.getElementById("editPopContainer"));
 }
 
 // Dragging
