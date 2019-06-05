@@ -280,6 +280,25 @@ li.dropDown {
     text-align: center;
 }
 
+#deleteCardContainer{
+    margin:0;
+}
+
+#deleteCard{
+    float: right;
+    width: 85%;
+}
+
+#deleteIcon{
+    float: left;
+    font-size: 150%;
+}
+
+#deleteIcon:hover{
+    color: red;
+    font-weight: bold;
+}
+
 /* Edit window end */
 
 #newCardButtonContainer{
@@ -323,6 +342,23 @@ li.dropDown {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+}
+
+.newCardName{
+    position: relative;
+    top: 20px;
+}
+
+.stars{
+    position: absolute;
+    font-size: 180%;
+    align-self: flex-start;
+    top: 0px;
+    left: 13px;
+}
+
+.stars:hover{
+    color: orange;
 }
 
 .orderInputContainer{
@@ -385,6 +421,7 @@ li.dropDown {
     position: absolute;
     align-self: flex-end;
     top: 6px;
+    right: 10px;
     font-size: 25px;
 }
 

@@ -29,6 +29,7 @@ let cardI = 0;
 let orderI = 0;
 let orderDrag;
 let cardId;
+let currentStarCard;
 
 // main container
 const table = document.getElementById("container");
@@ -95,6 +96,14 @@ function cardGenerator(){
         newCard.addEventListener("drop", dragDrop);
         table.append(newCard);
         
+        // Star
+        const cardStar = document.createElement("span");
+        cardStar.className = "stars";
+        cardStar.id = "star"+cardI;
+        cardStar.innerHTML = "&star;";
+        newCard.append(cardStar);
+        cardStar.addEventListener("click", setStarCard);
+
         // Edit button for cards
         const editCard = document.createElement("span");
         editCard.className = "edit";
@@ -141,6 +150,21 @@ function cardGenerator(){
     }
 }
 
+function setStarCard(e){
+    cardId = e.target.id.substr(e.target.id.length -1);
+    const currentStar = document.getElementById("star"+cardId);
+    for(var i = 0; i<cardI; i++){
+        if(i == cardId){
+            currentStar.innerHTML = "&starf;";
+            currentStarCard = cardId;
+            console.log(currentStarCard);
+        } else {
+            document.getElementById("star"+i).innerHTML = "&star;";
+        }
+    }
+
+}
+
 function editCardPop(e){
     
     cardId = e.target.id.substr(e.target.id.length -1);
@@ -179,17 +203,22 @@ function editCardPop(e){
     deleteCardContainer.className = "editInput";
     deleteCardContainer.id = "deleteCardContainer";
 
+    const deleteIcon = document.createElement("span");
+    deleteIcon.id = "deleteIcon";
+    deleteIcon.innerHTML = "&#9760;";
     const deleteCard = document.createElement("input");
     deleteCard.className = "editInput";
     deleteCard.id = "deleteCard";
     deleteCard.placeholder = "Enter 'DELETE' to confirm";
-
     
+    deleteCardContainer.append(deleteIcon);
+    deleteCardContainer.append(deleteCard);
+
     editWindow.append(editClose);
     editWindow.append(editEnter);
     editWindow.append(editCardName);
     editWindow.append(editName);
-    editWindow.append(deleteCard);
+    editWindow.append(deleteCardContainer);
     
     editPop.append(editWindow);
     body.append(editPop);
@@ -302,7 +331,8 @@ function dragLeave(e){
 function dragDrop(e){
     var target = getDiv( e.target );
     this.className = "cards";
-
+    
+    let star = 0;
     // check to place order above or below target
     if ( target.style['border-bottom'] !== '' && e.target.className !== "cards") {
         target.style['border-bottom'] = '';
@@ -315,6 +345,19 @@ function dragDrop(e){
     } else {
         alert("stupid");
     }
+
+    // starcardcheck
+    if ( e.target.className == "cards"){
+        star = e.target.id.substr(e.target.id.length -1);
+    } else if ( e.target.className != "cards"){
+        star = e.target.parentNode.id.substr(e.target.parentNode.id.length -1);
+    }
+
+    if(currentStarCard == star){
+        scorePop();
+
+    }
+
 }
 
 // get targeted div
@@ -339,29 +382,31 @@ var numberField = document.getElementById("number");
 var start = document.getElementById("start");
 var userPointsElement = document.getElementById("userPoints");
 var pointsEarnedElement = document.getElementById("pointsEarned");
-/* var startDropdown = document.getElementById("startDropdown"); */
+
 var dropdownDisplay = document.getElementById("dropDown_Score");
 var tableContainer = document.getElementById("container");
 
 var userPoints = 0;
 var pointsEarned = 200;
 
-/* startDropdown.addEventListener("click", function(){
+function scorePop(){
     tableContainer.style.filter = "blur(5px)"
     tableContainer.style.transition = "1s";
     dropdownDisplay.style.opacity = "0.8";
     dropdownDisplay.style.transition = "1s";
-
+    dropdownDisplay.style.display = "block";
     setTimeout(function(){ myLoop(); }, 1500);
     setTimeout(function(){ removeDropdown(); }, 5500);
 
-}); */
+}
 
 function removeDropdown(){
     tableContainer.style.filter = "blur(0px)"
     tableContainer.style.transition = "1s";
     dropdownDisplay.style.opacity = "0.0";
     dropdownDisplay.style.transition = "1s";
+    //HUSK Å ENDREEEEEE
+    dropdownDisplay.style.display = "none";
 }
 
 pointsEarnedElement.innerText = pointsEarned;
