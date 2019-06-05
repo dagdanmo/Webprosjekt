@@ -51,6 +51,12 @@ const newCardPopContainer = document.getElementById("newCardPopContainer");
 const popClose = document.getElementsByClassName("close")[0];
 popClose.addEventListener("click", popDown);
 const getCardName = document.getElementById("getCardName");
+getCardName.addEventListener("keyup", function(){
+    if(event.keyCode == 13){
+        cardGenerator();
+        popDown();
+    }
+});
 const popCardEnter = document.getElementById("cardEnter");
 popCardEnter.addEventListener("click", createNewCard);
 
@@ -93,7 +99,7 @@ function cardGenerator(){
         if(getCardName.value == ""){
             newCardName.innerHTML = "NEW CARD "+tempId;
         } if(getCardName.value != ""){
-            newCard.innerHTML = getCardName.value;
+            newCardName.innerHTML = getCardName.value.toUpperCase();
         } 
         
         // Adding eventlistener for dragging to new cards
@@ -118,7 +124,7 @@ function cardGenerator(){
         editCard.innerHTML = "&#9998;";
         editCard.addEventListener("click", editCardPop);
         newCard.append(editCard);
-
+        
         // Order input init
         let orderInputContainer = document.createElement("div");
         orderInputContainer.className = "orderInputContainer";
@@ -185,11 +191,15 @@ function setStarCard(e){
 
 // card edit popupwindow
 function editCardPop(e){
-    const cardId = e.target.id.substr(e.target.id.length -1);
+    
+    cardId = e.target.id.substr(e.target.id.length -1);
     const currentCard = document.getElementById("card"+cardId);
+    
     const editPop = document.createElement("div");
     editPop.className = "editPopContainer";
+    editPop.id = "editPopContainer";
     editPop.style.display = "block";
+    
     const editWindow = document.createElement("div");
     editWindow.className = "editPop";
     
