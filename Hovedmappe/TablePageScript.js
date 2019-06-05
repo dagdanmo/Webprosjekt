@@ -478,10 +478,10 @@ function dropdownDisplayNone(){
 
 var i = 1;                     //  set your counter to 1
 
-function myLoop () {           //  create a loop function
-   setTimeout(function () {    //  call a 3s setTimeout when the loop is called
-                              //  your code here
-                         //  increment the counter
+function myLoop () {                     //  create a loop function
+   setTimeout(function () {              //  call a 3s setTimeout when the loop is called
+                                         //  your code here
+                                         //  increment the counter
       if (pointsEarned > 0) {            //  if the counter < 10, call the loop function
         myLoop();
         userPoints += 1;
@@ -490,6 +490,7 @@ function myLoop () {           //  create a loop function
         userPointsElement.innerText = userPoints;
             if(userPoints >= 100){
                 userPointsElement.style.left = "100px";
+                
             }else if(userPoints > 10){
                 userPointsElement.style.left = "140px";
             }
@@ -506,6 +507,8 @@ function myLoop () {           //  create a loop function
       }                        //  ..  setTimeout()
    }, 10)
 }
+
+console.log(localStorage);
 
 /* start.addEventListener("click", function(){
     myLoop();

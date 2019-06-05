@@ -134,6 +134,7 @@ var selectColor;
             document.getElementById("TeamBox").appendChild(newCard);
             idIncrement++;
             console.log(newCard.className, newCard.id);
+            localStorage.setItem("tableName", inputTableName.value);
             inputTableName.value = "";
             tableNamed = inputTableName.value;
             newCard.style.backgroundColor = selectColor;
