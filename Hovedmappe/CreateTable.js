@@ -168,3 +168,48 @@ var selectColor;
             window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
          }, 1000);
     });
+
+
+/* Dark mode part */
+var checkbox = document.getElementById("checkDarkMode"); // checkbox
+var header = document.getElementById("header"); // header color (background)
+var footer = document.getElementById("footer"); // footer color (background-color)
+var plusVertical = document.getElementById("plusVertical"); //plus line vertical (background-color)
+var plusHorizontal = document.getElementById("plusHorizontal"); // plus line horizontal (background-color)
+var createNewTable = document.getElementById("createNewTable");  //default table color (background-color)
+var inputTableName = document.getElementById("inputTableName"); // Color for input field and font color (backgorund and font color)
+var confirmTableName = document.getElementById("confirmTableName"); // plus background color and plus-sign color (color and background-color)
+var center = document.getElementById("center"); // center color (background color)
+var txtMiddle = document.getElementById("txtMiddle"); // "TASK IT" text color (color)
+
+checkbox.addEventListener('change', function(e){
+    console.log(checkbox.checked, checkbox.value);
+    if(checkbox.checked){
+        console.log("huket av");
+        header.style.background = "#141414";
+        footer.style.backgroundColor ="#141414";
+        plusVertical.style.backgroundColor ="#eeeeee";
+        plusHorizontal.style.backgroundColor ="#eeeeee";
+        createNewTable.style.backgroundColor = "#303030";
+        inputTableName.style.backgroundColor ="#353535";
+        confirmTableName.style.backgroundColor ="#353535";
+        confirmTableName.style.color = "#eeeeee";
+        center.style.color = "#767D92";
+        txtMiddle.style.color = "#eeeeee";
+        document.body.style.background = "black";
+
+    } else {
+        console.log("Ikke huket av");
+        header.style.background = "#03acef";
+        footer.style.backgroundColor ="#e0fbff";
+        plusVertical.style.backgroundColor ="black";
+        plusHorizontal.style.backgroundColor ="black";
+        createNewTable.style.backgroundColor = "#c3f3ff";
+        inputTableName.style.backgroundColor ="white";
+        confirmTableName.style.backgroundColor ="white";
+        confirmTableName.style.color = "black";
+        center.style.backgroundcolor = "#03acef";
+        txtMiddle.style.color = "black";
+        document.body.style.background = "white";
+    }
+})

@@ -10,23 +10,29 @@
 <body>
         <header id = "header">
                 <div class = "headerElements">
-                        <div id="homeImgDiv"><img id="homeImg" src="images/HomeIcon.png"></div>
+                        <div id="homeImgDiv"><img id="homeImg" src="images/HomeIcondark.jpg"></div>
                 </div>
                 <nav>
                     <ul>
                         <div id="txtMiddle"><h1>TASK IT!</h1></div>
-                        <div id="profileImgDiv">
-                            <img id="profileImg" src="images/profilePic.png">
-                            <div id="dropdown-content">
-                                <a>Link 1</a>
-                                <a>Link 2</a>
-                                <div id="desc">Link 3</div>
-                            </div>
+                        <div class="dropdown">
+                                <div id="profileImgDiv"><img id="profileImg" src="images/profilePic.png">
+                                    <div class="dropdown-content">
+                                      <a href="#">Profile</a>
+                                      <a href="#">Settings</a>
+                                      <a href="index.html">Log out</a>
+                                    </div>
+                                </div>
                         </div>
                     </ul>
                 </nav>
             </header>
     <div id = "center">
+            <div id="settingsBox">
+                <p id="txtDarkMode">Turn on dark mode</p>
+                    <input type="checkbox" id="checkDarkMode">
+
+            </div>
         <div id = "createNewTable">
             <input id="inputTableName" placeholder="Enter table name...">
             <button id="confirmTableName">+</button>
@@ -39,9 +45,7 @@
             <div class="color" id="blue"></div>
             <div class="color" id="orange"></div>
             <div class="color" id="purple"></div>
-
         </div>
-
     </div>
     <div id = "footer">
              <!-- IN-PROGRESS, button to add an instance of a task Div -->
