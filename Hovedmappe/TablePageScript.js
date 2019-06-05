@@ -433,9 +433,9 @@ var pointsEarned = 200;
     
 
 
-function scorePop(e){
+function scorePop(/* e */){
     // Get orderID and the right score ammount
-    const target = getDiv (e.target);
+  /*   const target = getDiv (e.target); */
 
     setTimeout(function(){ dropdownDisplayBlock(); }, 20);
     setTimeout(function(){ dropdownTransitions(); }, 200);
