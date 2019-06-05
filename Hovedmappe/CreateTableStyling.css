@@ -311,9 +311,9 @@ button:hover {
 }
 
 #settingsBox{
-    /*opacity: 0.0;*/
+    opacity: 0.0;
     position: absolute;
-    /*top: 150%;*/
+    top: 150%;
     left: 39%;
     width: 400px;
     height: 200px; 
@@ -332,10 +332,10 @@ button:hover {
     padding:8px;
     position: relative;
     top: 90px;
-    left: 78px;
+    left: -20px;
     border: solid black 1px;
 }
-#closebtn{
+#closeBtn{
     color:black;
 }
 #checkDarkMode{

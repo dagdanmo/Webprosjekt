@@ -11,6 +11,7 @@ var homeSign = document.getElementById("homeImgDiv");
 var txtMiddle = document.getElementById("txtMiddle");
 var logOut = document.getElementById("logOut");
 
+
 console.log(localStorage);
 
 createNewTable.addEventListener("click", function(){
@@ -168,9 +169,10 @@ var selectColor;
             window.location.href = "index.html"; //will redirect to your blog page (an ex: blog.html)
          }, 1000);
     });
+    
 
 
-/* Dark mode part */
+/* Dark mode section */
 var checkbox = document.getElementById("checkDarkMode"); // checkbox
 var header = document.getElementById("header"); // header color (background)
 var footer = document.getElementById("footer"); // footer color (background-color)
@@ -181,6 +183,35 @@ var inputTableName = document.getElementById("inputTableName"); // Color for inp
 var confirmTableName = document.getElementById("confirmTableName"); // plus background color and plus-sign color (color and background-color)
 var center = document.getElementById("center"); // center color (background color)
 var txtMiddle = document.getElementById("txtMiddle"); // "TASK IT" text color (color)
+var txtDarkMode = document.getElementById("txtDarkMode");
+
+
+var settings = document.getElementById("settings");
+var settingsBox = document.getElementById("settingsBox");
+var checkBoxBtn = document.getElementById("checkBoxBtn");
+
+
+/*Makes the settings box appear */
+settings.addEventListener("click", function(){
+    console.log("Settings clicked");
+    settingsBox.style.top = "30%";
+    settingsBox.style.left = "39%";
+    settingsBox.style.transitionTimingFunction = "ease-in";
+    settingsBox.style.transitionDuration = "0.5s";
+    settingsBox.style.transitionDelay = "0s";
+    settingsBox.style.opacity = "1";
+})
+checkBoxBtn.addEventListener("click", function(){
+    console.log("close button clicked");
+    settingsBox.style.top = "150%";
+    settingsBox.style.left = "39%";
+    settingsBox.style.transitionTimingFunction = "ease-in";
+    settingsBox.style.transitionDuration = "0.5s";
+    settingsBox.style.transitionDelay = "0s";
+    settingsBox.style.opacity = "0";
+
+    
+})
 
 checkbox.addEventListener('change', function(e){
     console.log(checkbox.checked, checkbox.value);
@@ -188,14 +219,15 @@ checkbox.addEventListener('change', function(e){
         console.log("huket av");
         header.style.background = "#141414";
         footer.style.backgroundColor ="#141414";
-        plusVertical.style.backgroundColor ="#eeeeee";
-        plusHorizontal.style.backgroundColor ="#eeeeee";
+        plusVertical.style.backgroundColor ="#EEEEEE";
+        plusHorizontal.style.backgroundColor ="#EEEEEE";
         createNewTable.style.backgroundColor = "#303030";
         inputTableName.style.backgroundColor ="#353535";
         confirmTableName.style.backgroundColor ="#353535";
         confirmTableName.style.color = "#eeeeee";
         center.style.color = "#767D92";
         txtMiddle.style.color = "#eeeeee";
+        settingsBox.style.backgroundColor = "#8A928A"
         document.body.style.background = "black";
 
     } else {
@@ -210,6 +242,7 @@ checkbox.addEventListener('change', function(e){
         confirmTableName.style.color = "black";
         center.style.backgroundcolor = "#03acef";
         txtMiddle.style.color = "black";
+        settingsBox.style.backgroundColor = "#EEEEEE"
         document.body.style.background = "white";
     }
 })
