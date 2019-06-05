@@ -213,7 +213,7 @@ function createNewOrder(){
     const orderName = document.createElement("div");
     orderName.className = "orderName";
     orderName.id = "orderName"+cardId;
-    orderName.style.pointerEvents = "none";
+    orderName.style.pointerEvents = "none";    
 
     if(orderInput.value == ""){
         orderName.innerHTML = "NEW ORDER "+orderI;
@@ -223,12 +223,9 @@ function createNewOrder(){
 
     order.addEventListener("dragstart", dragStart);
     order.addEventListener("dragend", dragEnd);
-    /* orderMove = document.querySelectorAll(".orders"); */
-    
+
     order.append(orderName);
     currentCard.append(order);
-
-    /* currentCard.append(document.getElementById("orderInputContainer"+cardId)); */
 
     orderI++;
     orderInput.value = "";

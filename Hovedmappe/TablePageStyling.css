@@ -364,15 +364,19 @@ li.dropDown {
     border-radius: 5px;
 
     margin-top: 3%;
-    padding: 1%;
+    padding-top: 2%;
     width: 97.5%;
-    height: 40px;
 
     text-align: left;
 
     display: flex;
     flex-direction: column;
     cursor: pointer;
+}
+
+.orderName{
+    font-size: 20px;
+    text-align: center;
 }
 
 .edit{
