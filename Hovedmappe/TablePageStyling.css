@@ -440,6 +440,7 @@ li.dropDown {
     opacity: 0;
     z-index: 200;
     border: solid black 2px;
+    display: none;
 }
 
 

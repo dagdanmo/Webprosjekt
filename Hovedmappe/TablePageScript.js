@@ -339,14 +339,14 @@ var numberField = document.getElementById("number");
 var start = document.getElementById("start");
 var userPointsElement = document.getElementById("userPoints");
 var pointsEarnedElement = document.getElementById("pointsEarned");
-var startDropdown = document.getElementById("startDropdown");
+/* var startDropdown = document.getElementById("startDropdown"); */
 var dropdownDisplay = document.getElementById("dropDown_Score");
 var tableContainer = document.getElementById("container");
 
 var userPoints = 0;
 var pointsEarned = 200;
 
-startDropdown.addEventListener("click", function(){
+/* startDropdown.addEventListener("click", function(){
     tableContainer.style.filter = "blur(5px)"
     tableContainer.style.transition = "1s";
     dropdownDisplay.style.opacity = "0.8";
@@ -355,7 +355,7 @@ startDropdown.addEventListener("click", function(){
     setTimeout(function(){ myLoop(); }, 1500);
     setTimeout(function(){ removeDropdown(); }, 5500);
 
-});
+}); */
 
 function removeDropdown(){
     tableContainer.style.filter = "blur(0px)"
