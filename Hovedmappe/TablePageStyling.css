@@ -417,6 +417,14 @@ li.dropDown {
     margin-left: 2%;
 }
 
+.orderScore{
+    position: relative;
+    font-size: 14px;
+    text-align: left;
+    margin-left: 2%;
+    bottom: -10px;
+}
+
 .edit{
     position: absolute;
     align-self: flex-end;

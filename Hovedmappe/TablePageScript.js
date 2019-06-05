@@ -25,12 +25,18 @@ profileSign.addEventListener("click", function(){
 });
 
 // init
-let cardI = [0, 1, 2, 3, 4];
-let cardCounter = 0;
-let orderI = 0;
-let orderDrag;
-let cardId;
-let currentStarCard;
+    // Idenfication array for card creation, assigning a unique ID between 0-4 to all cards.
+    let cardI = [0, 1, 2, 3, 4];
+    // Counting cards for star function
+    let cardCounter = 0;
+    // assigning ID to orders
+    let orderI = 0;
+    let orderDrag;
+    let cardId;
+    let currentStarCard;
+    
+    // scores
+    let orderScore = 0;
 
 // main container
 const table = document.getElementById("container");
@@ -71,10 +77,9 @@ function popDown(){
 
 // Creating new cards
 function cardGenerator(){
-    console.log(cardI.length);
     
     if(cardI.length != 0){
-
+        // pulling out card ID from array
         const tempId = cardI[0];
         cardI.shift();
 
@@ -154,7 +159,7 @@ function cardGenerator(){
         alert("erroooor");
     }
 }
-
+// set starcard
 function setStarCard(e){
     cardId = e.target.id.substr(e.target.id.length -1);
     const currentStar = document.getElementById("star"+cardId);
@@ -170,6 +175,7 @@ function setStarCard(e){
 
 }
 
+// card edit popupwindow
 function editCardPop(e){
     
     cardId = e.target.id.substr(e.target.id.length -1);
@@ -232,13 +238,16 @@ function editCardPop(e){
     console.log(currentCard);
 }
 
+// delete card
 function deleteCardF(){
+    // get input and check for 'DELETE' to confirm and activate button.
     const deleteCardInput = document.getElementById("deleteCard");
     if(deleteCardInput.value == "DELETE"){
         if(cardId == currentStarCard){
             currentStarCard == "";
         }
         table.removeChild(document.getElementById("card"+cardId));
+        // put back card ID to card i array and open up for new cards
         cardI.push(cardId);
         newCardButton.style.display = "flex";
         document.getElementById("editPopContainer");
@@ -250,6 +259,9 @@ function deleteCardF(){
 // Creating new order
 function createNewOrder(){
     
+    //SCORE TESTING
+    orderScore = 1234;
+
     cardId = event.target.id.substr(event.target.id.length -1);
     const orderInput = document.getElementById("orderInput"+cardId);
     const currentCard = document.getElementById("card"+cardId);
@@ -262,8 +274,14 @@ function createNewOrder(){
     const orderName = document.createElement("div");
     orderName.className = "orderName";
     orderName.id = "orderName"+cardId;
-    orderName.style.pointerEvents = "none";    
-
+    orderName.style.pointerEvents = "none";   
+    
+    const orderScoreWeight = document.createElement("p");
+    orderScoreWeight.className = "orderScore";
+    orderScoreWeight.id = "orderScore"+orderI;
+    orderScoreWeight.style.pointerEvents = "none";
+    orderScoreWeight.innerHTML = "POINTS: " +orderScore;
+    
     if(orderInput.value == ""){
         orderName.innerHTML = "NEW ORDER "+orderI;
     } else if(orderInput.value != "" && orderInput.value.length <= 14){
@@ -282,11 +300,12 @@ function createNewOrder(){
     //editOrder.addEventListener("click", editOrderPop);
     
     order.append(editOrder);
-
+    
     order.addEventListener("dragstart", dragStart);
     order.addEventListener("dragend", dragEnd);
-
+    
     order.append(orderName);
+    order.append(orderScoreWeight);
     currentCard.append(order);
 
     orderI++;
@@ -410,7 +429,12 @@ var tableContainer = document.getElementById("container");
 var userPoints = 0;
 var pointsEarned = 200;
 
-function scorePop(){
+function scorePop(e){
+    // Get orderID and the right score ammount
+    const target = getDiv (e.target);
+    
+
+
     tableContainer.style.filter = "blur(5px)"
     tableContainer.style.transition = "1s";
     dropdownDisplay.style.opacity = "0.8";
@@ -443,7 +467,7 @@ function myLoop () {           //  create a loop function
       if (pointsEarned > 0) {            //  if the counter < 10, call the loop function
         myLoop();
         userPoints += 1;
-        pointsEarned -= 1; 
+        pointsEarned -= 1;
         pointsEarnedElement.innerText = pointsEarned;
         userPointsElement.innerText = userPoints;
             if(userPoints >= 100){
