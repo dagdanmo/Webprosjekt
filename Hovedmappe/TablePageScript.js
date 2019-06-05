@@ -53,7 +53,7 @@ popCardEnter.addEventListener("click", createNewCard);
 // open popup window for new card
 function newCardPopUp(){
     newCardPopContainer.style.display = "block";
-    newCardPopContainer.style.display = "none";
+    getCardName.focus();
     getCardName.value = "";
     tableContainer.style.filter = "blur(0px)";
 }
@@ -63,6 +63,9 @@ function createNewCard(){
     popDown();
 }
 
+function popDown(){
+    newCardPopContainer.style.display = "none";
+}
 
 // Creating new cards
 function cardGenerator(){
@@ -268,7 +271,7 @@ function dragEnd(){
 function dragOver(e){
     e.preventDefault();
     var target = getDiv (e.target);
-    
+
     if(e.target.className == "orders"){
         var bounding = target.getBoundingClientRect();
         var offset = bounding.y + (bounding.height/2);
@@ -401,6 +404,6 @@ function myLoop () {           //  create a loop function
    }, 10)
 }
 
-start.addEventListener("click", function(){
+/* start.addEventListener("click", function(){
     myLoop();
-});     
+});   */   
