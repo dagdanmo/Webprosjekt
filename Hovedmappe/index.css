@@ -86,9 +86,9 @@ body{
 #loginButton{
     widows: 150px;
     width: 98px;
-    border:2px solid white;
-    background-color: white;
+    border:2px solid rgb(20, 270, 20);
     border-radius:4px;
+    background-color: rgb(20, 270, 20);
     margin: 0;
     outline:none;
     padding:8px;
@@ -99,11 +99,11 @@ body{
 }
 
 
-<!-- #signUp{
+    #signUp{
     widows: 150px;
-    border:2px solid rgb(20, 270, 20);
+    border:2px solid white;
+    background-color: white;
     border-radius:4px;
-    background-color: rgb(20, 270, 20);
     margin:8px 0;
     outline:none;
     padding:8px;
