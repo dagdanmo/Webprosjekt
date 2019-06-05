@@ -330,11 +330,6 @@ function getDiv( target ) {
 
 
 
-
-
-
-
-
 var i = 0;
 
 var numberField = document.getElementById("number");
