@@ -357,8 +357,12 @@ li.dropDown {
     left: 13px;
 }
 
+#currentStar{
+    color: #FFCC00;
+}
+
 .stars:hover{
-    color: orange;
+    color: #FFCC00;
 }
 
 .orderInputContainer{
