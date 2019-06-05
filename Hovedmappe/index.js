@@ -16,7 +16,7 @@
                 setTimeout(function () {
                     localStorage.setItem("username", fetchUsername.value);
                     window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
-                 }, 1000);
+                 }, 300);
             }else{
                 console.log("Feil brukernavn eller passord.");
             }

@@ -594,7 +594,7 @@ function scorePop(){
 
     setTimeout(function(){ dropdownDisplayBlock(); }, 20);
     setTimeout(function(){ dropdownTransitions(); }, 200);
-    setTimeout(function(){ myLoop(); }, 1500);
+    setTimeout(function(){ delayedCounter(); }, 1500);
     setTimeout(function(){ removeDropdown(); }, 5000);
     setTimeout(function(){ dropdownDisplayNone();}, 6000);
 }
@@ -625,20 +625,21 @@ function dropdownDisplayNone(){
 
 
 
-var i = 1;                     //  set your counter to 1
+var i = 1;                                  //  set your counter to 1
 
-function myLoop () {           //  create a loop function
-   setTimeout(function () {    //  call a 3s setTimeout when the loop is called
-                              //  your code here
-                         //  increment the counter
+function delayedCounter () {                     //  create a loop function
+   setTimeout(function () {              //  call a 3s setTimeout when the loop is called
+                                         //  your code here
+                                         //  increment the counter
       if (pointsEarned > 0) {            //  if the counter < 10, call the loop function
-        myLoop();
+        delayedCounter();
         userPoints += 1;
         pointsEarned -= 1;
         pointsEarnedElement.innerText = pointsEarned;
         userPointsElement.innerText = userPoints;
             if(userPoints >= 100){
                 userPointsElement.style.left = "100px";
+                
             }else if(userPoints > 10){
                 userPointsElement.style.left = "140px";
             }
@@ -655,6 +656,8 @@ function myLoop () {           //  create a loop function
       }                        //  ..  setTimeout()
    }, 10)
 }
+
+console.log(localStorage);
 
 /* start.addEventListener("click", function(){
     myLoop();
