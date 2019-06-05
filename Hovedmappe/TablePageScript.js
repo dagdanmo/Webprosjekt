@@ -389,26 +389,32 @@ function editOrderPop(e){
         }
     });
 
-    const orderDescription = document.createElement("input");
+    const orderDescription = document.createElement("textarea");
     orderDescription.className = "orderDescription";
     orderDescription.id = "orderDescription"+getOrderId;
     orderDescription.placeholder = "Enter a description";
-    orderDescription.addEventListener("keyup", function(){
-        if(event.keyCode == 13){
-            editOrderPopEnter();
-        }
-    });
+    orderDescription.style.resize = "none";
 
     const orderScoreInput = document.createElement("input")
     orderScoreInput.className = "editInput";
     orderScoreInput.id = "orderScoreInput";
     orderScoreInput.maxLength = "2";
-    orderScoreInput.placeholder = "Enter score value for the order";
+    orderScoreInput.placeholder = "score";
     orderScoreInput.addEventListener("keyup", function(){
         if(event.keyCode == 13){
             editOrderPopEnter();
         }
     });
+
+    const orderScoreInfo = document.createElement("p");
+    orderScoreInfo.className = "orderScoreInfo";
+    orderScoreInfo.innerHTML = "Type in score earned when completing task";
+
+    // dato
+    const deadLine = document.createElement("input");
+    deadLine.className = "editinput";
+    deadLine.id = "deadLine";
+    deadLine.type = "datetime-local";
 
     const deleteOrderContainer = document.createElement("div");
     deleteOrderContainer.className = "editInput";
@@ -441,6 +447,8 @@ function editOrderPop(e){
     editWindow.append(editName);
     editWindow.append(orderDescription);
     editWindow.append(orderScoreInput);
+    editWindow.append(orderScoreInfo);
+    editWindow.append(deadLine);
     editWindow.append(deleteOrderContainer);
     
     editPop.append(editWindow);
@@ -545,26 +553,25 @@ function dragDrop(e){
     } else if ( e.target.className != "cards"){
         star = e.target.parentNode.id.substr(e.target.parentNode.id.length -1);
     }
-7
+
     if(currentStarCard == star){
 
         cardId = event.target.id.substr(event.target.id.length -1);
 
         getOrderId = orderDrag.id.substr(5);
         const getScoreId = document.getElementById("orderScore"+getOrderId);
-        const getScore = getScoreId.innerHTML.substr(7);
-        pointsEarned = getScore;
-        pointsEarnedElement.innerText = pointsEarned;
-        userPointsElement.innerText = userPoints;
+        if(getScoreId != null){
+            const getScore = getScoreId.innerHTML.substr(7);
+            pointsEarned = getScore;
+            pointsEarnedElement.innerText = pointsEarned;
+            userPointsElement.innerText = userPoints;
 
-        if(getScoreId.innerHTML != "DONE"){
-            scorePop();
+            if(getScoreId.innerHTML != "DONE"){
+                scorePop();
+            }
+            getScoreId.innerHTML = "DONE";
         }
-        getScoreId.innerHTML = "DONE";
     }
-
-    // Get orderID and the right score ammount
-
 }
 
 // get targeted div
@@ -579,6 +586,7 @@ function getDiv( target ) {
     }
 }
 
+
 var i = 0;
 
 var numberField = document.getElementById("number");
@@ -588,10 +596,12 @@ var pointsEarnedElement = document.getElementById("pointsEarned");
 var dropdownDisplay = document.getElementById("dropDown_Score");
 var tableContainer = document.getElementById("container");
 
-
-
 function scorePop(){
-
+    if(pointsEarned > 10){
+        pointsEarnedElement.style.left = "140px";
+    }else if(pointsEarned < 10){
+        pointsEarnedElement.style.left = "170px";
+    }
     setTimeout(function(){ dropdownDisplayBlock(); }, 20);
     setTimeout(function(){ dropdownTransitions(); }, 200);
     setTimeout(function(){ delayedCounter(); }, 1500);
@@ -611,7 +621,6 @@ function removeDropdown(){
     tableContainer.style.transition = "1s";
     dropdownDisplay.style.opacity = "0.0";
     dropdownDisplay.style.transition = "1s";
-    //HUSK Å ENDREEEEEE
 }
 
 function dropdownDisplayBlock(){
@@ -637,22 +646,20 @@ function delayedCounter () {                     //  create a loop function
         pointsEarned -= 1;
         pointsEarnedElement.innerText = pointsEarned;
         userPointsElement.innerText = userPoints;
-            if(userPoints >= 100){
-                userPointsElement.style.left = "100px";
-                
-            }else if(userPoints > 10){
-                userPointsElement.style.left = "140px";
-            }
-
-            if(pointsEarned > 100){
-                pointsEarnedElement.style.left = "100px";
-            }else if(pointsEarned > 10){
-                pointsEarnedElement.style.left = "140px";
-            }else if(pointsEarned < 10){
-                pointsEarnedElement.style.left = "170px";
-            }
-         
-            //  ..  again which will trigger another 
+           
+        if(userPoints >= 100){
+            userPointsElement.style.left = "100px";
+        }else if(userPoints > 10){
+            userPointsElement.style.left = "140px";
+        }
+        
+        if(pointsEarned > 10){
+            pointsEarnedElement.style.left = "140px";
+        }else if(pointsEarned < 10){
+            pointsEarnedElement.style.left = "170px";
+        }
+        
+        //  ..  again which will trigger another 
       }                        //  ..  setTimeout()
    }, 10)
 }
