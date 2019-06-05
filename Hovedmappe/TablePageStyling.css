@@ -308,18 +308,21 @@ li.dropDown {
 }
 
 #deleteCardContainer{
+    padding-top: 5%;
     margin:0;
+}
+
+#deleteCard{
+    position: relative;
+    float: right;
+    width: 80%;
+    bottom: -15px;
 }
 
 #deleteOrderContainer{
     /* position: relative; */
     padding-top: 20%;
     margin:0;
-}
-
-#deleteCard{
-    float: right;
-    width: 85%;
 }
 
 #deleteOrder{
@@ -466,10 +469,10 @@ li.dropDown {
 
 .orderName{
     position: relative;
-    font-size: 20px;
+    font-size: 18px;
     text-align: left;
     margin-left: 2%;
-    top: -25px;
+    top: -28px;
     width: 85%;
     overflow: hidden;
 }
@@ -478,8 +481,16 @@ li.dropDown {
     position: absolute;
     font-size: 10px;
     text-align: left;
-    left: 6px;
-    top: 18px;
+    left: 5px;
+    top: 12px;
+}
+
+.orderDeadLine{
+    position: absolute;
+    font-size: 12px;
+    text-align: left;
+    left: 5px;
+    top: 24px;
 }
 
 .edit{

@@ -25,6 +25,29 @@ profileSign.addEventListener("click", function(){
 });
 
 // init
+    // Date
+    let today = new Date();
+    let year = today.getFullYear();
+    let month = today.getMonth()+1;
+    let day = today.getDate();
+    let hour = today.getHours();
+    let minute = today.getMinutes();
+
+    if(month.toString().length == 1){
+        month = '0'+month;
+    }
+    if(day.toString().length == 1){
+        day = '0'+day;
+    }
+    if(hour.toString().length == 1){
+        hour = '0'+hour;
+    }
+    if(minute.toString().length == 1){
+        minute = '0'+minute;
+    }
+
+    let fullDate = year+'-'+month+'-'+day+'T'+hour+':'+minute;
+
     // Idenfication array for card creation, assigning a unique ID between 0-4 to all cards.
     let cardI = [0, 1, 2, 3, 4];
     // Counting cards for star function
@@ -415,6 +438,7 @@ function editOrderPop(e){
     deadLine.className = "editinput";
     deadLine.id = "deadLine";
     deadLine.type = "datetime-local";
+    deadLine.value = fullDate;
 
     const deleteOrderContainer = document.createElement("div");
     deleteOrderContainer.className = "editInput";
@@ -471,7 +495,14 @@ function editOrderPopEnter(){
         orderScoreWeight.innerHTML = "POINTS: " +orderScoreInput.value;
         document.getElementById("order"+getOrderId).append(orderScoreWeight);
     }
-
+    if(document.getElementById("deadLine").value != fullDate){
+        const orderDeadLine = document.createElement("p");
+        orderDeadLine.className = "orderDeadLine";
+        orderDeadLine.id = "orderDeadLine"+getOrderId;
+        orderDeadLine.style.pointerEvents = "none";
+        orderDeadLine.innerHTML = "Deadline: "+document.getElementById("deadLine").value.substr(0, 10)+"    "+document.getElementById("deadLine").value.substr(11);
+        document.getElementById("order"+getOrderId).append(orderDeadLine);
+    }
     body.removeChild(document.getElementById("editPopContainer"));
 }
 
@@ -541,7 +572,7 @@ function dragDrop(e){
     } else if ( target.style['border-top'] !== '' && e.target.className !== "cards"){
         target.style['border-top'] = '';
         target.parentNode.insertBefore(orderDrag, e.target);
-    } else if (e.target.className == "cards" ||  e.target.parentNode.className == "orderInputContainer" || e.target.className == "edit" || e.target.className == "stars"){
+    } else if (e.target.className == "cards" ||  e.target.parentNode.className == "orderInputContainer" || e.target.className == "edit" || e.target.className == "orderEdit" || e.target.className == "stars"){
         this.append(orderDrag);
     } else {
         alert("stupid");
