@@ -37,7 +37,7 @@ readSignup.addEventListener("click", function(){
     loginField.style.top = "0%";
     loginField.style.transitionDelay = "0s";
 
-    signupForm.style.top = "15%";
+    signupForm.style.top = "0%";
     signupForm.style.transitionTimingFunction = "ease-in";
     signupForm.style.transitionDuration = "0.5s";
     signupForm.style.transitionDelay = "0s";
@@ -203,7 +203,7 @@ register_Signup.addEventListener("click", function(){
         signupForm.style.opacity = "0";
         signupForm.style.top = "120%";
     
-        loginField.style.top = "30%";
+        loginField.style.top = "85%";
         loginField.style.transitionTimingFunction = "ease-in";
         loginField.style.transitionDuration = "0.5s";
         loginField.style.transitionDelay = "1.5s";

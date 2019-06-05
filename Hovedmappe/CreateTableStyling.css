@@ -11,12 +11,12 @@ body {
     align-items: center;
     padding: 0px 16px;
     height: 90px;
+    position: relative;
 }
-#profileImgDiv{
+#profileImgDiv {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    position: relative;
     display: inline-block;
 }
 #profileImg{
@@ -25,30 +25,30 @@ body {
     height: 60px;
     border-radius: 50%;
 }
-#homeImgDiv{
+#homeImgDiv {
     width: 60px;
     height: 60px;
     border-radius: 50%;
 }
-#homeImg{
+#homeImg {
     width: 60px;
     height: 60px;
     border-radius: 50%;
 }
-#homeImg:hover{
+#homeImg:hover {
     opacity: 0.5;
     cursor: pointer;
 }
-#profileImg:hover{
+#profileImg:hover {
     opacity: 0.5;
     cursor: pointer; 
 }
-#txtMiddle{
+#txtMiddle {
     width: 100px;
     height: 60px;
     border-radius: 50%;
 }
-#txtMiddle:hover{
+#txtMiddle:hover {
     opacity: 0.5;
     cursor: pointer;
 }
@@ -60,10 +60,14 @@ body {
   
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-    position: absolute;
     display: none;
-    background-color: #f1f1f1;
+    background-color: turquoise;
     z-index: 1;
+    position: absolute;
+    padding: 9px 9px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
 }
   
 /* Links inside the dropdown */
@@ -75,7 +79,7 @@ body {
   
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: red;
 }
   
 /* Show the dropdown menu on hover */
@@ -148,7 +152,7 @@ button:hover {
     padding: 0;
 }
 
-#center{
+#center {
     position: absolute;
     top: 90px;
     width: 100%;
@@ -156,8 +160,7 @@ button:hover {
     text-align: center;
     margin: 0;
 }
-
-#footer{
+#footer {
     position: absolute;
     bottom: 0px;
     background-color: #e0fbff;
@@ -189,8 +192,7 @@ button:hover {
     top: 50%;
     border: none;     
     width: 650px;
-    height: 300px;      
-    text-align: center;     
+    height: 300px;          
     font-size: 16px;     
     opacity: 0.6;     
     transition: 0.3s;     
@@ -204,9 +206,11 @@ button:hover {
     cursor: pointer;
 }
 
-#createNewTable:hover {opacity: 1}
+#createNewTable:hover {
+    opacity: 1
+}
 
-#inputTableName{
+#inputTableName {
     height: 70px;
     width: 400px;
     left: 70px;
@@ -220,7 +224,7 @@ button:hover {
     opacity: 0;
 }
 
-#confirmTableName{
+#confirmTableName {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -236,11 +240,11 @@ button:hover {
     cursor: pointer;
 }
 
-#plusSign{
-       cursor: pointer;
+#plusSign {
+    cursor: pointer;
 }
 
-#plusHorizontal{
+#plusHorizontal {
     cursor: pointer;
     position: absolute;
     height: 20px;
@@ -253,7 +257,7 @@ button:hover {
     margin-top: -10px;
     border-radius: 7px 7px 7px 7px;
 }
-#plusVertical{
+#plusVertical {
     cursor: pointer;
     position: absolute;;
     width: 20px;
@@ -268,7 +272,7 @@ button:hover {
 
 
 }
-.color{
+.color {
     position: absolute;
     border-radius: 50%;
     height: 50px;
@@ -276,54 +280,73 @@ button:hover {
     top: 200px;
 }
 
-#blue{
+#blue {
     left: 180px;
     background-color: #1aabd8;
     opacity: 0;
 }
 
-#red{
+#red {
     left: 120px;
     background-color: #ef5181;
     opacity: 0;
 }
 
-#orange{
+#orange {
     left: 240px;
     background-color: #fcb71e;
     opacity: 0;
 }
 
-#purple{
+#purple {
     left: 300px;
     background-color: #8e56a1;
     opacity: 0;
 }
-#green{
+
+#green {
     left: 360px;
-    background-color: #bdd549;
+    background-color: #bbdb19;
     opacity: 0;
 }
 
 #settingsBox{
+    /*opacity: 0.0;*/
     position: absolute;
-    top: 300px;
-    left: 100px;
+    /*top: 150%;*/
+    left: 39%;
     width: 400px;
     height: 200px; 
-    background-color: rgb(138, 146, 138);
+    background-color: #EEEEEE;
     z-index: 1;
     border-top-left-radius: 25%;
     border-bottom-right-radius: 25%;
+
+}
+#checkBoxBtn{
+    height: 40px;
+    width: 80px;
+    border:2px solid white;
+    border-radius: 4px;
+    outline:none;
+    padding:8px;
+    position: relative;
+    top: 90px;
+    left: 78px;
+    border: solid black 1px;
+}
+#closebtn{
+    color:black;
 }
 #checkDarkMode{
     position: relative;
     height: 20px;
     width: 20px;
-    top: 20px;
-    left: 90px;
+    top: 17px;
+    left: 130px;
 }
 #txtDarkMode{
+    color: black;
     position: relative;
     top: 56px;
 }
