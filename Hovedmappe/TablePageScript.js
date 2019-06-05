@@ -37,6 +37,8 @@ profileSign.addEventListener("click", function(){
     
     // scores
     let orderScore = 0;
+    let userPoints = 0;
+    let pointsEarned = 0;
 
 // main container
 const table = document.getElementById("container");
@@ -166,10 +168,12 @@ function setStarCard(e){
     for(var i = 0; i<cardCounter; i++){
         if(i == cardId){
             currentStar.innerHTML = "&starf;";
+            currentStar.style.color = "#FFCC00";
             currentStarCard = cardId;
             console.log(currentStarCard);
         } else {
             document.getElementById("star"+i).innerHTML = "&star;";
+            document.getElementById("star"+i).style.color ="#000";
         }
     }
 
@@ -260,7 +264,7 @@ function deleteCardF(){
 function createNewOrder(){
     
     //SCORE TESTING
-    orderScore = 1234;
+    orderScore = prompt("enter score");
 
     cardId = event.target.id.substr(event.target.id.length -1);
     const orderInput = document.getElementById("orderInput"+cardId);
@@ -380,7 +384,7 @@ function dragDrop(e){
     } else if ( target.style['border-top'] !== '' && e.target.className !== "cards"){
         target.style['border-top'] = '';
         target.parentNode.insertBefore(orderDrag, e.target);
-    } else if (e.target.className == "cards" ||  e.target.parentNode.className == "orderInputContainer" || e.target.className == "edit"){
+    } else if (e.target.className == "cards" ||  e.target.parentNode.className == "orderInputContainer" || e.target.className == "edit" || e.target.className == "stars"){
         this.append(orderDrag);
     } else {
         alert("stupid");
@@ -392,11 +396,25 @@ function dragDrop(e){
     } else if ( e.target.className != "cards"){
         star = e.target.parentNode.id.substr(e.target.parentNode.id.length -1);
     }
-
+7
     if(currentStarCard == star){
-        scorePop();
 
+        cardId = event.target.id.substr(event.target.id.length -1);
+
+        const getOrderId = orderDrag.id.substr(5);
+        const getScoreId = document.getElementById("orderScore"+getOrderId);
+        const getScore = getScoreId.innerHTML.substr(7);
+        pointsEarned = getScore;
+        pointsEarnedElement.innerText = pointsEarned;
+        userPointsElement.innerText = userPoints;
+
+        if(getScoreId.innerHTML != "DONE"){
+            scorePop();
+        }
+        getScoreId.innerHTML = "DONE";
     }
+
+    // Get orderID and the right score ammount
 
 }
 
@@ -412,10 +430,6 @@ function getDiv( target ) {
     }
 }
 
-
-
-
-
 var i = 0;
 
 var numberField = document.getElementById("number");
@@ -425,17 +439,9 @@ var pointsEarnedElement = document.getElementById("pointsEarned");
 var dropdownDisplay = document.getElementById("dropDown_Score");
 var tableContainer = document.getElementById("container");
 
-var userPoints = 0;
-var pointsEarned = 200;
 
 
-    
-    
-
-
-function scorePop(e){
-    // Get orderID and the right score ammount
-    const target = getDiv (e.target);
+function scorePop(){
 
     setTimeout(function(){ dropdownDisplayBlock(); }, 20);
     setTimeout(function(){ dropdownTransitions(); }, 200);
@@ -467,8 +473,7 @@ function dropdownDisplayNone(){
     dropdownDisplay.style.display = "none";
 }
 
-pointsEarnedElement.innerText = pointsEarned;
-userPointsElement.innerText = userPoints;
+
 
 
 var i = 1;                     //  set your counter to 1
