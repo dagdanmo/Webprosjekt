@@ -1,6 +1,5 @@
 body{
     background-color: #CCF3FF;
-    z-index: 0;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -35,7 +34,6 @@ body{
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    z-index: 10;
 }
 #homeImg{
     width: 60px;
@@ -54,7 +52,6 @@ body{
     width: 100px;
     height: 60px;
     border-radius: 50%;
-    z-index: 10;
 }
 #txtMiddle:hover{
     opacity: 0.5;
@@ -120,24 +117,19 @@ button:hover {
     padding: 0;
 }
 
-li a, .dropBtn
-{
+li a, .dropBtn {
     display:inline-block;
     color: white;
     text-align: center;
     padding: 20px 22px;
     text-decoration: none;
-    z-index: 100;
 }
-li a:hover, .dropDown:hover .dropBtn
-{
+li a:hover, .dropDown:hover .dropBtn {
     background: #786BDE;
-    z-index: 100;
+
 }
-li.dropDown
-{
+li.dropDown {
     display: inline-block;
-    z-index: 100;
 }
 .dropDownContent
 {
@@ -146,30 +138,23 @@ li.dropDown
     background: #333;
     min-width: 124px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 100;
 }
-.dropDownContent a
-{
+.dropDownContent a {
     color: black;
     padding: 20px 22px;
     text-decoration: none;
     display: block;
-    z-index: 100;
 }
-.dropDownContent a:hover
-{
+.dropDownContent a:hover {
     background: #d7d2ff;
-    z-index: 100;
 }
-.dropDown:hover .dropDownContent
-{
+.dropDown:hover .dropDownContent {
     display: block;
-    z-index: 100;
 }
 /* Header end */
 
 .text{
-    
+    margin: 0;
 }
 
 
