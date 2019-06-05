@@ -364,6 +364,7 @@ li.dropDown {
     border-radius: 5px;
 
     margin-top: 3%;
+    margin-left: 1%;
     padding-top: 2%;
     width: 97.5%;
 
@@ -376,7 +377,8 @@ li.dropDown {
 
 .orderName{
     font-size: 20px;
-    text-align: center;
+    text-align: left;
+    margin-left: 2%;
 }
 
 .edit{

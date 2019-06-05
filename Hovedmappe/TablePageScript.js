@@ -217,9 +217,22 @@ function createNewOrder(){
 
     if(orderInput.value == ""){
         orderName.innerHTML = "NEW ORDER "+orderI;
-    } if(orderInput.value != ""){
+    } else if(orderInput.value != "" && orderInput.value.length <= 14){
         orderName.innerHTML = orderInput.value.toUpperCase();
-    } 
+    } else {
+        orderInput.value = "";
+        orderInput.placeholder = "Too many letters, max 14";
+        orderName.innerHTML = "NEW ORDER "+orderI;
+    }
+    
+    // Edit button for cards
+    const editOrder = document.createElement("span");
+    editOrder.className = "edit";
+    editOrder.id = "orderEdit"+cardI;
+    editOrder.innerHTML = "&#9998;";
+    //editOrder.addEventListener("click", editOrderPop);
+    
+    order.append(editOrder);
 
     order.addEventListener("dragstart", dragStart);
     order.addEventListener("dragend", dragEnd);
