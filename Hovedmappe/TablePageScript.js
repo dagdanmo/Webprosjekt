@@ -128,12 +128,27 @@ function cardGenerator(){
         orderEnter.className = "enter";
         orderEnter.id = "orderEnter"+tempId;
         orderEnter.innerHTML = "&plus;";
-        orderEnter.addEventListener("click",createNewOrder);
+        orderEnter.addEventListener("click",function(){
+            if(getOrderName.value.length <= 14){
+                createNewOrder();
+            } else {
+                getOrderName.value = "";
+                getOrderName.placeholder = "Max 14 letters";
+            }
+        });
         
         const getOrderName = document.createElement("input");
         getOrderName.className = "orderInput";
         getOrderName.id = "orderInput"+tempId;
         getOrderName.placeholder = "Enter new order name....";
+        getOrderName.addEventListener("keyup", function(){
+            if(event.keyCode == 13 && getOrderName.value.length <= 10){
+                createNewOrder();
+            } else if (event.keyCode == 13 && getOrderName.value.length > 10){
+                getOrderName.value = "";
+                getOrderName.placeholder = "Max 14 letters";
+            }
+        });
         
         orderInputContainer.append(orderEnter);
         orderInputContainer.append(getOrderName);
@@ -198,6 +213,11 @@ function editCardPop(e){
     editName.className = "editInput";
     editName.id = "editName";
     editName.placeholder = "Enter new cardname";
+    editName.addEventListener("keyup", function(){
+        if(event.keyCode == 13){
+            editPopEnter();
+        }
+    });
 
     const deleteCardContainer = document.createElement("div");
     deleteCardContainer.className = "editInput";
@@ -211,6 +231,12 @@ function editCardPop(e){
     deleteCard.className = "editInput";
     deleteCard.id = "deleteCard";
     deleteCard.placeholder = "Enter 'DELETE' to confirm";
+    deleteCard.addEventListener("keyup", function(){
+        if(event.keyCode == 13){
+            deleteCardF();
+        }
+    });
+    
     
     deleteCardContainer.append(deleteIcon);
     deleteCardContainer.append(deleteCard);
@@ -273,12 +299,8 @@ function createNewOrder(){
     
     if(orderInput.value == ""){
         orderName.innerHTML = "NEW ORDER "+orderI;
-    } else if(orderInput.value != "" && orderInput.value.length <= 14){
+    } else if(orderInput.value != ""){
         orderName.innerHTML = orderInput.value.toUpperCase();
-    } else {
-        orderInput.value = "";
-        orderInput.placeholder = "Too many letters, max 14";
-        orderName.innerHTML = "NEW ORDER "+orderI;
     }
     
     // Edit button for cards
