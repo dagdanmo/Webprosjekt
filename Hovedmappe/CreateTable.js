@@ -7,6 +7,9 @@ var colorBlue = document.getElementById("blue");
 var colorOrange = document.getElementById("orange");
 var colorPurple = document.getElementById("purple");
 var colorGreen = document.getElementById("green");
+var homeSign = document.getElementById("homeImgDiv");
+var txtMiddle = document.getElementById("txtMiddle");
+var profileSign = document.getElementById("profileImgDiv");
 
 console.log(localStorage);
 
@@ -146,4 +149,22 @@ var selectColor;
         }else{
             console.log("Insert table name.")
         }
+    });
+    homeSign.addEventListener("click", function(){
+
+        setTimeout(function () {
+            window.location.href = "index.html"; //will redirect to your blog page (an ex: blog.html)
+         }, 1000);
+    });
+    txtMiddle.addEventListener("click", function(){
+
+        setTimeout(function () {
+            window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
+         }, 1000);
+    });
+    profileSign.addEventListener("click", function(){
+
+        setTimeout(function () {
+            window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
+         }, 1000);
     });

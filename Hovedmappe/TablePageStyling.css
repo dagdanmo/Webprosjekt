@@ -1,6 +1,5 @@
 body{
     background-color: #CCF3FF;
-    z-index: 0;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -11,6 +10,7 @@ body{
     -ms-user-select: none;
     user-select: none;
 }
+/* Header start */
 #header {
     background: #03acef;
     display: flex;
@@ -34,7 +34,6 @@ body{
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    z-index: 10;
 }
 #homeImg{
     width: 60px;
@@ -53,7 +52,6 @@ body{
     width: 100px;
     height: 60px;
     border-radius: 50%;
-    z-index: 10;
 }
 #txtMiddle:hover{
     opacity: 0.5;
@@ -70,9 +68,9 @@ body{
 .headerElements h1 {
     margin: 0;
 }
-@media (min-width: 550px) {
+@media (min-width: 450px) {
     .headerElements {
-      flex: 0 1 48%;
+      flex: 0 1 44%;
     }
 }
 @media (min-width: 1300px) {
@@ -90,9 +88,9 @@ nav ul {
     justify-content: space-between;
     align-items: center;
 }
-@media (min-width: 550px) {
+@media (min-width: 450px) {
     nav {
-      flex: 0 1 52%;
+      flex: 0 1 56%;
     }
     
 }
@@ -119,24 +117,19 @@ button:hover {
     padding: 0;
 }
 
-li a, .dropBtn
-{
+li a, .dropBtn {
     display:inline-block;
     color: white;
     text-align: center;
     padding: 20px 22px;
     text-decoration: none;
-    z-index: 100;
 }
-li a:hover, .dropDown:hover .dropBtn
-{
+li a:hover, .dropDown:hover .dropBtn {
     background: #786BDE;
-    z-index: 100;
+
 }
-li.dropDown
-{
+li.dropDown {
     display: inline-block;
-    z-index: 100;
 }
 .dropDownContent
 {
@@ -145,28 +138,23 @@ li.dropDown
     background: #333;
     min-width: 124px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 100;
 }
-.dropDownContent a
-{
+.dropDownContent a {
     color: black;
     padding: 20px 22px;
     text-decoration: none;
     display: block;
-    z-index: 100;
 }
-.dropDownContent a:hover
-{
+.dropDownContent a:hover {
     background: #d7d2ff;
-    z-index: 100;
 }
-.dropDown:hover .dropDownContent
-{
+.dropDown:hover .dropDownContent {
     display: block;
-    z-index: 100;
 }
+/* Header end */
+
 .text{
-    
+    margin: 0;
 }
 
 
@@ -176,7 +164,7 @@ li.dropDown
     position: fixed;
     padding-top: 5%;
     left: 0;
-    top: 10%;
+    top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -188,27 +176,27 @@ li.dropDown
 .popupWindow{
     background-color: #EDFBFF;
     margin: auto;
-    padding: 1.1%;
+    padding: 1% 0.5% 1% 0.5%;
     border: 1px solid #888;
     border-radius: 15px;
     width: 300px;
-    height: 45px;
+    display: inline-block;
 }
 
 .popInput{
-    width: 240px;
-    height: 41px;
-    float: left;
+    width: 228px;
+    height: 44px;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 20px;
     text-align: center;
+    float: left;
 }
 
 .enter{ 
     padding-right: 3.5%;
     color: #aaaaaa;
     float: left;
-    font-size: 38px;
+    font-size: 250%;
     font-weight: bold;
 }
 
@@ -222,7 +210,7 @@ li.dropDown
 .close{
     color:#aaaaaa;
     float: right;
-    font-size: 38px;
+    font-size: 250%;
     font-weight: bold;
 }
 
@@ -233,7 +221,7 @@ li.dropDown
     cursor: pointer;
 }
 /* Popup End */
-
+/* Edit window start */
 .editPopContainer{
     display: none;
     position: fixed;
@@ -251,13 +239,48 @@ li.dropDown
 
 .editPop{
     background-color: #EDFBFF;
-    margin: auto;
+    margin: 0;
+    padding: 0;
     padding: 1.1%;
     border: 1px solid #888;
     border-radius: 15px;
     width: 300px;
-    height: 45px;
+    display: inline-block;
+    text-align: center;
 }
+
+.editInput{
+    width: 100%;
+    height: 41px;
+    border-radius: 5px;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+#editEnter{
+    position: relative;
+    top:0;
+    font-size: 250%;
+}
+
+#editClose{
+    position: relative;
+    top: 0;
+    font-size: 250%;
+}
+
+/* active card in edit window */
+.editCardName{
+    position: relative;
+    font-size: 20px;
+    left: 10%;
+    top: -10px;
+    width: 70%;
+    text-align: center;
+}
+
+/* Edit window end */
 
 #newCardButtonContainer{
     width: 110px;
@@ -341,15 +364,19 @@ li.dropDown
     border-radius: 5px;
 
     margin-top: 3%;
-    padding: 1%;
+    padding-top: 2%;
     width: 97.5%;
-    height: 40px;
 
     text-align: left;
 
     display: flex;
     flex-direction: column;
     cursor: pointer;
+}
+
+.orderName{
+    font-size: 20px;
+    text-align: center;
 }
 
 .edit{
