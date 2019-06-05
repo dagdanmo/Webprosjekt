@@ -382,7 +382,6 @@ var numberField = document.getElementById("number");
 var start = document.getElementById("start");
 var userPointsElement = document.getElementById("userPoints");
 var pointsEarnedElement = document.getElementById("pointsEarned");
-
 var dropdownDisplay = document.getElementById("dropDown_Score");
 var tableContainer = document.getElementById("container");
 
@@ -390,15 +389,19 @@ var userPoints = 0;
 var pointsEarned = 200;
 
 function scorePop(){
+    setTimeout(function(){ dropdownDisplayBlock(); }, 20);
+    setTimeout(function(){ dropdownTransitions(); }, 200);
+    setTimeout(function(){ myLoop(); }, 1500);
+    setTimeout(function(){ removeDropdown(); }, 5000);
+    setTimeout(function(){ dropdownDisplayNone();}, 6000);
+}
+
+function dropdownTransitions(){
     tableContainer.style.filter = "blur(5px)"
     tableContainer.style.transition = "1s";
     dropdownDisplay.style.opacity = "0.8";
     dropdownDisplay.style.transition = "1s";
-    dropdownDisplay.style.display = "block";
-    setTimeout(function(){ myLoop(); }, 1500);
-    setTimeout(function(){ removeDropdown(); }, 5500);
-
-}
+};
 
 function removeDropdown(){
     tableContainer.style.filter = "blur(0px)"
@@ -406,6 +409,13 @@ function removeDropdown(){
     dropdownDisplay.style.opacity = "0.0";
     dropdownDisplay.style.transition = "1s";
     //HUSK Å ENDREEEEEE
+}
+
+function dropdownDisplayBlock(){
+    dropdownDisplay.style.display = "block";
+}
+
+function dropdownDisplayNone(){
     dropdownDisplay.style.display = "none";
 }
 
