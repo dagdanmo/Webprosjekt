@@ -313,7 +313,7 @@ button:hover {
 #settingsBox{
     opacity: 0.0;
     position: absolute;
-    top: 150%;
+    top: 80%;
     left: 39%;
     width: 400px;
     height: 200px; 
