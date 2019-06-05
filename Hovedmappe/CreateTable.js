@@ -9,7 +9,7 @@ var colorPurple = document.getElementById("purple");
 var colorGreen = document.getElementById("green");
 var homeSign = document.getElementById("homeImgDiv");
 var txtMiddle = document.getElementById("txtMiddle");
-var profileSign = document.getElementById("profileImgDiv");
+var logOut = document.getElementById("logOut");
 
 console.log(localStorage);
 
@@ -162,9 +162,9 @@ var selectColor;
             window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
          }, 1000);
     });
-    profileSign.addEventListener("click", function(){
+    logOut.addEventListener("click", function(){
 
         setTimeout(function () {
-            window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
+            window.location.href = "index.html"; //will redirect to your blog page (an ex: blog.html)
          }, 1000);
     });

@@ -1,4 +1,4 @@
-body{
+body {
     font-family: sans-serif;
     background-color: #e0fbff;
     margin: 0;
@@ -11,68 +11,83 @@ body{
     align-items: center;
     padding: 0px 16px;
     height: 90px;
+    position: relative;
 }
-#profileImgDiv{
+#profileImgDiv {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: inline-block;
+}
+#profileImg {
     width: 60px;
     height: 60px;
     border-radius: 50%;
     position: relative;
-    display: inline-block;
+    
 }
-#profileImg{
+#homeImgDiv {
     width: 60px;
     height: 60px;
     border-radius: 50%;
 }
-#homeImgDiv{
+#homeImg {
     width: 60px;
     height: 60px;
     border-radius: 50%;
 }
-#homeImg{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-}
-#homeImg:hover{
+#homeImg:hover {
     opacity: 0.5;
     cursor: pointer;
 }
-#profileImg:hover{
+#profileImg:hover {
     opacity: 0.5;
     cursor: pointer; 
 }
-#txtMiddle{
+#txtMiddle {
     width: 100px;
     height: 60px;
     border-radius: 50%;
 }
-#txtMiddle:hover{
+#txtMiddle:hover {
     opacity: 0.5;
     cursor: pointer;
 }
-#dropDownContent{
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 100px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    display: inline-block;
 }
-#dropDownContent a{
+  
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    background-color: turquoise;
+    z-index: 1;
+    position: absolute;
+    padding: 9px 9px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+  
+/* Links inside the dropdown */
+.dropdown-content a {
     color: black;
-    padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
-/*#dropDownContent a:hover {background-color: #f1f1f1};*/
-
-#dropDown:hover #dropDownContent{
+  
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: red;
+}
+  
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
     display: block;
 }
-#dropDown:hover #profileBtn{
-    background-color: #3e8e41;
-    
-}
+
 .headerElements {
     flex: 0 1 100%;
 }
@@ -137,39 +152,7 @@ button:hover {
     padding: 0;
 }
 
-li a, .dropBtn {
-    display:inline-block;
-    color: white;
-    text-align: center;
-    padding: 20px 22px;
-    text-decoration: none;
-}
-li a:hover, .dropDown:hover .dropBtn {
-    background: #786BDE;
-}
-li.dropDown {
-    display: inline-block;
-}
-.dropDownContent {
-    display:none;
-    position: absolute;
-    background: #333;
-    min-width: 124px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-.dropDownContent a {
-    color: black;
-    padding: 20px 22px;
-    text-decoration: none;
-    display: block;
-}
-.dropDownContent a:hover {
-    background: #d7d2ff;
-}
-.profileImgDiv:hover .dropDownContent {
-    display: block;
-}
-#center{
+#center {
     position: absolute;
     top: 90px;
     background-color: #ffffff;
@@ -178,7 +161,7 @@ li.dropDown {
     text-align: center;
     margin: 0;
 }
-#footer{
+#footer {
     position: absolute;
     bottom: 0px;
     background-color: #e0fbff;
@@ -211,8 +194,7 @@ li.dropDown {
     border: none;     
     color: white;
     width: 650px;
-    height: 300px;      
-    text-align: center;     
+    height: 300px;          
     font-size: 16px;     
     opacity: 0.6;     
     transition: 0.3s;     
@@ -226,9 +208,11 @@ li.dropDown {
     cursor: pointer;
 }
 
-#createNewTable:hover {opacity: 1}
+#createNewTable:hover {
+    opacity: 1
+}
 
-#inputTableName{
+#inputTableName {
     height: 70px;
     width: 400px;
     left: 70px;
@@ -242,7 +226,7 @@ li.dropDown {
     opacity: 0;
 }
 
-#confirmTableName{
+#confirmTableName {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -258,12 +242,12 @@ li.dropDown {
     cursor: pointer;
 }
 
-#plusSign{
+#plusSign {
     
     cursor: pointer;
 }
 
-#plusHorizontal{
+#plusHorizontal {
     cursor: pointer;
     position: absolute;
     height: 20px;
@@ -276,7 +260,7 @@ li.dropDown {
     margin-top: -10px;
     border-radius: 7px 7px 7px 7px;
 }
-#plusVertical{
+#plusVertical {
     cursor: pointer;
     position: absolute;;
     width: 20px;
@@ -291,7 +275,7 @@ li.dropDown {
 
 
 }
-.color{
+.color {
     position: absolute;
     border-radius: 50%;
     height: 50px;
@@ -299,31 +283,31 @@ li.dropDown {
     top: 200px;
 }
 
-#blue{
+#blue {
     left: 180px;
     background-color: #1aabd8;
     opacity: 0;
 }
 
-#red{
+#red {
     left: 120px;
     background-color: #ef5181;
     opacity: 0;
 }
 
-#orange{
+#orange {
     left: 240px;
     background-color: #fcb71e;
     opacity: 0;
 }
 
-#purple{
+#purple {
     left: 300px;
     background-color: #8e56a1;
     opacity: 0;
 }
 
-#green{
+#green {
     left: 360px;
     background-color: #bdd549;
     opacity: 0;
