@@ -25,7 +25,8 @@ profileSign.addEventListener("click", function(){
 });
 
 // init
-let cardI = 0;
+let cardI = [0, 1, 2, 3, 4];
+let cardCounter = 0;
 let orderI = 0;
 let orderDrag;
 let cardId;
@@ -70,21 +71,26 @@ function popDown(){
 
 // Creating new cards
 function cardGenerator(){
-    if(cardI <= 4){
-        
+    console.log(cardI.length);
+    
+    if(cardI.length != 0){
+
+        const tempId = cardI[0];
+        cardI.shift();
+
         const newCard = document.createElement("div");
         newCard.className = "cards";
-        newCard.id = "card"+cardI;
+        newCard.id = "card"+tempId;
         
         const newCardName = document.createElement("p");
         newCardName.className = "newCardName";
-        newCardName.id = "newCardName"+cardI;
+        newCardName.id = "newCardName"+tempId;
         newCardName.style.pointerEvents = "none";
         newCard.append(newCardName);
         
         // checking for input, if no user input cardname = new card + cardI
         if(getCardName.value == ""){
-            newCardName.innerHTML = "NEW CARD "+cardI;
+            newCardName.innerHTML = "NEW CARD "+tempId;
         } if(getCardName.value != ""){
             newCardName.innerHTML = getCardName.value.toUpperCase();
         } 
@@ -99,7 +105,7 @@ function cardGenerator(){
         // Star
         const cardStar = document.createElement("span");
         cardStar.className = "stars";
-        cardStar.id = "star"+cardI;
+        cardStar.id = "star"+tempId;
         cardStar.innerHTML = "&star;";
         newCard.append(cardStar);
         cardStar.addEventListener("click", setStarCard);
@@ -107,7 +113,7 @@ function cardGenerator(){
         // Edit button for cards
         const editCard = document.createElement("span");
         editCard.className = "edit";
-        editCard.id = "cardEdit"+cardI;
+        editCard.id = "cardEdit"+tempId;
         editCard.innerHTML = "&#9998;";
         editCard.addEventListener("click", editCardPop);
         newCard.append(editCard);
@@ -115,17 +121,17 @@ function cardGenerator(){
         // Order input init
         let orderInputContainer = document.createElement("div");
         orderInputContainer.className = "orderInputContainer";
-        orderInputContainer.id = "orderInputContainer"+cardI;
+        orderInputContainer.id = "orderInputContainer"+tempId;
         
         const orderEnter = document.createElement("span");
         orderEnter.className = "enter";
-        orderEnter.id = "orderEnter"+cardI;
+        orderEnter.id = "orderEnter"+tempId;
         orderEnter.innerHTML = "&plus;";
         orderEnter.addEventListener("click",createNewOrder);
         
         const getOrderName = document.createElement("input");
         getOrderName.className = "orderInput";
-        getOrderName.id = "orderInput"+cardI;
+        getOrderName.id = "orderInput"+tempId;
         getOrderName.placeholder = "Enter new order name....";
         getOrderName.addEventListener("keyup", function(){
             if(event.keyCode == 13){
@@ -138,13 +144,12 @@ function cardGenerator(){
         newCard.append(orderInputContainer);
         table.append(newCardButton);
         
-        cardI++;
-        
         // max cards
-        if(cardI == 5){
+        if(cardI.length == 0){
             newCardButton.style.display = "none";
         }
         
+        cardCounter++;
     } else {
         alert("erroooor");
     }
@@ -153,7 +158,7 @@ function cardGenerator(){
 function setStarCard(e){
     cardId = e.target.id.substr(e.target.id.length -1);
     const currentStar = document.getElementById("star"+cardId);
-    for(var i = 0; i<cardI; i++){
+    for(var i = 0; i<cardCounter; i++){
         if(i == cardId){
             currentStar.innerHTML = "&starf;";
             currentStarCard = cardId;
@@ -206,6 +211,7 @@ function editCardPop(e){
     const deleteIcon = document.createElement("span");
     deleteIcon.id = "deleteIcon";
     deleteIcon.innerHTML = "&#9760;";
+    deleteIcon.addEventListener("click", deleteCardF);
     const deleteCard = document.createElement("input");
     deleteCard.className = "editInput";
     deleteCard.id = "deleteCard";
@@ -224,6 +230,21 @@ function editCardPop(e){
     body.append(editPop);
     
     console.log(currentCard);
+}
+
+function deleteCardF(){
+    const deleteCardInput = document.getElementById("deleteCard");
+    if(deleteCardInput.value == "DELETE"){
+        if(cardId == currentStarCard){
+            currentStarCard == "";
+        }
+        table.removeChild(document.getElementById("card"+cardId));
+        cardI.push(cardId);
+        newCardButton.style.display = "flex";
+        document.getElementById("editPopContainer");
+        editpopDown();
+        cardCounter--;
+    }
 }
 
 // Creating new order
