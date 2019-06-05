@@ -11,6 +11,7 @@ body{
     justify-content: center;
     align-items: center;
     padding: 8px 1px 0;
+    height: 10%;
 }
 #profileImgDiv{
     width: 60px;
@@ -47,10 +48,9 @@ button {
 }
 #profileImg:hover{
     opacity: 0.5;
-    cursor: pointer; {
-        
+    cursor: pointer;        
     }
-}
+
 #txtMiddle{
     width: 100px;
     height: 60px;

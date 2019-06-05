@@ -1,6 +1,6 @@
 body{
     position: fixed;
-    background-color: rgb(224,251,255);
+    background-color: rgb(255, 255, 255);
     left: 0px; 
     margin: 0;
     padding: 0;
@@ -12,31 +12,37 @@ body{
 #backgroundLeft{
     position: absolute;
     height: 100%;
-    width: 73%;
+    width: 100%;
     padding: 0;
     margin: 0;
+    filter: blur(4px);
 }
 
 #rightBox{
-    z-index: 0;
-    position:absolute;
-    background-color: #e0fbff;
     position: absolute;
-    height: 100%;
-    width: 30%;
-    left: 70%;
-    top: 0px;
-    padding: 0;
-    margin: 0;
-}
+    background-color: whitesmoke;
+    position: absolute;
+    height: 400px;
+    width: 700px;
+    margin-left: -350px;
+    margin-top: -200px;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px 10px 10px 10px;
+    opacity: 0.95;
+    border: solid black 1.5px;
+    overflow: hidden;
+} 
 
 #loginField{
     position: absolute;
-    height: 100%;
-    width: 40%;
-    left: 80%;
-    top: 30%;
-    margin: 0;
+    height: 125px;
+    width: 176px;
+    left: 52%;
+    top: 85%;
+    margin-top: -150px;
+    margin-left: -100px;
+    z-index: 1000;
 }
 
 #logo{
@@ -56,7 +62,7 @@ body{
     position: absolute;
     transform: scale;
     widows: 150px;
-    border: 2px solid white;
+    border: solid black 1px;
     border-radius: 4px;
     outline: none;
     padding:8px;
@@ -74,20 +80,22 @@ body{
     top:45px;
     left: 0px;
     width: 158px;
+
 }
 
 #loginButton{
     widows: 150px;
-    width: 100px;
+    width: 98px;
     border:2px solid white;
     background-color: white;
     border-radius:4px;
-    margin:8px 0;
+    margin: 0;
     outline:none;
     padding:8px;
     position: absolute;
-    top: 82px;
+    top: 90px;
     left: 78px;
+    border: solid black 1px;
 }
 
 
@@ -103,6 +111,7 @@ body{
     top: 82px;
     width: 75px;
     left: 0px;
+    border: solid black 1px;
 }
 
 
@@ -111,8 +120,8 @@ body{
     z-index: 100;
     position: absolute;
     width: 30%;
-    top: 50%;
-    left: 80%;
+    top: 120%;
+    left: 38%;
     margin: 0;
 }
 
@@ -152,6 +161,7 @@ body{
     left: 0px;
     border-color: rgb(20, 270, 20);
     background-color: rgb(20, 270, 20);
+    border: solid black 1px;
 }
 #registerText{
     top: -19px;
