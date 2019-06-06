@@ -9,19 +9,19 @@ homeSign.addEventListener("click", function(){
 
     setTimeout(function () {
         window.location.href = "index.html"; //will redirect to your blog page (an ex: blog.html)
-     }, 1000);
+     }, 300);
 });
 txtMiddle.addEventListener("click", function(){
 
     setTimeout(function () {
         window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
-     }, 1000);
+     }, 300);
 });
 profileSign.addEventListener("click", function(){
 
     setTimeout(function () {
         window.location.href = "TablePage.html"; //will redirect to your blog page (an ex: blog.html)
-     }, 1000);
+     }, 300);
 });
 
 // init
