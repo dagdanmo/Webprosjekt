@@ -113,7 +113,6 @@ var selectColor;
 
         colorRed.addEventListener("click", function(){
             selectColor = "#ef5181";
-            console.log("red selected!")
             createNewTable.style.backgroundColor = selectColor;
             borderRemover();
             colorRed.style.border = "2px solid black";
@@ -123,7 +122,6 @@ var selectColor;
 
         colorBlue.addEventListener("click", function(){
             selectColor = "#1aabd8";
-            console.log("Blue selected!");
             createNewTable.style.backgroundColor = selectColor;
             borderRemover();
             colorBlue.style.border = "2px solid black";
