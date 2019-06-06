@@ -309,7 +309,8 @@ button:hover {
     width: 100%;
     top: 26px;
     margin: 0;
-    padding: 0;
+    padding-bottom: 2%;
+    float: left;
 }
 #deadLine{
     position: relative;
@@ -360,23 +361,21 @@ button:hover {
 
 .userContainer{
     position: relative;
-    background-color: #888;
-    width: 100%;
-    height: 60px;
-    top: 15px;
-    padding-top: 1%;
-    margin-top: 15%;
+    /* border: 1px dashed #888; */
+    width: 73%;
+    height: 7%;
+    top: 13px;
     display:flex;
+    flex-wrap: wrap;
 }
 
 .addUser{
     position: relative;
-    padding-right: 3.5%;
     color: #aaaaaa;
     float: left;
     font-size: 250%;
     font-weight: bold;
-    left: 10px;
+    left: -30px;
 }
 
 .addUser:hover{
@@ -388,14 +387,16 @@ button:hover {
 #addUserText{
     position: relative;
     font-size: 20px;
-    left: 65px;
+    left: 40px;
     top: 13px;
-
-
 }
 
 .userDropDown{
-
+    position: relative;
+    width: 32%;
+    height: 25px;
+    border-radius: 5px;
+    float: left;
 }
 
 #deleteCardContainer{
@@ -704,7 +705,7 @@ button:hover {
 
 /* DarkMode */
 #settingsBox{
-    opacity: 1;
+    opacity: 0;
     position: absolute;
     top: 80%;
     left: 39%;

@@ -199,6 +199,7 @@ var selectColor;
             console.log("Insert table name.")
         }
     });
+    
     inputTableName.addEventListener("keyup", function(){
         if(event.keyCode == 13 && tableNamed != null && tableNamed != ""){
             var newCard = document.createElement("div");
@@ -225,59 +226,66 @@ var selectColor;
             console.log("Insert table name.")
         }
     });
+
+    // Return to CreateTable.html side when house icon is pressed
     homeSign.addEventListener("click", function(){
 
         setTimeout(function () {
-            window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
+            window.location.href = "CreateTable.html"; 
          }, 300);
     });
+    // Return to CreateTable.html side when logo is pressed
     txtMiddle.addEventListener("click", function(){
 
         setTimeout(function () {
-            window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
+            window.location.href = "CreateTable.html"; 
          }, 300);
     });
+    // Logs the user out and returns index.html side when house icon is pressed
     logOut.addEventListener("click", function(){
 
         setTimeout(function () {
-            window.location.href = "index.html"; //will redirect to your blog page (an ex: blog.html)
+            window.location.href = "index.html"; 
          }, 300);
     });
     
 
 
 /* Dark mode section */
-var checkbox = document.getElementById("checkDarkMode"); // checkbox
-var header = document.getElementById("header"); // header color (background)
-var footer = document.getElementById("footer"); // footer color (background-color)
-var plusVertical = document.getElementById("plusVertical"); //plus line vertical (background-color)
-var plusHorizontal = document.getElementById("plusHorizontal"); // plus line horizontal (background-color)
-var createNewTable = document.getElementById("createNewTable");  //default table color (background-color)
-var inputTableName = document.getElementById("inputTableName"); // Color for input field and font color (backgorund and font color)
-var confirmTableName = document.getElementById("confirmTableName"); // plus background color and plus-sign color (color and background-color)
-var center = document.getElementById("center"); // center color (background color)
-var txtMiddle = document.getElementById("txtMiddle"); // "TASK IT" text color (color)
+
+// Adding elements to color change
+var checkbox = document.getElementById("checkDarkMode"); 
+var header = document.getElementById("header");
+var footer = document.getElementById("footer"); 
+var plusVertical = document.getElementById("plusVertical"); 
+var plusHorizontal = document.getElementById("plusHorizontal"); 
+var createNewTable = document.getElementById("createNewTable");  
+var inputTableName = document.getElementById("inputTableName"); 
+var confirmTableName = document.getElementById("confirmTableName"); 
+var center = document.getElementById("center"); 
+var txtMiddle = document.getElementById("txtMiddle"); 
 var txtDarkMode = document.getElementById("txtDarkMode");
-var dropDownContent = document.getElementById("dropdown-content"); // Dropdown menu background color
-var taskitBlack = document.getElementById("taskitBlack");
-var taskitBlue = document.getElementById("taskitBlue");
+var dropDownContent = document.getElementById("dropdown-content"); 
+var taskitBlack = document.getElementById("logoBlack");
+var taskitBlue = document.getElementById("logoBlue");
 
-
+// Adding setting menu elements
 var settings = document.getElementById("settings");
 var settingsBox = document.getElementById("settingsBox");
 var checkBoxBtn = document.getElementById("checkBoxBtn");
 
-
+// Calling settings box hide function
+hideSettingsBox();
 /*Makes the settings box appear */
 settings.addEventListener("click", function(){
     setTimeout(function(){ showSettingsBox(); }, 20);
     setTimeout(function(){ settingsBoxShowElements(); }, 200);
 })
 
+/*Function for showing settings menu*/
 function settingsBoxShowElements(){
-
+   // console.log("Settings clicked");
     settingsBox.style.zIndex = "100";
-    console.log("Settings clicked");
     settingsBox.style.top = "30%";
     settingsBox.style.left = "39%";
     settingsBox.style.transitionTimingFunction = "ease-in";
@@ -286,8 +294,9 @@ function settingsBoxShowElements(){
     settingsBox.style.opacity = "1";
 
 }
+// Function for closing settings menu 
 checkBoxBtn.addEventListener("click", function(){
-    console.log("close button clicked");
+   // console.log("close button clicked");
     settingsBox.style.top = "80%";
     settingsBox.style.left = "39%";
     settingsBox.style.transitionTimingFunction = "ease-in";
@@ -296,53 +305,48 @@ checkBoxBtn.addEventListener("click", function(){
     settingsBox.style.opacity = "0";
     setTimeout(function(){ hideSettinsBox(); }, 500);
 });
-
+// Show settings box
 function showSettingsBox(){
     settingsBox.style.display = "block";
 }
-
+// Hide settings box
 function hideSettingsBox(){
     settingsBox.style.display = "none";
 }
 
-
+// function to detect if checkbox in settings menu is checked or not
 checkbox.addEventListener('change', function(e){
-    console.log(checkbox.checked, checkbox.value);
+   // console.log(checkbox.checked, checkbox.value);
     if(checkbox.checked){
         console.log("huket av");
-        dropDownContent.style.backgroundColor = "#AAAAAA";
-        header.style.background = "#141414";
-        footer.style.backgroundColor ="#141414";
-        plusVertical.style.backgroundColor ="#03acef";
-        plusHorizontal.style.backgroundColor ="#03acef";
-        createNewTable.style.backgroundColor = "#303030";
+        dropDownContent.style.backgroundColor = "#AAAAAA"; // Dropdown menu background color
+        header.style.background = "#141414"; // header color
+        footer.style.backgroundColor ="#141414"; // footer color
+        plusVertical.style.backgroundColor ="#03acef"; // plus sign vertical line color
+        plusHorizontal.style.backgroundColor ="#03acef"; // plus sign horizontal line color
+        createNewTable.style.backgroundColor = "#303030"; // "Create new table" - box color
         inputTableName.style.backgroundColor ="#353535"; // inputfield color
-        inputTableName.style.color = "#03acef";
-        confirmTableName.style.backgroundColor ="#353535"; // plus sign background color
-        confirmTableName.style.color = "#03acef";
-        center.style.color = "#767D92";
-        txtMiddle.style.color = "#eeeeee";
-        settingsBox.style.backgroundColor = "#8A928A"
-        document.body.style.background = "black";
-        taskitBlack.style.display = "none";
-        taskitBlue.style.display = "block";
+        inputTableName.style.color = "#03acef"; // input text color
+        confirmTableName.style.backgroundColor ="#353535"; // plus sign confirmation button background color
+        confirmTableName.style.color = "#03acef";  // plus sign confirmation button color
+        document.body.style.background = "black"; // body color
+        taskitBlack.style.display = "none"; // Setting wich logo to not show
+        taskitBlue.style.display = "block"; // Setting wich logo to show
 
     } else {
-        console.log("Ikke huket av");
-        dropDownContent.style.backgroundColor = "white";
-        header.style.background = "#03acef";
-        footer.style.backgroundColor ="#e0fbff";
-        plusVertical.style.backgroundColor ="black";
-        plusHorizontal.style.backgroundColor ="black";
-        createNewTable.style.backgroundColor = "#c3f3ff";
-        inputTableName.style.backgroundColor ="white";
-        confirmTableName.style.backgroundColor ="white";
-        confirmTableName.style.color = "black";
-        center.style.backgroundcolor = "#03acef";
-        txtMiddle.style.color = "black";
-        settingsBox.style.backgroundColor = "#EEEEEE"
-        document.body.style.background = "white";
-        taskitBlack.style.display = "block";
-        taskitBlue.style.display = "none";
+      //  console.log("Ikke huket av");
+        dropDownContent.style.backgroundColor = "white"; // Dropdown menu background color
+        header.style.background = "#03acef"; // Header color
+        footer.style.backgroundColor ="#e0fbff"; // footer color
+        plusVertical.style.backgroundColor ="black"; // plus sign vertical line color
+        plusHorizontal.style.backgroundColor ="black"; // plus sign horizontal line color
+        createNewTable.style.backgroundColor = "#c3f3ff"; // "Create new table" - box color
+        inputTableName.style.color = "black"; // input text color
+        inputTableName.style.backgroundColor ="white"; // input field color
+        confirmTableName.style.backgroundColor ="white"; // plus sign confirmation button background color
+        confirmTableName.style.color = "black"; // plus sign confirmation button color
+        document.body.style.background = "white"; // body color
+        taskitBlack.style.display = "block"; // Setting wich logo to show
+        taskitBlue.style.display = "none"; // Setting wich logo not to show
     }
-})
+});
