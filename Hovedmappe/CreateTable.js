@@ -135,6 +135,7 @@ var selectColor;
             document.getElementById("TeamBox").appendChild(newCard);
             idIncrement++;
             console.log(newCard.className, newCard.id);
+            localStorage.setItem("tableName", inputTableName.value);
             inputTableName.value = "";
             tableNamed = inputTableName.value;
             newCard.style.backgroundColor = selectColor;
@@ -143,7 +144,7 @@ var selectColor;
             createNewTable.style.color = "#e0fbff";
 
            setTimeout(function () {
-                window.location.href = "TablePage.html"; //will redirect to your blog page (an ex: blog.html)
+                window.location.href = "TablePage.html";
              }, 2000);
 
             
@@ -193,6 +194,7 @@ var checkBoxBtn = document.getElementById("checkBoxBtn");
 
 /*Makes the settings box appear */
 settings.addEventListener("click", function(){
+    setTimeout(function(){ showSettingsBox(); }, 20);
     console.log("Settings clicked");
     settingsBox.style.top = "30%";
     settingsBox.style.left = "39%";
@@ -203,15 +205,23 @@ settings.addEventListener("click", function(){
 })
 checkBoxBtn.addEventListener("click", function(){
     console.log("close button clicked");
-    settingsBox.style.top = "150%";
+    settingsBox.style.top = "80%";
     settingsBox.style.left = "39%";
     settingsBox.style.transitionTimingFunction = "ease-in";
     settingsBox.style.transitionDuration = "0.5s";
     settingsBox.style.transitionDelay = "0s";
     settingsBox.style.opacity = "0";
+    setTimeout(function(){ hideSettinsBox(); }, 2000);
+});
 
-    
-})
+function showSettingsBox(){
+    settingsBox.style.display = "block";
+}
+
+function hideSettinsBox(){
+    settingsBox.style.display = "none";
+}
+
 
 checkbox.addEventListener('change', function(e){
     console.log(checkbox.checked, checkbox.value);

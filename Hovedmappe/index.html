@@ -14,8 +14,8 @@
             <div id="rightBox">
                 <box id="loginField">
                 <img id="logo" src="images/Logo-post.png">
-                <input class="inputFields" id="inputUsername" placeholder="Enter e-mail or username"></input>
-                <input class="inputFields" id="inputPassword" placeholder="Enter password" type="password"></input>
+                <input class="inputFields" id="inputUsername" placeholder="Enter e-mail or username" maxLength="40"></input>
+                <input class="inputFields" id="inputPassword" placeholder="Enter password" type="password" maxlength="20"></input>
                 <button id="loginButton">Login</button>
                 <button id="signUp" type="button">Sign up</button>
             </box>
@@ -24,16 +24,16 @@
             <box id="signupForm">
 
 
-                <input class="inputFields" id= "inputUsername_Signup" placeholder="Username">
+                <input class="inputFields" id= "inputUsername_Signup" placeholder="Username" maxlength="14">
 
-                <input class="inputFields" id="inputEmail_Signup" placeholder="E-mail">
+                <input class="inputFields" id="inputEmail_Signup" placeholder="E-mail" maxlength="40">
 
-                <input class="inputFields" id="inputPassword_Signup" placeholder="Password" type="password">
+                <input class="inputFields" id="inputPassword_Signup" placeholder="Password" type="password" maxlength="20">
 
                 <p id="wrong_Signup">&#9746;</p>
                 <p id="correct_Signup">&#9745;</p>
 
-                <input class="inputFields" id="inputConfirmPassword_Signup" placeholder="Confirm password" type="password">
+                <input class="inputFields" id="inputConfirmPassword_Signup" placeholder="Confirm password" type="password" maxlength="20">
 
                 <button type="button" class="inputFields" id="register_Signup"><p id="registerText">Register</p></button>
                 <p id ="regFeedback_Signup"></p>

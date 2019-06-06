@@ -1,7 +1,6 @@
 body{
     background-color: #CCF3FF;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -10,6 +9,11 @@ body{
     -ms-user-select: none;
     user-select: none;
 }
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 /* Header start */
 #header {
     background: #03acef;
@@ -176,27 +180,27 @@ li.dropDown {
 .popupWindow{
     background-color: #EDFBFF;
     margin: auto;
-    padding: 1.1%;
+    padding: 1% 0.5% 1% 0.5%;
     border: 1px solid #888;
     border-radius: 15px;
     width: 300px;
-    height: 45px;
+    display: inline-block;
 }
 
 .popInput{
-    width: 240px;
-    height: 41px;
-    float: left;
+    width: 228px;
+    height: 44px;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 20px;
     text-align: center;
+    float: left;
 }
 
 .enter{ 
     padding-right: 3.5%;
     color: #aaaaaa;
     float: left;
-    font-size: 38px;
+    font-size: 250%;
     font-weight: bold;
 }
 
@@ -210,7 +214,7 @@ li.dropDown {
 .close{
     color:#aaaaaa;
     float: right;
-    font-size: 38px;
+    font-size: 250%;
     font-weight: bold;
 }
 
@@ -221,7 +225,7 @@ li.dropDown {
     cursor: pointer;
 }
 /* Popup End */
-
+/* Edit window start */
 .editPopContainer{
     display: none;
     position: fixed;
@@ -239,16 +243,62 @@ li.dropDown {
 
 .editPop{
     background-color: #EDFBFF;
-    margin: auto;
+    margin: 0;
+    padding: 0;
     padding: 1.1%;
     border: 1px solid #888;
     border-radius: 15px;
     width: 300px;
-    height: 45px;
+    display: inline-block;
+    text-align: center;
 }
 
-/* active card in edit window */
-.editCardName{
+.editInput{
+    width: 100%;
+    height: 41px;
+    border-radius: 5px;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.orderDescription{
+    width: 100%;
+    height: 123px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+#orderScoreInput{
+    width: 20%;
+    float: left;
+}
+
+.orderScoreInfo{
+    position: relative;
+    width: 70%;
+    text-align: left;
+    float: left;
+    padding-left: 5%;
+    top: -12px;
+}
+
+#editEnter{
+    position: relative;
+    top:0;
+    font-size: 250%;
+}
+
+#editClose{
+    position: relative;
+    top: 0;
+    font-size: 250%;
+}
+
+/* active card/order in edit window */
+.editName{
     position: relative;
     font-size: 20px;
     left: 10%;
@@ -258,22 +308,40 @@ li.dropDown {
 }
 
 #deleteCardContainer{
+    padding-top: 5%;
     margin:0;
 }
 
 #deleteCard{
+    position: relative;
     float: right;
-    width: 85%;
+    width: 80%;
+    bottom: -15px;
+}
+
+#deleteOrderContainer{
+    /* position: relative; */
+    padding-top: 10%;
+    margin:0;
+}
+
+#deleteOrder{
+    position: relative;
+    float: right;
+    width: 80%;
+    bottom: -15px;
 }
 
 #deleteIcon{
+    position: relative;
     float: left;
-    font-size: 150%;
+    font-size: 200%;
+    bottom: -5px;
+    left: 10px;
 }
 
 #deleteIcon:hover{
     color: red;
-    font-weight: bold;
 }
 
 /* Edit window end */
@@ -306,7 +374,7 @@ li.dropDown {
     position: relative;
     background-color: #ffffff;
     border: 1px solid #888;
-    border-radius: 10px;
+    border-radius: 7px;
     
     margin: 1%;
     padding: 1%;
@@ -324,6 +392,8 @@ li.dropDown {
 .newCardName{
     position: relative;
     top: 20px;
+    width: 100%;
+    overflow: hidden;
 }
 
 .stars{
@@ -376,7 +446,7 @@ li.dropDown {
 
 .orders{
     position: relative;
-    background-color: #EBFFC1;
+    background-color: lightyellow;
     border: 1px solid #888;
     border-radius: 5px;
 
@@ -384,7 +454,7 @@ li.dropDown {
     margin-left: 1%;
     padding-top: 2%;
     width: 97.5%;
-    height: 40px;
+    /* height: 50px; */
 
     text-align: left;
 
@@ -393,18 +463,34 @@ li.dropDown {
     cursor: pointer;
 }
 
+.orders:hover{
+    border: 1px solid #000;
+}
+
 .orderName{
-    font-size: 20px;
+    position: relative;
+    font-size: 18px;
     text-align: left;
     margin-left: 2%;
+    top: -28px;
+    width: 85%;
+    overflow: hidden;
 }
 
 .orderScore{
-    position: relative;
-    font-size: 14px;
+    position: absolute;
+    font-size: 10px;
     text-align: left;
-    margin-left: 2%;
-    bottom: -10px;
+    left: 5px;
+    top: 12px;
+}
+
+.orderDeadLine{
+    position: absolute;
+    font-size: 12px;
+    text-align: left;
+    left: 5px;
+    top: 24px;
 }
 
 .edit{
@@ -420,6 +506,21 @@ li.dropDown {
     cursor: pointer;
 }
 
+.orderEdit{
+    position: relative;
+    align-self: flex-end;
+    right: 5px;
+    top: -3px;
+    font-size: 20px;
+}
+
+.orderEdit:hover{
+    color: #888;
+    cursor: pointer;
+}
+
+
+
 .hold{
     border: dashed 2px #888;
 }
@@ -432,6 +533,12 @@ li.dropDown {
 .invisible{
     display: none;
 }
+
+
+
+
+
+
 
 #number{
     font-size: 100px;
@@ -500,6 +607,6 @@ li.dropDown {
 }
 #pointsEarned{
     font-size: 100px;
-    left: 100px;
+    left: 140px;
     top: 120px;
 }
