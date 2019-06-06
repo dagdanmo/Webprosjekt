@@ -259,8 +259,8 @@ var center = document.getElementById("center"); // center color (background colo
 var txtMiddle = document.getElementById("txtMiddle"); // "TASK IT" text color (color)
 var txtDarkMode = document.getElementById("txtDarkMode");
 var dropDownContent = document.getElementById("dropdown-content"); // Dropdown menu background color
-var taskitBlack = document.getElementById("taskitBlack");
-var taskitBlue = document.getElementById("taskitBlue");
+var taskitBlack = document.getElementById("logoBlack");
+var taskitBlue = document.getElementById("logoBlue");
 
 
 var settings = document.getElementById("settings");
@@ -335,6 +335,7 @@ checkbox.addEventListener('change', function(e){
         plusVertical.style.backgroundColor ="black";
         plusHorizontal.style.backgroundColor ="black";
         createNewTable.style.backgroundColor = "#c3f3ff";
+        inputTableName.style.color = "black"
         inputTableName.style.backgroundColor ="white";
         confirmTableName.style.backgroundColor ="white";
         confirmTableName.style.color = "black";

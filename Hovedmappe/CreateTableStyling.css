@@ -48,7 +48,7 @@ body {
     height: 60px;
     border-radius: 50%;
 }
-#taskitBlack{
+#logoBlack{
     position: absolute;
     top: 60px;
     width: 200px;
@@ -56,7 +56,7 @@ body {
     margin-left: -100px;
     margin-top: -100px;
 }
-#taskitBlue{
+#logoBlue{
     position: absolute;
     top: 60px;
     width: 200px;
@@ -202,7 +202,7 @@ button:hover {
     font-size: 30px;
     overflow: hidden;
 }
-
+/* Create new table div */
 #createNewTable {     
     left: 50%;     
     position: absolute;     
@@ -225,10 +225,12 @@ button:hover {
     cursor: pointer;
 }
 
+/* hover function on create ned table div */
 #createNewTable:hover {
     opacity: 1
 }
 
+/* Input table name field */
 #inputTableName {
     height: 70px;
     width: 400px;
@@ -244,6 +246,7 @@ button:hover {
     display: none;
 }
 
+/* Button for confirming table name appearance */
 #confirmTableName {
     width: 100px;
     height: 100px;
@@ -260,7 +263,7 @@ button:hover {
     cursor: pointer;
     display: none;
 }
-
+/* Making plus sign start */
 #plusSign {
     cursor: pointer;
 }
@@ -290,9 +293,10 @@ button:hover {
     margin-left: -10px;
     margin-top: -70px;
     border-radius: 7px 7px 7px 7px;
-
-
 }
+/* Making plus sign end*/
+
+/* Select color section start */
 .color {
     position: absolute;
     border-radius: 50%;
@@ -335,7 +339,9 @@ button:hover {
     opacity: 0;
     display: none;
 }
+/* Select color section ends*/
 
+/* Settings menu appearance */
 #settingsBox{
     opacity: 0.0;
     position: absolute;
@@ -349,6 +355,7 @@ button:hover {
     border-bottom-right-radius: 25%;
 
 }
+/* Close button in settings menu appearance */
 #checkBoxBtn{
     height: 40px;
     width: 80px;
@@ -361,9 +368,11 @@ button:hover {
     left: -20px;
     border: solid black 1px;
 }
+/* Close button text */
 #closeBtn{
     color:black;
 }
+/* Checkbox in settings menu */
 #checkDarkMode{
     position: relative;
     height: 20px;
@@ -371,6 +380,7 @@ button:hover {
     top: 17px;
     left: 130px;
 }
+/* "select dark mode" text */
 #txtDarkMode{
     color: black;
     position: relative;
