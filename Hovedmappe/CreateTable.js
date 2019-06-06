@@ -11,6 +11,7 @@ var homeSign = document.getElementById("homeImgDiv");
 var txtMiddle = document.getElementById("txtMiddle");
 var logOut = document.getElementById("logOut");
 
+
 console.log(localStorage);
 
 createNewTable.addEventListener("click", function(){
@@ -134,6 +135,7 @@ var selectColor;
             document.getElementById("TeamBox").appendChild(newCard);
             idIncrement++;
             console.log(newCard.className, newCard.id);
+            localStorage.setItem("tableName", inputTableName.value);
             inputTableName.value = "";
             tableNamed = inputTableName.value;
             newCard.style.backgroundColor = selectColor;
@@ -194,3 +196,89 @@ var selectColor;
             window.location.href = "index.html"; //will redirect to your blog page (an ex: blog.html)
          }, 300);
     });
+    
+
+
+/* Dark mode section */
+var checkbox = document.getElementById("checkDarkMode"); // checkbox
+var header = document.getElementById("header"); // header color (background)
+var footer = document.getElementById("footer"); // footer color (background-color)
+var plusVertical = document.getElementById("plusVertical"); //plus line vertical (background-color)
+var plusHorizontal = document.getElementById("plusHorizontal"); // plus line horizontal (background-color)
+var createNewTable = document.getElementById("createNewTable");  //default table color (background-color)
+var inputTableName = document.getElementById("inputTableName"); // Color for input field and font color (backgorund and font color)
+var confirmTableName = document.getElementById("confirmTableName"); // plus background color and plus-sign color (color and background-color)
+var center = document.getElementById("center"); // center color (background color)
+var txtMiddle = document.getElementById("txtMiddle"); // "TASK IT" text color (color)
+var txtDarkMode = document.getElementById("txtDarkMode");
+
+
+var settings = document.getElementById("settings");
+var settingsBox = document.getElementById("settingsBox");
+var checkBoxBtn = document.getElementById("checkBoxBtn");
+
+
+/*Makes the settings box appear */
+settings.addEventListener("click", function(){
+    setTimeout(function(){ showSettingsBox(); }, 20);
+    console.log("Settings clicked");
+    settingsBox.style.top = "30%";
+    settingsBox.style.left = "39%";
+    settingsBox.style.transitionTimingFunction = "ease-in";
+    settingsBox.style.transitionDuration = "0.5s";
+    settingsBox.style.transitionDelay = "0s";
+    settingsBox.style.opacity = "1";
+})
+checkBoxBtn.addEventListener("click", function(){
+    console.log("close button clicked");
+    settingsBox.style.top = "80%";
+    settingsBox.style.left = "39%";
+    settingsBox.style.transitionTimingFunction = "ease-in";
+    settingsBox.style.transitionDuration = "0.5s";
+    settingsBox.style.transitionDelay = "0s";
+    settingsBox.style.opacity = "0";
+    setTimeout(function(){ hideSettinsBox(); }, 2000);
+});
+
+function showSettingsBox(){
+    settingsBox.style.display = "block";
+}
+
+function hideSettinsBox(){
+    settingsBox.style.display = "none";
+}
+
+
+checkbox.addEventListener('change', function(e){
+    console.log(checkbox.checked, checkbox.value);
+    if(checkbox.checked){
+        console.log("huket av");
+        header.style.background = "#141414";
+        footer.style.backgroundColor ="#141414";
+        plusVertical.style.backgroundColor ="#EEEEEE";
+        plusHorizontal.style.backgroundColor ="#EEEEEE";
+        createNewTable.style.backgroundColor = "#303030";
+        inputTableName.style.backgroundColor ="#353535";
+        confirmTableName.style.backgroundColor ="#353535";
+        confirmTableName.style.color = "#eeeeee";
+        center.style.color = "#767D92";
+        txtMiddle.style.color = "#eeeeee";
+        settingsBox.style.backgroundColor = "#8A928A"
+        document.body.style.background = "black";
+
+    } else {
+        console.log("Ikke huket av");
+        header.style.background = "#03acef";
+        footer.style.backgroundColor ="#e0fbff";
+        plusVertical.style.backgroundColor ="black";
+        plusHorizontal.style.backgroundColor ="black";
+        createNewTable.style.backgroundColor = "#c3f3ff";
+        inputTableName.style.backgroundColor ="white";
+        confirmTableName.style.backgroundColor ="white";
+        confirmTableName.style.color = "black";
+        center.style.backgroundcolor = "#03acef";
+        txtMiddle.style.color = "black";
+        settingsBox.style.backgroundColor = "#EEEEEE"
+        document.body.style.background = "white";
+    }
+})
