@@ -15,6 +15,14 @@ var logOut = document.getElementById("logOut");
 console.log(localStorage);
 
 createNewTable.addEventListener("click", function(){
+
+    setTimeout(function(){ showNewTableElements(); }, 100);
+    setTimeout(function(){ newTableTransitions(); }, 500);
+
+    
+});
+
+function newTableTransitions(){
     createNewTable.style.transitionTimingFunction = "ease-in-ease-out";
     createNewTable.style.transitionDuration = "0.5s";
     createNewTable.style.top = "40%";
@@ -29,10 +37,6 @@ createNewTable.addEventListener("click", function(){
     confirmTableName.style.opacity = "ease-in-ease-out";
     confirmTableName.style.transitionDuration = "0.5s";
     confirmTableName.style.transitionDelay = "0.4s";
-
-    plusSign.style.opacity = "0";
-    plusSign.style.transitionTimingFunction = "ease-in-ease-out";
-    plusSign.style.transitionDuration = "0.5s";
 
     colorRed.style.opacity = "1";
     colorRed.style.transitionTimingFunction = "ease-in-ease-out";
@@ -58,7 +62,52 @@ createNewTable.addEventListener("click", function(){
     colorGreen.style.transitionTimingFunction = "ease-in-ease-out";
     colorGreen.style.transitionDuration = "0.5s";
     colorGreen.style.transitionDelay = "0.4s";
-});
+
+    plusSign.style.display = "none";
+}
+
+function hideNewTableElements(){
+    createNewTable.style.display = "none";
+
+    inputTableName.style.display = "none";
+
+    confirmTableName.style.display = "none";
+
+    plusSign.style.display = "none";
+
+    colorRed.style.display = "none";
+
+    colorBlue.style.display = "none";
+
+    colorOrange.style.display = "none";
+
+    colorPurple.style.display = "none";
+
+    colorGreen.style.display = "none";
+}
+
+function showNewTableElements(){
+    createNewTable.style.display = "block";
+
+    inputTableName.style.display = "block";
+
+    confirmTableName.style.display = "block";
+
+    plusSign.style.opacity = "0";
+    plusSign.style.transitionTimingFunction = "ease-in-ease-out";
+    plusSign.style.transitionDuration = "0.5s";
+
+    colorRed.style.display = "block";
+
+    colorBlue.style.display = "block";
+
+    colorOrange.style.display = "block";
+
+    colorPurple.style.display = "block";
+
+    colorGreen.style.display = "block";
+
+}
 
 var selectColor;
 
