@@ -783,9 +783,6 @@ checkbox.addEventListener('change', function(e){
             }  */
 
 
-
-
-
     } else {
         console.log("Ikke huket av");
         dropDownContent.style.backgroundColor = "white";
@@ -795,6 +792,15 @@ checkbox.addEventListener('change', function(e){
         document.body.style.background = "#CCF3FF";
         txtAddCard.style.color = "black";
         document.getElementById("newCardButton").style.color = "AAAAAA";
+
+        document.getElementById("newCardButton").addEventListener("mouseover", mouseOver);
+        document.getElementById("newCardButton").addEventListener("mouseout", mouseOut);
+        function mouseOver() {
+            document.getElementById("newCardButton").style.color = "#33CC00";
+        }
+        function mouseOut() {
+            document.getElementById("newCardButton").style.color = "#AAAAAA";
+        }
     }
 });
 
@@ -826,3 +832,34 @@ function showSettingsBox(){
 function hideSettinsBox(){
     settingsBox.style.display = "none";
 }
+
+var users = [{
+    username: "Dag",
+    email: "dag@taskit.com",
+    password: "Dag123",
+    score: 0
+},
+{
+    username: "Daniel",
+    email: "daniel@taskit.com",
+    password: "Daniel123"
+},
+{
+    username: "Mattis",
+    email: "mattis@taskit.com",
+    password: "Mattis123"
+},
+{
+    username: "Martin",
+    email: "martin@taskit.com",
+    password: "Martin123",
+},
+{
+    username: "Mathias",
+    email: "mathias@taskit.com",
+    password: "Mathias123"
+},{
+    username: "admin",
+    email: "admin@taskit.com",
+    password: "admin"
+}];
