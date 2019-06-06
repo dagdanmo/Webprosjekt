@@ -8,7 +8,7 @@ var profileSign = document.getElementById("profileImgDiv");
 homeSign.addEventListener("click", function(){
 
     setTimeout(function () {
-        window.location.href = "index.html"; //will redirect to your blog page (an ex: blog.html)
+        window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
      }, 1000);
 });
 txtMiddle.addEventListener("click", function(){
@@ -17,12 +17,7 @@ txtMiddle.addEventListener("click", function(){
         window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
      }, 1000);
 });
-profileSign.addEventListener("click", function(){
 
-    setTimeout(function () {
-        window.location.href = "TablePage.html"; //will redirect to your blog page (an ex: blog.html)
-     }, 1000);
-});
 
 // init
     // Date
@@ -798,6 +793,8 @@ checkbox.addEventListener('change', function(e){
         document.body.style.background = "#333333";
         txtAddCard.style.color = "#03acef";
         document.getElementById("newCardButton").style.color = "#03acef";
+        taskitBlack.style.display = "none";
+        taskitBlue.style.display = "block";
 
 
             //const card = document.getElementById("card"+i);
@@ -818,6 +815,8 @@ checkbox.addEventListener('change', function(e){
         document.body.style.background = "#CCF3FF";
         txtAddCard.style.color = "black";
         document.getElementById("newCardButton").style.color = "AAAAAA";
+        taskitBlack.style.display = "block";
+        taskitBlue.style.display = "none";
 
         document.getElementById("newCardButton").addEventListener("mouseover", mouseOver);
         document.getElementById("newCardButton").addEventListener("mouseout", mouseOut);
@@ -849,6 +848,7 @@ checkBoxBtn.addEventListener("click", function(){
     settingsBox.style.transitionDuration = "0.5s";
     settingsBox.style.transitionDelay = "0s";
     settingsBox.style.opacity = "0";
+    
     setTimeout(function(){ hideSettinsBox(); }, 2000);
 });
 function showSettingsBox(){

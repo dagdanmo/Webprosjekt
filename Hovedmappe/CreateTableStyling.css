@@ -48,13 +48,22 @@ body {
     height: 60px;
     border-radius: 50%;
 }
-#taskitCenter{
+#taskitBlack{
     position: absolute;
     top: 60px;
     width: 200px;
     height: 200px;
     margin-left: -100px;
     margin-top: -100px;
+}
+#taskitBlue{
+    position: absolute;
+    top: 60px;
+    width: 200px;
+    height: 200px;
+    margin-left: -100px;
+    margin-top: -100px;
+    display: none;
 }
 #txtMiddle:hover {
     opacity: 0.5;
@@ -106,12 +115,12 @@ body {
 }
 @media (min-width: 450px) {
     .headerElements {
-      flex: 0 1 44%;
+      flex: 0 1 50%;
     }
 }
 @media (min-width: 1300px) {
     .headerElements {
-      flex: 0 1 48%;
+      flex: 0 1 50%;
     }
 }
 nav {
@@ -127,13 +136,13 @@ nav ul {
 }
 @media (min-width: 450px) {
     nav {
-      flex: 0 1 56%;
+      flex: 0 1 50%;
     }
     
 }
 @media (min-width: 1300px) {
     nav {
-      flex: 0 1 52%;
+      flex: 0 1 50%;
     }
 }
 button {

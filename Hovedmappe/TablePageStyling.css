@@ -1,7 +1,7 @@
 body{
     background-color: #CCF3FF;
     text-align: center;
-    margin: 0;
+    margin: 0;  
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -10,7 +10,7 @@ body{
     user-select: none;
 }
 
-* {
+*{
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -60,6 +60,24 @@ body{
 #txtMiddle:hover{
     opacity: 0.5;
     cursor: pointer;
+}
+
+#taskitBlack{
+    position: absolute;
+    top: 60px;
+    width: 200px;
+    height: 200px;
+    margin-left: -100px;
+    margin-top: -100px;
+}
+#taskitBlue{
+    position: absolute;
+    top: 60px;
+    width: 200px;
+    height: 200px;
+    margin-left: -100px;
+    margin-top: -100px;
+    display: none;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -112,12 +130,12 @@ body{
 }
 @media (min-width: 450px) {
     .headerElements {
-      flex: 0 1 44%;
+      flex: 0 1 47.3%;
     }
 }
 @media (min-width: 1300px) {
     .headerElements {
-      flex: 0 1 48%;
+      flex: 0 1 47.3%;
     }
 }
 nav {
@@ -132,13 +150,13 @@ nav ul {
 }
 @media (min-width: 450px) {
     nav {
-      flex: 0 1 56%;
+      flex: 0 1 52.7%;
     }
     
 }
 @media (min-width: 1300px) {
     nav {
-      flex: 0 1 52%;
+      flex: 0 1 52.7%;
     }
 }
 button {

@@ -113,7 +113,6 @@ var selectColor;
 
         colorRed.addEventListener("click", function(){
             selectColor = "#ef5181";
-            console.log("red selected!")
             createNewTable.style.backgroundColor = selectColor;
             borderRemover();
             colorRed.style.border = "2px solid black";
@@ -123,7 +122,6 @@ var selectColor;
 
         colorBlue.addEventListener("click", function(){
             selectColor = "#1aabd8";
-            console.log("Blue selected!");
             createNewTable.style.backgroundColor = selectColor;
             borderRemover();
             colorBlue.style.border = "2px solid black";
@@ -230,7 +228,7 @@ var selectColor;
     homeSign.addEventListener("click", function(){
 
         setTimeout(function () {
-            window.location.href = "index.html"; //will redirect to your blog page (an ex: blog.html)
+            window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
          }, 300);
     });
     txtMiddle.addEventListener("click", function(){
@@ -260,6 +258,9 @@ var confirmTableName = document.getElementById("confirmTableName"); // plus back
 var center = document.getElementById("center"); // center color (background color)
 var txtMiddle = document.getElementById("txtMiddle"); // "TASK IT" text color (color)
 var txtDarkMode = document.getElementById("txtDarkMode");
+var dropDownContent = document.getElementById("dropdown-content"); // Dropdown menu background color
+var taskitBlack = document.getElementById("taskitBlack");
+var taskitBlue = document.getElementById("taskitBlue");
 
 
 var settings = document.getElementById("settings");
@@ -270,30 +271,37 @@ var checkBoxBtn = document.getElementById("checkBoxBtn");
 /*Makes the settings box appear */
 settings.addEventListener("click", function(){
     setTimeout(function(){ showSettingsBox(); }, 20);
+    setTimeout(function(){ settingsBoxShowElements(); }, 200);
+})
+
+function settingsBoxShowElements(){
+
+    settingsBox.style.zIndex = "100";
     console.log("Settings clicked");
     settingsBox.style.top = "30%";
     settingsBox.style.left = "39%";
     settingsBox.style.transitionTimingFunction = "ease-in";
-    settingsBox.style.transitionDuration = "0.5s";
+    settingsBox.style.transitionDuration = "0.2s";
     settingsBox.style.transitionDelay = "0s";
     settingsBox.style.opacity = "1";
-})
+
+}
 checkBoxBtn.addEventListener("click", function(){
     console.log("close button clicked");
     settingsBox.style.top = "80%";
     settingsBox.style.left = "39%";
     settingsBox.style.transitionTimingFunction = "ease-in";
-    settingsBox.style.transitionDuration = "0.5s";
+    settingsBox.style.transitionDuration = "0.2s";
     settingsBox.style.transitionDelay = "0s";
     settingsBox.style.opacity = "0";
-    setTimeout(function(){ hideSettinsBox(); }, 2000);
+    setTimeout(function(){ hideSettinsBox(); }, 500);
 });
 
 function showSettingsBox(){
     settingsBox.style.display = "block";
 }
 
-function hideSettinsBox(){
+function hideSettingsBox(){
     settingsBox.style.display = "none";
 }
 
@@ -302,21 +310,26 @@ checkbox.addEventListener('change', function(e){
     console.log(checkbox.checked, checkbox.value);
     if(checkbox.checked){
         console.log("huket av");
+        dropDownContent.style.backgroundColor = "#AAAAAA";
         header.style.background = "#141414";
         footer.style.backgroundColor ="#141414";
-        plusVertical.style.backgroundColor ="#EEEEEE";
-        plusHorizontal.style.backgroundColor ="#EEEEEE";
+        plusVertical.style.backgroundColor ="#03acef";
+        plusHorizontal.style.backgroundColor ="#03acef";
         createNewTable.style.backgroundColor = "#303030";
-        inputTableName.style.backgroundColor ="#353535";
-        confirmTableName.style.backgroundColor ="#353535";
-        confirmTableName.style.color = "#eeeeee";
+        inputTableName.style.backgroundColor ="#353535"; // inputfield color
+        inputTableName.style.color = "#03acef";
+        confirmTableName.style.backgroundColor ="#353535"; // plus sign background color
+        confirmTableName.style.color = "#03acef";
         center.style.color = "#767D92";
         txtMiddle.style.color = "#eeeeee";
         settingsBox.style.backgroundColor = "#8A928A"
         document.body.style.background = "black";
+        taskitBlack.style.display = "none";
+        taskitBlue.style.display = "block";
 
     } else {
         console.log("Ikke huket av");
+        dropDownContent.style.backgroundColor = "white";
         header.style.background = "#03acef";
         footer.style.backgroundColor ="#e0fbff";
         plusVertical.style.backgroundColor ="black";
@@ -329,5 +342,7 @@ checkbox.addEventListener('change', function(e){
         txtMiddle.style.color = "black";
         settingsBox.style.backgroundColor = "#EEEEEE"
         document.body.style.background = "white";
+        taskitBlack.style.display = "block";
+        taskitBlue.style.display = "none";
     }
 })
