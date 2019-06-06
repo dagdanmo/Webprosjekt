@@ -373,9 +373,7 @@ function createNewOrder(){
 // Order Edit pop
 function editOrderPop(e){
     getOrderId = e.target.id.substr(9);
-    console.log(getOrderId);
     getParentID = document.getElementById("order"+getOrderId).parentNode.id.substr(4);
-    console.log(getParentID);
     
     const editPop = document.createElement("div");
     editPop.className = "editPopContainer";
@@ -417,6 +415,9 @@ function editOrderPop(e){
     orderDescription.id = "orderDescription"+getOrderId;
     orderDescription.placeholder = "Enter a description";
     orderDescription.style.resize = "none";
+    if(document.getElementById("orderDescriptionSave"+getOrderId) != null){
+        orderDescription.value = document.getElementById("orderDescriptionSave"+getOrderId).value;
+    }
 
     const orderScoreInput = document.createElement("input")
     orderScoreInput.className = "editInput";
@@ -481,27 +482,41 @@ function editOrderPop(e){
 
 // save edit order pop
 function editOrderPopEnter(){
+    const currentOrder = document.getElementById("order"+getOrderId);
     if(document.getElementById("editName").value != ""){
         document.getElementById("orderName"+getOrderId).innerHTML = document.getElementById("editName").value.toUpperCase();
     }
     if(document.getElementById("orderScoreInput").value != ""){
         if(document.getElementById("orderScore"+getOrderId) !== null){
-            document.getElementById("order"+getOrderId).removeChild(document.getElementById("orderScore"+getOrderId));
+            currentOrder.removeChild(document.getElementById("orderScore"+getOrderId));
         }    
         const orderScoreWeight = document.createElement("p");
         orderScoreWeight.className = "orderScore";
         orderScoreWeight.id = "orderScore"+getOrderId;
         orderScoreWeight.style.pointerEvents = "none";
         orderScoreWeight.innerHTML = "POINTS: " +orderScoreInput.value;
-        document.getElementById("order"+getOrderId).append(orderScoreWeight);
+        currentOrder.append(orderScoreWeight);
     }
-    if(document.getElementById("deadLine").value != fullDate){
+    if(document.getElementById("deadLine").value != fullDate && document.getElementById("deadLine").value != document.getElementById("orderDeadLine"+getOrderId.value)){
+        if(document.getElementById("orderDeadLine"+getOrderId) != null){
+            currentOrder.removeChild(document.getElementById("orderDeadLine"+getOrderId));
+        }
         const orderDeadLine = document.createElement("p");
         orderDeadLine.className = "orderDeadLine";
         orderDeadLine.id = "orderDeadLine"+getOrderId;
         orderDeadLine.style.pointerEvents = "none";
         orderDeadLine.innerHTML = "Deadline: "+document.getElementById("deadLine").value.substr(0, 10)+"    "+document.getElementById("deadLine").value.substr(11);
-        document.getElementById("order"+getOrderId).append(orderDeadLine);
+        currentOrder.append(orderDeadLine);
+    }
+    if(document.getElementById("orderDescription"+getOrderId).value != ""){
+        const orderDescriptionSave = document.createElement("textArea");
+        orderDescriptionSave.className = "orderDescriptionSave";
+        orderDescriptionSave.id = "orderDescriptionSave"+getOrderId;
+        orderDescriptionSave.style.display = "none";
+        orderDescriptionSave.value = document.getElementById("orderDescription"+getOrderId).value;
+        currentOrder.append(orderDescriptionSave);
+    } else if (document.getElementById("orderDescription"+getOrderId).value == document.getElementById("orderDescriptionSave"+getOrderId).value){
+        document.getElementById("orderDescriptionSave"+getOrderId).value = document.getElementById("orderDescription"+getOrderId).value;
     }
     body.removeChild(document.getElementById("editPopContainer"));
 }
