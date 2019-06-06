@@ -55,6 +55,7 @@ txtMiddle.addEventListener("click", function(){
     let cardId;
     let currentStarCard;
     let getParentID;
+    let userCounter = 0;
     
     // scores
     let orderScore = 0;
@@ -63,6 +64,7 @@ txtMiddle.addEventListener("click", function(){
 
     // users
     let users = ["Dag", "Daniel", "Mattis", "Martin", "Mathias"];
+    let setUsers = [];
 
 // main container
 const table = document.getElementById("container");
@@ -319,9 +321,6 @@ function editpopDown(){
 
 // Creating new order
 function createNewOrder(){
-    
-    //SCORE TESTING
-    /* orderScore = prompt("enter score"); */
 
     cardId = event.target.id.substr(event.target.id.length -1);
     const orderInput = document.getElementById("orderInput"+cardId);
@@ -336,13 +335,7 @@ function createNewOrder(){
     orderName.className = "orderName";
     orderName.id = "orderName"+orderI;
     orderName.style.pointerEvents = "none";   
-    
-    /* const orderScoreWeight = document.createElement("p");
-    orderScoreWeight.className = "orderScore";
-    orderScoreWeight.id = "orderScore"+orderI;
-    orderScoreWeight.style.pointerEvents = "none";
-    orderScoreWeight.innerHTML = "POINTS: " +orderScore; */
-    
+
     if(orderInput.value == ""){
         orderName.innerHTML = "NEW ORDER "+orderI;
     } else if(orderInput.value != ""){
@@ -357,12 +350,9 @@ function createNewOrder(){
     editOrder.addEventListener("click", editOrderPop);
     
     order.append(editOrder);
-    
     order.addEventListener("dragstart", dragStart);
     order.addEventListener("dragend", dragEnd);
-    
     order.append(orderName);
-    /* order.append(orderScoreWeight); */
     currentCard.append(order);
 
     orderI++;
@@ -460,11 +450,7 @@ function editOrderPop(e){
     deadLine.type = "datetime-local";
     deadLine.value = fullDate;
 
-    // assign users
-    const userContainer = document.createElement("div");
-    userContainer.className = "userContainer";
-    userContainer.id = "userContainer";
-
+    // assign users 
     const addUser = document.createElement("span");
     addUser.className = "addUser";
     addUser.id = "addUser";
@@ -476,24 +462,60 @@ function editOrderPop(e){
     addUserText.innerHTML = "ADD<br>USER";
     addUser.append(addUserText);
     
-    addUser.addEventListener("click", function(){
-        const userDropDown = document.createElement("select");
-        userDropDown.className = "userDropDown";
-        const userOption = document.createElement("option");
-        userOption.textContent = "USER";
-        userOption.value = "USER";
-        userDropDown.append(userOption);
-        
-        for(var i = 0; i < users.length; i++){
-            var temp = document.createElement("option");
-            temp.textContent = users[i];
-            temp.value = users[i];
-            userDropDown.append(temp);
+    const userContainer = document.createElement("div");
+    userContainer.className = "userContainer";
+    userContainer.id = "userContainer";
+    
+    if(document.getElementById("usersOnOrder"+getOrderId) != null){
+        userCounter = document.getElementById("usersOnOrder"+getOrderId).value;
+    } else {
+        userCounter = 0;
+    }
+    console.log(document.getElementById("usersOnOrder"+getOrderId));
+    if(userCounter != 0){
+        for(var j = 0; j <= userCounter; j++){
+            if(document.getElementById("saveOption"+getOrderId+j) != null){
+                let tempUser = document.getElementById("saveOption"+getOrderId+j);
+                const userDropDown = document.createElement("select");
+                userDropDown.className = "userDropDown";
+                userDropDown.id = "userDropDown"+j;
+                const userOption = document.createElement("option");
+                userOption.textContent = "USER";
+                userOption.value = "USER";
+                userDropDown.append(userOption);
+                for(var ij = 0; ij < users.length; ij++){
+                    var temp = document.createElement("option");
+                    temp.textContent = users[ij];
+                    temp.value = users[ij];
+                    userDropDown.append(temp);
+                }
+                userDropDown.value = tempUser.value;
+                userContainer.append(userDropDown);
+            } 
         }
-        userContainer.append(userDropDown);
+        userCounter++;
+    }
+    
+    addUser.addEventListener("click", function(){
+        if(userCounter < 6){
+            const userDropDown = document.createElement("select");
+            userDropDown.className = "userDropDown";
+            userDropDown.id = "userDropDown"+userCounter;
+            const userOption = document.createElement("option");
+            userOption.textContent = "USER";
+            userOption.value = "USER";
+            userDropDown.append(userOption);
+            for(var i = 0; i < users.length; i++){
+                var temp = document.createElement("option");
+                temp.textContent = users[i];
+                temp.value = users[i];
+                userDropDown.append(temp);
+            }
+            userContainer.append(userDropDown);
+            userCounter++; 
+        }
+        
     });
-
-   
 
     // delete
     const deleteOrderContainer = document.createElement("div");
@@ -516,8 +538,6 @@ function editOrderPop(e){
         }
     });
 
-    
-    
     deleteOrderContainer.append(deleteIcon);
     deleteOrderContainer.append(deleteOrder);
 
@@ -542,14 +562,17 @@ function editOrderPop(e){
 // save edit order pop
 function editOrderPopEnter(){
     const currentOrder = document.getElementById("order"+getOrderId);
+    // check if name contains text
     if(document.getElementById("editName").value != ""){
         document.getElementById("orderName"+getOrderId).innerHTML = document.getElementById("editName").value.toUpperCase();
     }
+
+    // check if score contains value higher than zero and checking for old value to update
     if(document.getElementById("orderScoreInput").value != ""){
         if(document.getElementById("orderScore"+getOrderId) !== null){
             currentOrder.removeChild(document.getElementById("orderScore"+getOrderId));
         }
-        if(document.getElementById("orderScoreInput").value != "" && document.getElementById("orderScore"+getOrderId) == null){
+        if(document.getElementById("orderScoreInput").value != "" && document.getElementById("orderScoreInput").value != "0" && document.getElementById("orderScore"+getOrderId) == null){
             const orderScoreWeight = document.createElement("p");
             orderScoreWeight.className = "orderScore";
             orderScoreWeight.id = "orderScore"+getOrderId;
@@ -562,17 +585,8 @@ function editOrderPopEnter(){
             }
         }
     }
-    if(document.getElementById("deadLine").value != fullDate && document.getElementById("deadLine").value != document.getElementById("orderDeadLine"+getOrderId.value)){
-        if(document.getElementById("orderDeadLine"+getOrderId) != null){
-            currentOrder.removeChild(document.getElementById("orderDeadLine"+getOrderId));
-        }
-        const orderDeadLine = document.createElement("p");
-        orderDeadLine.className = "orderDeadLine";
-        orderDeadLine.id = "orderDeadLine"+getOrderId;
-        orderDeadLine.style.pointerEvents = "none";
-        orderDeadLine.innerHTML = "Deadline: "+document.getElementById("deadLine").value.substr(0, 10)+"    "+document.getElementById("deadLine").value.substr(11);
-        currentOrder.append(orderDeadLine);
-    }
+    
+    // check if orderDescription contains text and if description of the order already exists.
     if(document.getElementById("orderDescription"+getOrderId).value != "" && document.getElementById("orderDescriptionSave"+getOrderId) == null){
         const orderDescriptionSave = document.createElement("textArea");
         orderDescriptionSave.className = "orderDescriptionSave";
@@ -585,6 +599,70 @@ function editOrderPopEnter(){
             document.getElementById("orderDescriptionSave"+getOrderId).value = document.getElementById("orderDescription"+getOrderId).value;
         }
     }
+
+    // check if user is selected and saves to order
+    let tempCount = userCounter;
+    for(var i = 0; i <= tempCount; i++){
+        let tempUser = document.getElementById("userDropDown"+i);
+        
+        if(tempUser != null){
+            if(tempUser.value != "USER"){
+                if(document.getElementById("saveOption"+getOrderId+i) != null && tempUser.value != "USER"){
+                    if(tempUser.value != document.getElementById("saveOption"+getOrderId+i).value){
+                        document.getElementById("saveOption"+getOrderId+i).textContent = tempUser.value;
+                        document.getElementById("saveOption"+getOrderId+i).value = tempUser.value;
+                    } 
+                } else {
+                    const saveOption = document.createElement("option");
+                    saveOption.className = "saveOption";
+                    saveOption.id = "saveOption"+getOrderId+i;
+                    saveOption.textContent = tempUser.value;
+                    saveOption.value = tempUser.value;
+                    saveOption.style.display = "none";
+                    currentOrder.append(saveOption);
+                }
+            } else if (tempUser.value == "USER"){
+                if(document.getElementById("saveOption"+getOrderId+i) != null){
+                    currentOrder.removeChild(document.getElementById("saveOption"+getOrderId+i));
+                    userCounter--;
+                } else {
+
+                    userCounter--;
+                }
+            }
+        }
+    }  
+    
+    if(document.getElementById("usersOnOrder"+getOrderId) != null){
+        document.getElementById("usersOnOrder"+getOrderId).value = userCounter;
+        userCounter = 0;
+        tempCount = 0;
+    } else {
+        const usersOnOrder = document.createElement("input");
+        usersOnOrder.type = "number";
+        usersOnOrder.style.display = "none";
+        usersOnOrder.id = "usersOnOrder"+getOrderId;
+        usersOnOrder.value = userCounter;
+        currentOrder.append(usersOnOrder);
+        userCounter = 0;
+        tempCount = 0;
+    } 
+    
+
+    // check if deadline is different than default date/time and looking for already set deadline and update.    
+    if(document.getElementById("deadLine").value != fullDate && document.getElementById("deadLine").value != document.getElementById("orderDeadLine"+getOrderId.value)){
+        if(document.getElementById("orderDeadLine"+getOrderId) != null){
+            currentOrder.removeChild(document.getElementById("orderDeadLine"+getOrderId));
+        }
+        const orderDeadLine = document.createElement("p");
+        orderDeadLine.className = "orderDeadLine";
+        orderDeadLine.id = "orderDeadLine"+getOrderId;
+        orderDeadLine.style.pointerEvents = "none";
+        orderDeadLine.innerHTML = "Deadline: "+document.getElementById("deadLine").value.substr(0, 10)+"    "+document.getElementById("deadLine").value.substr(11);
+        currentOrder.append(orderDeadLine);
+    }
+
+    // remove the popupwindow
     body.removeChild(document.getElementById("editPopContainer"));
 }
 
