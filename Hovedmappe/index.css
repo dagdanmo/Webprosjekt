@@ -33,7 +33,6 @@ body{
     border: solid black 1.5px;
     overflow: hidden;
 } 
-
 #loginField{
     position: absolute;
     height: 125px;
@@ -46,7 +45,6 @@ body{
 }
 
 #logo{
-    height: 300px;
     position: absolute;
     top: -140px;
     left: -25px;

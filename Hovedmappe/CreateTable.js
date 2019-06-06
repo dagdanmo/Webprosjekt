@@ -267,7 +267,7 @@ var settings = document.getElementById("settings");
 var settingsBox = document.getElementById("settingsBox");
 var checkBoxBtn = document.getElementById("checkBoxBtn");
 
-
+hideSettingsBox();
 /*Makes the settings box appear */
 settings.addEventListener("click", function(){
     setTimeout(function(){ showSettingsBox(); }, 20);
@@ -345,4 +345,4 @@ checkbox.addEventListener('change', function(e){
         logoBlack.style.display = "block";
         logoBlue.style.display = "none";
     }
-})
+});
