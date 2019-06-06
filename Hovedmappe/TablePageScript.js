@@ -795,6 +795,43 @@ var dropDownContent = document.getElementById("dropdown-content");
 var settings = document.getElementById("settings");
 var settingsBox = document.getElementById("settingsBox");
 var checkBoxBtn = document.getElementById("checkBoxBtn");
+hideSettingsBox();
+/*Makes the settings box appear */
+settings.addEventListener("click", function(){
+    setTimeout(function(){ showSettingsBox(); }, 20);
+    setTimeout(function(){ settingsBoxShowElements(); }, 200);
+})
+
+function settingsBoxShowElements(){
+
+    settingsBox.style.zIndex = "100";
+    console.log("Settings clicked");
+    settingsBox.style.top = "30%";
+    settingsBox.style.left = "39%";
+    settingsBox.style.transitionTimingFunction = "ease-in";
+    settingsBox.style.transitionDuration = "0.2s";
+    settingsBox.style.transitionDelay = "0s";
+    settingsBox.style.opacity = "1";
+
+}
+checkBoxBtn.addEventListener("click", function(){
+    console.log("close button clicked");
+    settingsBox.style.top = "80%";
+    settingsBox.style.left = "39%";
+    settingsBox.style.transitionTimingFunction = "ease-in";
+    settingsBox.style.transitionDuration = "0.2s";
+    settingsBox.style.transitionDelay = "0s";
+    settingsBox.style.opacity = "0";
+    setTimeout(function(){ hideSettingsBox(); }, 500);
+});
+
+function showSettingsBox(){
+    settingsBox.style.display = "block";
+}
+
+function hideSettingsBox(){
+    settingsBox.style.display = "none";
+}
 
 checkbox.addEventListener('change', function(e){
     console.log(checkbox.checked, checkbox.value);
@@ -809,6 +846,16 @@ checkbox.addEventListener('change', function(e){
         document.getElementById("newCardButton").style.color = "#03acef";
         taskitBlack.style.display = "none";
         taskitBlue.style.display = "block";
+
+        document.getElementById("newCardButton").addEventListener("mouseover", mouseOver);
+        document.getElementById("newCardButton").addEventListener("mouseout", mouseOut);
+        function mouseOver() {
+            document.getElementById("newCardButton").style.color = "#66ffff";
+        }
+        function mouseOut() {
+            document.getElementById("newCardButton").style.color = "#03acef";
+
+        }
 
 
             //const card = document.getElementById("card"+i);
@@ -843,32 +890,4 @@ checkbox.addEventListener('change', function(e){
     }
 });
 
-/* Makes the settings box appear */
-settings.addEventListener("click", function(){
-    setTimeout(function(){ showSettingsBox(); }, 20);
-    console.log("Settings clicked");
-    settingsBox.style.top = "80%";
-    settingsBox.style.left = "39%";
-    settingsBox.style.transitionTimingFunction = "ease-in";
-    settingsBox.style.transitionDuration = "0.5s";
-    settingsBox.style.transitionDelay = "0s";
-    settingsBox.style.opacity = "1";
-})
-checkBoxBtn.addEventListener("click", function(){
-    console.log("close button clicked");
-    settingsBox.style.top = "80%";
-    settingsBox.style.left = "39%";
-    settingsBox.style.transitionTimingFunction = "ease-in";
-    settingsBox.style.transitionDuration = "0.5s";
-    settingsBox.style.transitionDelay = "0s";
-    settingsBox.style.opacity = "0";
-    
-    setTimeout(function(){ hideSettinsBox(); }, 2000);
-});
-function showSettingsBox(){
-    settingsBox.style.display = "block";
-}
 
-function hideSettinsBox(){
-    settingsBox.style.display = "none";
-}
