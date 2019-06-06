@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="CreateTableStyling.css" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CreateTable sida</title>
+</head>
+<body>
+        <header id = "header">
+                <div class = "headerElements">
+                        <div id="homeImgDiv"><img id="homeImg" src="images/HomeIcondark.jpg"></div>
+                </div>
+                <nav>
+                    <ul>
+                        <div id="txtMiddle"><img id="taskitBlack" src="images/TASKIT-final.png"><img id="taskitWhite" src="images/TASKIT-finalWhite.png" id></div>
+                        <div class="dropdown">
+                                <div id="profileImgDiv"><img id="profileImg" src="images/profilePic.png">
+                                    <div class="dropdown-content">
+                                      <a href="#">Profile</a>
+                                      <a id = "settings" href="#">Settings</a>
+                                      <a id = "logOut" href="#">Log Out</a>
+                                    </div>
+                                </div>
+                        </div>
+                    </ul>
+                </nav>
+            </header>
+    <div id = "center">
+            <div id="settingsBox">
+                <p id="txtDarkMode">Turn on dark mode</p>
+                    <input type="checkbox" id="checkDarkMode">
+                    <button id="checkBoxBtn"><a id="closeBtn">Close</a></button>
+            </div>
+        <div id = "createNewTable">
+            <input id="inputTableName" placeholder="Enter table name...">
+            <button id="confirmTableName">+</button>
+            <div id ="plusSign">
+                <box id="plusHorizontal"></box>
+                <box id="plusVertical"></box>
+            </div>
+            <div class="color" id="red"></div>
+            <div class="color" id="green"></div>
+            <div class="color" id="blue"></div>
+            <div class="color" id="orange"></div>
+            <div class="color" id="purple"></div>
+        </div>
+    </div>
+    <div id = "footer">
+             <!-- IN-PROGRESS, button to add an instance of a task Div -->
+            <div class="TeamBoxContainer" id="TeamBox">
+                <p id="TeamBox"></p>
+            </div>
+    </div>
+    
+    <script src="CreateTable.js"></script>
+</body>
+</html>
