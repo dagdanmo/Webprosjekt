@@ -783,9 +783,6 @@ checkbox.addEventListener('change', function(e){
             }  */
 
 
-
-
-
     } else {
         console.log("Ikke huket av");
         dropDownContent.style.backgroundColor = "white";
@@ -795,6 +792,15 @@ checkbox.addEventListener('change', function(e){
         document.body.style.background = "#CCF3FF";
         txtAddCard.style.color = "black";
         document.getElementById("newCardButton").style.color = "AAAAAA";
+
+        document.getElementById("newCardButton").addEventListener("mouseover", mouseOver);
+        document.getElementById("newCardButton").addEventListener("mouseout", mouseOut);
+        function mouseOver() {
+            document.getElementById("newCardButton").style.color = "#33CC00";
+        }
+        function mouseOut() {
+            document.getElementById("newCardButton").style.color = "#AAAAAA";
+        }
     }
 });
 
