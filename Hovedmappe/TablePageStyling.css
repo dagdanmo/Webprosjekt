@@ -262,16 +262,41 @@ li.dropDown {
     margin-bottom: 2%;
 }
 
+#orderDescriptionHeader{
+    position: relative;
+    height: 20px;
+    width: 100%;
+    top: 25px;
+    margin: 0;
+    padding: 0;
+}
+
 .orderDescription{
     width: 100%;
     height: 123px;
     border-radius: 5px;
     font-size: 16px;
     text-align: center;
+    margin-top: 10%;
     margin-bottom: 2%;
 }
 
+#deadLineHeader{
+    position: relative;
+    height: 20px;
+    width: 100%;
+    top: 0px;
+    margin: 0;
+    padding: 0;
+}
+#deadLine{
+    position: relative;
+    top:22px;
+}
+
 #orderScoreInput{
+    position: relative;
+    top: 10px;
     width: 20%;
     float: left;
 }
@@ -282,7 +307,7 @@ li.dropDown {
     text-align: left;
     float: left;
     padding-left: 5%;
-    top: -12px;
+    top: -5px;
 }
 
 #editEnter{
@@ -295,6 +320,10 @@ li.dropDown {
     position: relative;
     top: 0;
     font-size: 250%;
+}
+
+.editHeaders{
+    position: absolute;
 }
 
 /* active card/order in edit window */
@@ -482,7 +511,7 @@ li.dropDown {
     font-size: 10px;
     text-align: left;
     left: 5px;
-    top: 12px;
+    top: 14px;
 }
 
 .orderDeadLine{
