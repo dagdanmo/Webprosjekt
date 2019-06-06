@@ -258,8 +258,8 @@ var confirmTableName = document.getElementById("confirmTableName"); // plus back
 var center = document.getElementById("center"); // center color (background color)
 var txtMiddle = document.getElementById("txtMiddle"); // "TASK IT" text color (color)
 var txtDarkMode = document.getElementById("txtDarkMode");
-var taskitBlack = document.getElementById("taskitBlack");
-var taskitBlue = document.getElementById("taskitBlue");
+var logoBlack = document.getElementById("logoBlack");
+var logoBlue = document.getElementById("logoBlue");
 
 
 var settings = document.getElementById("settings");
@@ -321,8 +321,8 @@ checkbox.addEventListener('change', function(e){
         txtMiddle.style.color = "#eeeeee";
         settingsBox.style.backgroundColor = "#8A928A"
         document.body.style.background = "black";
-        taskitBlack.style.display = "none";
-        taskitBlue.style.display = "block";
+        logoBlack.style.display = "none";
+        logoBlue.style.display = "block";
 
     } else {
         console.log("Ikke huket av");
@@ -338,7 +338,7 @@ checkbox.addEventListener('change', function(e){
         txtMiddle.style.color = "black";
         settingsBox.style.backgroundColor = "#EEEEEE"
         document.body.style.background = "white";
-        taskitBlack.style.display = "block";
-        taskitBlue.style.display = "none";
+        logoBlack.style.display = "block";
+        logoBlue.style.display = "none";
     }
 })
