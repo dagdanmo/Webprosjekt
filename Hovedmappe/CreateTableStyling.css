@@ -207,6 +207,10 @@ button:hover {
     margin-top: -150px;
     cursor: pointer;
 }
+/*
+textarea:focus, input:focus {
+    color: #ff0000;
+}*/
 
 #createNewTable:hover {
     opacity: 1

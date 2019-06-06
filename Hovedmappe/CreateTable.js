@@ -199,7 +199,7 @@ var selectColor;
     
 
 
-/* Dark mode section */
+/*------------ Dark mode section ------------*/
 var checkbox = document.getElementById("checkDarkMode"); // checkbox
 var header = document.getElementById("header"); // header color (background)
 var footer = document.getElementById("footer"); // footer color (background-color)
@@ -210,6 +210,7 @@ var inputTableName = document.getElementById("inputTableName"); // Color for inp
 var confirmTableName = document.getElementById("confirmTableName"); // plus background color and plus-sign color (color and background-color)
 var center = document.getElementById("center"); // center color (background color)
 var txtMiddle = document.getElementById("txtMiddle"); // "TASK IT" text color (color)
+var inputTableName = document.getElementById("inputTableName"); // input text color
 var txtDarkMode = document.getElementById("txtDarkMode");
 
 
@@ -255,15 +256,16 @@ checkbox.addEventListener('change', function(e){
         console.log("huket av");
         header.style.background = "#141414";
         footer.style.backgroundColor ="#141414";
-        plusVertical.style.backgroundColor ="#EEEEEE";
-        plusHorizontal.style.backgroundColor ="#EEEEEE";
+        plusVertical.style.backgroundColor ="#03acef";
+        plusHorizontal.style.backgroundColor ="#03acef";
         createNewTable.style.backgroundColor = "#303030";
         inputTableName.style.backgroundColor ="#353535";
         confirmTableName.style.backgroundColor ="#353535";
-        confirmTableName.style.color = "#eeeeee";
+        confirmTableName.style.color = "#03acef";
         center.style.color = "#767D92";
-        txtMiddle.style.color = "#eeeeee";
-        settingsBox.style.backgroundColor = "#8A928A"
+        txtMiddle.style.color = "#03acef";
+        settingsBox.style.backgroundColor = "#8A928A";
+        inputTableName.style.color = "#03acef";
         document.body.style.background = "black";
 
     } else {
@@ -279,6 +281,7 @@ checkbox.addEventListener('change', function(e){
         center.style.backgroundcolor = "#03acef";
         txtMiddle.style.color = "black";
         settingsBox.style.backgroundColor = "#EEEEEE"
+        inputTableName.style.color = "black";
         document.body.style.background = "white";
     }
-})
+});

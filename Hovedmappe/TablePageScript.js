@@ -715,3 +715,83 @@ console.log(localStorage);
 /* start.addEventListener("click", function(){
     myLoop();
 });   */   
+
+
+/*------------ Dark mode section ------------*/
+
+var checkbox = document.getElementById("checkDarkMode"); // checkbox
+var txtMiddle = document.getElementById("txtMiddle"); // "TASK IT" text color (color)
+var container = document.getElementById("container"); // Main container color
+
+
+var txtAddCard = document.getElementById("txtAddCard"); // Add card text color
+
+
+var settings = document.getElementById("settings");
+var settingsBox = document.getElementById("settingsBox");
+var checkBoxBtn = document.getElementById("checkBoxBtn");
+
+checkbox.addEventListener('change', function(e){
+    console.log(checkbox.checked, checkbox.value);
+    if(checkbox.checked){
+        console.log("huket av");
+        header.style.background = "#141414";
+        txtMiddle.style.color = "#03acef";
+        container.style.background = "#333333"
+        document.body.style.background = "#333333";
+        txtAddCard.style.color = "#03acef";
+        popCardEnter.style.color = "#03acef";
+        document.getElementById("newCardButton").style.color = "#03acef";
+
+        
+            //const card = document.getElementById("card"+i);
+            // ADD CHANGES BLABLA
+            /*
+            var card = document.querySelectorAll(".cards"), i;
+            for(i = 0; i < card.length; ++i){
+                card[i].style.backgroundColor = "#03acef";
+            }  */
+            
+        
+        
+        
+
+    } else {
+        console.log("Ikke huket av");
+        header.style.background = "#03acef";
+        txtMiddle.style.color = "black";
+        container.style.backgroundColor = "#CCF3FF";
+        document.body.style.background = "#CCF3FF";
+        txtAddCard.style.color = "black";
+        document.getElementById("newCardButton").style.color = "AAAAAA";
+    }
+}); 
+
+/*Makes the settings box appear */
+settings.addEventListener("click", function(){
+    setTimeout(function(){ showSettingsBox(); }, 20);
+    console.log("Settings clicked");
+    settingsBox.style.top = "80%";
+    settingsBox.style.left = "39%";
+    settingsBox.style.transitionTimingFunction = "ease-in";
+    settingsBox.style.transitionDuration = "0.5s";
+    settingsBox.style.transitionDelay = "0s";
+    settingsBox.style.opacity = "1";
+})
+checkBoxBtn.addEventListener("click", function(){
+    console.log("close button clicked");
+    settingsBox.style.top = "80%";
+    settingsBox.style.left = "39%";
+    settingsBox.style.transitionTimingFunction = "ease-in";
+    settingsBox.style.transitionDuration = "0.5s";
+    settingsBox.style.transitionDelay = "0s";
+    settingsBox.style.opacity = "0";
+    setTimeout(function(){ hideSettinsBox(); }, 2000);
+});
+function showSettingsBox(){
+    settingsBox.style.display = "block";
+}
+
+function hideSettinsBox(){
+    settingsBox.style.display = "none";
+}

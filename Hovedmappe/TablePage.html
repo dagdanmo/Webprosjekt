@@ -20,7 +20,7 @@
                         <div id="profileImgDiv"><img id="profileImg" src="images/profilePic.png">
                             <div class="dropdown-content">
                               <a href="#">Profile</a>
-                              <a href="#">Settings</a>
+                              <a id = "settings" href="#">Settings</a>
                               <a id = "logOut" href="#">Log Out</a>
                             </div>
                         </div>
@@ -33,7 +33,12 @@
     <div class="tableContainer" id="container">
         <div id="newCardButtonContainer">
                 <span class="enter" id="newCardButton"> &plus; </span>
-                <div>ADD CARD</div>
+                <div id ="txtAddCard">ADD CARD</div>
+        </div>
+        <div id="settingsBox">
+                <p id="txtDarkMode">Turn on dark mode</p>
+                    <input type="checkbox" id="checkDarkMode">
+                    <button id="checkBoxBtn"><a id="closeBtn">Close</a></button>
         </div>
     </div>
     
