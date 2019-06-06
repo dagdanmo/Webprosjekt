@@ -115,7 +115,7 @@ body {
 }
 @media (min-width: 450px) {
     .headerElements {
-      flex: 0 1 44%;
+      flex: 0 1 50%;
     }
 }
 @media (min-width: 1300px) {
@@ -136,7 +136,7 @@ nav ul {
 }
 @media (min-width: 450px) {
     nav {
-      flex: 0 1 56%;
+      flex: 0 1 50%;
     }
     
 }

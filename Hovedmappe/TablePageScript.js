@@ -8,7 +8,7 @@ var profileSign = document.getElementById("profileImgDiv");
 homeSign.addEventListener("click", function(){
 
     setTimeout(function () {
-        window.location.href = "index.html"; //will redirect to your blog page (an ex: blog.html)
+        window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
      }, 1000);
 });
 txtMiddle.addEventListener("click", function(){
@@ -17,12 +17,7 @@ txtMiddle.addEventListener("click", function(){
         window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
      }, 1000);
 });
-profileSign.addEventListener("click", function(){
 
-    setTimeout(function () {
-        window.location.href = "TablePage.html"; //will redirect to your blog page (an ex: blog.html)
-     }, 1000);
-});
 
 // init
     // Date
@@ -65,6 +60,9 @@ profileSign.addEventListener("click", function(){
     let orderScore = 0;
     let userPoints = 0;
     let pointsEarned = 0;
+
+    // users
+    let users = ["Dag", "Daniel", "Mattis", "Martin", "Mathias"];
 
 // main container
 const table = document.getElementById("container");
@@ -462,6 +460,28 @@ function editOrderPop(e){
     deadLine.type = "datetime-local";
     deadLine.value = fullDate;
 
+    // assign users
+    const userContainer = document.createElement("div");
+    userContainer.className = "userContainer";
+    userContainer.id = "userContainer";
+
+    const addUser = document.createElement("span");
+    addUser.className = "addUser";
+    addUser.id = "addUser";
+    addUser.innerHTML = "&plus;";
+    
+    const addUserText = document.createElement("p");
+    addUserText.className = "addUser";
+    addUserText.id = "addUserText";
+    addUserText.innerHTML = "ADD USER";
+    addUser.append(addUserText);
+
+    const userDropDown = document.createElement("option");
+    userDropDown.className = "userDropDown";
+
+    userContainer.append(addUser);
+    userContainer.append(userDropDown);
+
     // delete
     const deleteOrderContainer = document.createElement("div");
     deleteOrderContainer.className = "editInput";
@@ -496,6 +516,7 @@ function editOrderPop(e){
     editWindow.append(orderDescription);
     editWindow.append(orderScoreInput);
     editWindow.append(orderScoreInfo);
+    editWindow.append(userContainer);
     editWindow.append(deadLineHeader);
     editWindow.append(deadLine);
     editWindow.append(deleteOrderContainer);
@@ -827,6 +848,7 @@ checkBoxBtn.addEventListener("click", function(){
     settingsBox.style.transitionDuration = "0.5s";
     settingsBox.style.transitionDelay = "0s";
     settingsBox.style.opacity = "0";
+    
     setTimeout(function(){ hideSettinsBox(); }, 2000);
 });
 function showSettingsBox(){
@@ -836,36 +858,3 @@ function showSettingsBox(){
 function hideSettinsBox(){
     settingsBox.style.display = "none";
 }
-
-var users = [{
-    username: "Dag",
-    email: "dag@taskit.com",
-    password: "Dag123",
-    score: 0
-},
-{
-    username: "Daniel",
-    email: "daniel@taskit.com",
-    password: "Daniel123"
-},
-{
-    username: "Mattis",
-    email: "mattis@taskit.com",
-    password: "Mattis123"
-},
-{
-    username: "Martin",
-    email: "martin@taskit.com",
-    password: "Martin123",
-},
-{
-    username: "Mathias",
-    email: "mathias@taskit.com",
-    password: "Mathias123"
-},{
-    username: "admin",
-    email: "admin@taskit.com",
-    password: "admin"
-}];
-
-console.log(users[1].username);

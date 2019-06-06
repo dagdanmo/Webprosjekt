@@ -228,7 +228,7 @@ var selectColor;
     homeSign.addEventListener("click", function(){
 
         setTimeout(function () {
-            window.location.href = "index.html"; //will redirect to your blog page (an ex: blog.html)
+            window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
          }, 300);
     });
     txtMiddle.addEventListener("click", function(){
@@ -258,6 +258,7 @@ var confirmTableName = document.getElementById("confirmTableName"); // plus back
 var center = document.getElementById("center"); // center color (background color)
 var txtMiddle = document.getElementById("txtMiddle"); // "TASK IT" text color (color)
 var txtDarkMode = document.getElementById("txtDarkMode");
+var dropDownContent = document.getElementById("dropdown-content"); // Dropdown menu background color
 var logoBlack = document.getElementById("logoBlack");
 var logoBlue = document.getElementById("logoBlue");
 
@@ -300,7 +301,7 @@ function showSettingsBox(){
     settingsBox.style.display = "block";
 }
 
-function hideSettinsBox(){
+function hideSettingsBox(){
     settingsBox.style.display = "none";
 }
 
@@ -309,14 +310,16 @@ checkbox.addEventListener('change', function(e){
     console.log(checkbox.checked, checkbox.value);
     if(checkbox.checked){
         console.log("huket av");
+        dropDownContent.style.backgroundColor = "#AAAAAA";
         header.style.background = "#141414";
         footer.style.backgroundColor ="#141414";
-        plusVertical.style.backgroundColor ="#EEEEEE";
-        plusHorizontal.style.backgroundColor ="#EEEEEE";
+        plusVertical.style.backgroundColor ="#03acef";
+        plusHorizontal.style.backgroundColor ="#03acef";
         createNewTable.style.backgroundColor = "#303030";
-        inputTableName.style.backgroundColor ="#353535";
-        confirmTableName.style.backgroundColor ="#353535";
-        confirmTableName.style.color = "#eeeeee";
+        inputTableName.style.backgroundColor ="#353535"; // inputfield color
+        inputTableName.style.color = "#03acef";
+        confirmTableName.style.backgroundColor ="#353535"; // plus sign background color
+        confirmTableName.style.color = "#03acef";
         center.style.color = "#767D92";
         txtMiddle.style.color = "#eeeeee";
         settingsBox.style.backgroundColor = "#8A928A"
@@ -326,6 +329,7 @@ checkbox.addEventListener('change', function(e){
 
     } else {
         console.log("Ikke huket av");
+        dropDownContent.style.backgroundColor = "white";
         header.style.background = "#03acef";
         footer.style.backgroundColor ="#e0fbff";
         plusVertical.style.backgroundColor ="black";
