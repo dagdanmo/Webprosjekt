@@ -5,47 +5,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CreateTable sida</title>
+    <!--Tab bar name-->
+    <title>Task IT!</title>
 </head>
 <body>
+        <!--Header bar-->
         <header id = "header">
                 <div class = "headerElements">
+                        <!--Home button image-->
                         <div id="homeImgDiv"><img id="homeImg" src="images/HomeIcondark.jpg"></div>
                 </div>
                 <nav>
                     <ul>
+                        <!--Task it logo -->
                         <div id="txtMiddle"><img id="taskitBlack" src="images/TASKIT-final.png"><img id="taskitBlue" src="images/TASKIT-finalBlue.png" id></div>
+                        <!--Drop down menu div-->
                         <div class="dropdown">
-                                <div id="profileImgDiv"><img id="profileImg" src="images/profilePic.png">
+                                <div id="profileImgDiv"><img id="profileImg" src="images/profilePic.png"> <!--Profile image on right corner-->
                                     <div class="dropdown-content" id="dropdown-content">
-                                      <a href="#">Profile</a>
-                                      <a id = "settings" href="#">Settings</a>
-                                      <a id = "logOut" href="#">Log Out</a>
+                                        <!-- Drop down menu links-->
+                                      <a>Profile</a>
+                                      <a id = "settings">Settings</a>
+                                      <a id = "logOut">Log Out</a>
                                     </div>
                                 </div>
                         </div>
                     </ul>
                 </nav>
-            </header>
+            </header> 
+            <!--Header section ends-->
+            <!--Center section-->
     <div id = "center">
+            <!--Settings menu-->
             <div id="settingsBox">
                 <p id="txtDarkMode">Turn on dark mode</p>
-                    <input type="checkbox" id="checkDarkMode">
-                    <button id="checkBoxBtn"><a id="closeBtn">Close</a></button>
+                    <input type="checkbox" id="checkDarkMode"> <!--Checkbox-->
+                    <button id="checkBoxBtn"><a id="closeBtn">Close</a></button> 
             </div>
+            <!--Settings menu section ends-->
+            <!--New table section-->
         <div id = "createNewTable">
-            <input id="inputTableName" placeholder="Enter table name...">
-            <button id="confirmTableName">+</button>
+            <input id="inputTableName" placeholder="Enter table name..."> <!--Input field-->
+            <button id="confirmTableName">+</button> <!--confirm table button-->
             <div id ="plusSign">
                 <box id="plusHorizontal"></box>
                 <box id="plusVertical"></box>
             </div>
+            <!--Color selection-->
             <div class="color" id="red"></div>
             <div class="color" id="green"></div>
             <div class="color" id="blue"></div>
             <div class="color" id="orange"></div>
             <div class="color" id="purple"></div>
+            <!--Color selection ends-->
         </div>
+            <!--New menu section ends-->
     </div>
     <div id = "footer">
              <!-- IN-PROGRESS, button to add an instance of a task Div -->
@@ -54,6 +68,6 @@
             </div>
     </div>
     
-    <script src="CreateTable.js"></script>
+    <script src="CreateTable.js"></script> <!--JavaScript referance-->
 </body>
 </html>
