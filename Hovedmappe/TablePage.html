@@ -11,12 +11,20 @@
     <!-- Header -->
     <header id = "header">
         <div class = "headerElements">
-            <div id="homeImgDiv"><img id="homeImg" src="images/HomeIcon.png"></div>
+            <div id="homeImgDiv"><img id="homeImg" src="images/HomeIcondark.jpg"></div>
         </div>
         <nav>
             <ul>
                 <div id="txtMiddle"><h1>TASK IT!</h1></div>
-                <div id="profileImgDiv"><img id="profileImg" src="images/profilePic.png"></div>
+                <div class="dropdown">
+                        <div id="profileImgDiv"><img id="profileImg" src="images/profilePic.png">
+                            <div class="dropdown-content">
+                              <a href="#">Profile</a>
+                              <a href="#">Settings</a>
+                              <a id = "logOut" href="#">Log Out</a>
+                            </div>
+                        </div>
+                </div>
             </ul>
         </nav>
     </header>

@@ -193,8 +193,34 @@ var selectColor;
             createNewTable.style.color = "#e0fbff";
 
            setTimeout(function () {
-                window.location.href = "TablePage.html";
-             }, 2000);
+                window.location.href = "TablePage.html"; //will redirect to your blog page (an ex: blog.html)
+             }, 300);
+
+            
+        }else{
+            console.log("Insert table name.")
+        }
+    });
+    inputTableName.addEventListener("keyup", function(){
+        if(event.keyCode == 13 && tableNamed != null && tableNamed != ""){
+            var newCard = document.createElement("div");
+            newCard.className = "newCard";
+            newCard.id = "newCard" + idIncrement;
+            var newCardName = document.createTextNode(inputTableName.value);
+            newCard.appendChild(newCardName);
+            document.getElementById("TeamBox").appendChild(newCard);
+            idIncrement++;
+            console.log(newCard.className, newCard.id);
+            inputTableName.value = "";
+            tableNamed = inputTableName.value;
+            newCard.style.backgroundColor = selectColor;
+
+            borderRemover();
+            createNewTable.style.color = "#e0fbff";
+
+           setTimeout(function () {
+                window.location.href = "TablePage.html"; //will redirect to your blog page (an ex: blog.html)
+             }, 300);
 
             
         }else{
@@ -205,19 +231,19 @@ var selectColor;
 
         setTimeout(function () {
             window.location.href = "index.html"; //will redirect to your blog page (an ex: blog.html)
-         }, 1000);
+         }, 300);
     });
     txtMiddle.addEventListener("click", function(){
 
         setTimeout(function () {
             window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
-         }, 1000);
+         }, 300);
     });
     logOut.addEventListener("click", function(){
 
         setTimeout(function () {
             window.location.href = "index.html"; //will redirect to your blog page (an ex: blog.html)
-         }, 1000);
+         }, 300);
     });
     
 

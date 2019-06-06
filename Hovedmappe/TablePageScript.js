@@ -9,22 +9,45 @@ homeSign.addEventListener("click", function(){
 
     setTimeout(function () {
         window.location.href = "index.html"; //will redirect to your blog page (an ex: blog.html)
-     }, 1000);
+     }, 300);
 });
 txtMiddle.addEventListener("click", function(){
 
     setTimeout(function () {
         window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
-     }, 1000);
+     }, 300);
 });
 profileSign.addEventListener("click", function(){
 
     setTimeout(function () {
         window.location.href = "TablePage.html"; //will redirect to your blog page (an ex: blog.html)
-     }, 1000);
+     }, 300);
 });
 
 // init
+    // Date
+    let today = new Date();
+    let year = today.getFullYear();
+    let month = today.getMonth()+1;
+    let day = today.getDate();
+    let hour = today.getHours();
+    let minute = today.getMinutes();
+
+    if(month.toString().length == 1){
+        month = '0'+month;
+    }
+    if(day.toString().length == 1){
+        day = '0'+day;
+    }
+    if(hour.toString().length == 1){
+        hour = '0'+hour;
+    }
+    if(minute.toString().length == 1){
+        minute = '0'+minute;
+    }
+
+    let fullDate = year+'-'+month+'-'+day+'T'+hour+':'+minute;
+
     // Idenfication array for card creation, assigning a unique ID between 0-4 to all cards.
     let cardI = [0, 1, 2, 3, 4];
     // Counting cards for star function
@@ -333,10 +356,153 @@ function createNewOrder(){
     orderInput.value = "";
 }
 
-// save edit pop
-function editPopEnter(){
+// Order Edit pop
+function editOrderPop(e){
+    getOrderId = e.target.id.substr(9);
+    getParentID = document.getElementById("order"+getOrderId).parentNode.id.substr(4);
+    
+    const editPop = document.createElement("div");
+    editPop.className = "editPopContainer";
+    editPop.id = "editPopContainer";
+    editPop.style.display = "block";
+    
+    const editWindow = document.createElement("div");
+    editWindow.className = "editPop";
+
+    const editOrderName = document.createElement("p");
+    editOrderName.className = "editName";
+    editOrderName.innerHTML = document.getElementById("orderName"+getOrderId).innerHTML;
+
+    const editEnter = document.createElement("span");
+    editEnter.className = "enter";
+    editEnter.id = "editEnter";
+    editEnter.innerHTML = "&plus;";
+    editEnter.addEventListener("click", editOrderPopEnter);
+    
+    const editClose = document.createElement("span");
+    editClose.className = "close";
+    editClose.id = "editClose";
+    editClose.innerHTML = "&times;";
+    editClose.addEventListener("click", editpopDown);
+    
+    const editName = document.createElement("input");
+    editName.className = "editInput";
+    editName.id = "editName";
+    editName.placeholder = "Enter new ordername";
+    editName.maxLength = "14";
+    editName.addEventListener("keyup", function(){
+        if(event.keyCode == 13){
+            editOrderPopEnter();
+        }
+    });
+
+    const orderDescription = document.createElement("textarea");
+    orderDescription.className = "orderDescription";
+    orderDescription.id = "orderDescription"+getOrderId;
+    orderDescription.placeholder = "Enter a description";
+    orderDescription.style.resize = "none";
+    if(document.getElementById("orderDescriptionSave"+getOrderId) != null){
+        orderDescription.value = document.getElementById("orderDescriptionSave"+getOrderId).value;
+    }
+
+    const orderScoreInput = document.createElement("input")
+    orderScoreInput.className = "editInput";
+    orderScoreInput.id = "orderScoreInput";
+    orderScoreInput.maxLength = "2";
+    orderScoreInput.placeholder = "score";
+    orderScoreInput.addEventListener("keyup", function(){
+        if(event.keyCode == 13){
+            editOrderPopEnter();
+        }
+    });
+
+    const orderScoreInfo = document.createElement("p");
+    orderScoreInfo.className = "orderScoreInfo";
+    orderScoreInfo.innerHTML = "Type in score earned when completing task";
+
+    // dato
+    const deadLine = document.createElement("input");
+    deadLine.className = "editinput";
+    deadLine.id = "deadLine";
+    deadLine.type = "datetime-local";
+    deadLine.value = fullDate;
+
+    const deleteOrderContainer = document.createElement("div");
+    deleteOrderContainer.className = "editInput";
+    deleteOrderContainer.id = "deleteOrderContainer";
+
+    const deleteIcon = document.createElement("span");
+    deleteIcon.id = "deleteIcon";
+    deleteIcon.innerHTML = "&#9760;";
+    deleteIcon.addEventListener("click", deleteOrderF);
+    
+    const deleteOrder = document.createElement("input");
+    deleteOrder.className = "editInput";
+    deleteOrder.id = "deleteOrder";
+    deleteOrder.placeholder = "Enter 'DELETE' to confirm";
+    deleteOrder.maxLength = "10";
+    deleteOrder.addEventListener("keyup", function(){
+        if(event.keyCode == 13){
+            deleteOrderF();
+        }
+    });
+
+    
+    
+    deleteOrderContainer.append(deleteIcon);
+    deleteOrderContainer.append(deleteOrder);
+
+    editWindow.append(editClose);
+    editWindow.append(editEnter);
+    editWindow.append(editOrderName);
+    editWindow.append(editName);
+    editWindow.append(orderDescription);
+    editWindow.append(orderScoreInput);
+    editWindow.append(orderScoreInfo);
+    editWindow.append(deadLine);
+    editWindow.append(deleteOrderContainer);
+    
+    editPop.append(editWindow);
+    body.append(editPop);
+}
+
+// save edit order pop
+function editOrderPopEnter(){
+    const currentOrder = document.getElementById("order"+getOrderId);
     if(document.getElementById("editName").value != ""){
-        document.getElementById("newCardName"+cardId).innerHTML = document.getElementById("editName").value.toUpperCase();
+        document.getElementById("orderName"+getOrderId).innerHTML = document.getElementById("editName").value.toUpperCase();
+    }
+    if(document.getElementById("orderScoreInput").value != ""){
+        if(document.getElementById("orderScore"+getOrderId) !== null){
+            currentOrder.removeChild(document.getElementById("orderScore"+getOrderId));
+        }    
+        const orderScoreWeight = document.createElement("p");
+        orderScoreWeight.className = "orderScore";
+        orderScoreWeight.id = "orderScore"+getOrderId;
+        orderScoreWeight.style.pointerEvents = "none";
+        orderScoreWeight.innerHTML = "POINTS: " +orderScoreInput.value;
+        currentOrder.append(orderScoreWeight);
+    }
+    if(document.getElementById("deadLine").value != fullDate && document.getElementById("deadLine").value != document.getElementById("orderDeadLine"+getOrderId.value)){
+        if(document.getElementById("orderDeadLine"+getOrderId) != null){
+            currentOrder.removeChild(document.getElementById("orderDeadLine"+getOrderId));
+        }
+        const orderDeadLine = document.createElement("p");
+        orderDeadLine.className = "orderDeadLine";
+        orderDeadLine.id = "orderDeadLine"+getOrderId;
+        orderDeadLine.style.pointerEvents = "none";
+        orderDeadLine.innerHTML = "Deadline: "+document.getElementById("deadLine").value.substr(0, 10)+"    "+document.getElementById("deadLine").value.substr(11);
+        currentOrder.append(orderDeadLine);
+    }
+    if(document.getElementById("orderDescription"+getOrderId).value != ""){
+        const orderDescriptionSave = document.createElement("textArea");
+        orderDescriptionSave.className = "orderDescriptionSave";
+        orderDescriptionSave.id = "orderDescriptionSave"+getOrderId;
+        orderDescriptionSave.style.display = "none";
+        orderDescriptionSave.value = document.getElementById("orderDescription"+getOrderId).value;
+        currentOrder.append(orderDescriptionSave);
+    } else if (document.getElementById("orderDescription"+getOrderId).value == document.getElementById("orderDescriptionSave"+getOrderId).value){
+        document.getElementById("orderDescriptionSave"+getOrderId).value = document.getElementById("orderDescription"+getOrderId).value;
     }
     body.removeChild(document.getElementById("editPopContainer"));
 }
@@ -401,7 +567,7 @@ function dragDrop(e){
     } else if ( target.style['border-top'] !== '' && e.target.className !== "cards"){
         target.style['border-top'] = '';
         target.parentNode.insertBefore(orderDrag, e.target);
-    } else if (e.target.className == "cards" ||  e.target.parentNode.className == "orderInputContainer" || e.target.className == "edit" || e.target.className == "stars"){
+    } else if (e.target.className == "cards" ||  e.target.parentNode.className == "orderInputContainer" || e.target.className == "edit" || e.target.className == "orderEdit" || e.target.className == "stars"){
         this.append(orderDrag);
     } else {
         alert("stupid");

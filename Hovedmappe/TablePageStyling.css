@@ -61,6 +61,43 @@ body{
     opacity: 0.5;
     cursor: pointer;
 }
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    display: inline-block;
+}
+  
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    background-color: ;
+    z-index: 1;
+    position: absolute;
+    padding: 9px 9px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+  
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+  
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #03acef;
+}
+  
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+    background-color: white;
+    margin: 0;
+    padding-top: 5px;  
+}
 @media (min-width: 550px) {
     #header {
       padding: 0 16px;
@@ -120,42 +157,6 @@ button:hover {
     margin: 0;
     padding: 0;
 }
-
-li a, .dropBtn {
-    display:inline-block;
-    color: white;
-    text-align: center;
-    padding: 20px 22px;
-    text-decoration: none;
-}
-li a:hover, .dropDown:hover .dropBtn {
-    background: #786BDE;
-
-}
-li.dropDown {
-    display: inline-block;
-}
-.dropDownContent
-{
-    display:none;
-    position: absolute;
-    background: #333;
-    min-width: 124px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-.dropDownContent a {
-    color: black;
-    padding: 20px 22px;
-    text-decoration: none;
-    display: block;
-}
-.dropDownContent a:hover {
-    background: #d7d2ff;
-}
-.dropDown:hover .dropDownContent {
-    display: block;
-}
-/* Header end */
 
 .text{
     margin: 0;
@@ -308,18 +309,21 @@ li.dropDown {
 }
 
 #deleteCardContainer{
-    margin:0;
-}
-
-#deleteOrderContainer{
-    /* position: relative; */
-    padding-top: 20%;
+    padding-top: 5%;
     margin:0;
 }
 
 #deleteCard{
+    position: relative;
     float: right;
-    width: 85%;
+    width: 80%;
+    bottom: -15px;
+}
+
+#deleteOrderContainer{
+    /* position: relative; */
+    padding-top: 10%;
+    margin:0;
 }
 
 #deleteOrder{
@@ -466,10 +470,10 @@ li.dropDown {
 
 .orderName{
     position: relative;
-    font-size: 20px;
+    font-size: 18px;
     text-align: left;
     margin-left: 2%;
-    top: -25px;
+    top: -28px;
     width: 85%;
     overflow: hidden;
 }
@@ -478,8 +482,16 @@ li.dropDown {
     position: absolute;
     font-size: 10px;
     text-align: left;
-    left: 6px;
-    top: 18px;
+    left: 5px;
+    top: 12px;
+}
+
+.orderDeadLine{
+    position: absolute;
+    font-size: 12px;
+    text-align: left;
+    left: 5px;
+    top: 24px;
 }
 
 .edit{
