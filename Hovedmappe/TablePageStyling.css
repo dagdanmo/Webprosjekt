@@ -738,7 +738,7 @@ li.dropDown {
 
 /* DarkMode */
 #settingsBox{
-    opacity: 1;
+    opacity: 0;
     position: absolute;
     top: 80%;
     left: 39%;
