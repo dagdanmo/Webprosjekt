@@ -303,7 +303,7 @@ checkBoxBtn.addEventListener("click", function(){
     settingsBox.style.transitionDuration = "0.2s";
     settingsBox.style.transitionDelay = "0s";
     settingsBox.style.opacity = "0";
-    setTimeout(function(){ hideSettinsBox(); }, 500);
+    setTimeout(function(){ hideSettingsBox(); }, 500);
 });
 // Show settings box
 function showSettingsBox(){
