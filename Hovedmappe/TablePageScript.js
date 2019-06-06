@@ -772,6 +772,8 @@ checkbox.addEventListener('change', function(e){
         document.body.style.background = "#333333";
         txtAddCard.style.color = "#03acef";
         document.getElementById("newCardButton").style.color = "#03acef";
+        taskitBlack.style.display = "none";
+        taskitBlue.style.display = "block";
 
 
             //const card = document.getElementById("card"+i);
@@ -792,6 +794,8 @@ checkbox.addEventListener('change', function(e){
         document.body.style.background = "#CCF3FF";
         txtAddCard.style.color = "black";
         document.getElementById("newCardButton").style.color = "AAAAAA";
+        taskitBlack.style.display = "block";
+        taskitBlue.style.display = "none";
 
         document.getElementById("newCardButton").addEventListener("mouseover", mouseOver);
         document.getElementById("newCardButton").addEventListener("mouseout", mouseOut);
@@ -833,3 +837,36 @@ function showSettingsBox(){
 function hideSettinsBox(){
     settingsBox.style.display = "none";
 }
+
+var users = [{
+    username: "Dag",
+    email: "dag@taskit.com",
+    password: "Dag123",
+    score: 0
+},
+{
+    username: "Daniel",
+    email: "daniel@taskit.com",
+    password: "Daniel123"
+},
+{
+    username: "Mattis",
+    email: "mattis@taskit.com",
+    password: "Mattis123"
+},
+{
+    username: "Martin",
+    email: "martin@taskit.com",
+    password: "Martin123",
+},
+{
+    username: "Mathias",
+    email: "mathias@taskit.com",
+    password: "Mathias123"
+},{
+    username: "admin",
+    email: "admin@taskit.com",
+    password: "admin"
+}];
+
+console.log(users[1].username);
