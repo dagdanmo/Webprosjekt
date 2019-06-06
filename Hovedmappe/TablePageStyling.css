@@ -323,7 +323,7 @@ li.dropDown {
     position: relative;
     height: 20px;
     width: 100%;
-    top: 0px;
+    top: 26px;
     margin: 0;
     padding: 0;
 }
@@ -372,6 +372,46 @@ li.dropDown {
     top: -10px;
     width: 70%;
     text-align: center;
+}
+
+.userContainer{
+    position: relative;
+    background-color: #888;
+    width: 100%;
+    height: 60px;
+    top: 15px;
+    padding-top: 1%;
+    margin-top: 15%;
+    display:flex;
+}
+
+.addUser{
+    position: relative;
+    padding-right: 3.5%;
+    color: #aaaaaa;
+    float: left;
+    font-size: 250%;
+    font-weight: bold;
+    left: 10px;
+}
+
+.addUser:hover{
+    color: #33CC00;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#addUserText{
+    position: relative;
+    font-size: 20px;
+    left: 65px;
+    top: 13px;
+
+
+}
+
+.userDropDown{
+
 }
 
 #deleteCardContainer{
