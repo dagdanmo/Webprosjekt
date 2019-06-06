@@ -8,7 +8,7 @@ var profileSign = document.getElementById("profileImgDiv");
 homeSign.addEventListener("click", function(){
 
     setTimeout(function () {
-        window.location.href = "index.html"; //will redirect to your blog page (an ex: blog.html)
+        window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
      }, 1000);
 });
 txtMiddle.addEventListener("click", function(){
@@ -17,12 +17,7 @@ txtMiddle.addEventListener("click", function(){
         window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
      }, 1000);
 });
-profileSign.addEventListener("click", function(){
 
-    setTimeout(function () {
-        window.location.href = "TablePage.html"; //will redirect to your blog page (an ex: blog.html)
-     }, 1000);
-});
 
 // init
     // Date
