@@ -260,6 +260,8 @@ var confirmTableName = document.getElementById("confirmTableName"); // plus back
 var center = document.getElementById("center"); // center color (background color)
 var txtMiddle = document.getElementById("txtMiddle"); // "TASK IT" text color (color)
 var txtDarkMode = document.getElementById("txtDarkMode");
+var taskitBlack = document.getElementById("taskitBlack");
+var taskitBlue = document.getElementById("taskitBlue");
 
 
 var settings = document.getElementById("settings");
@@ -270,23 +272,30 @@ var checkBoxBtn = document.getElementById("checkBoxBtn");
 /*Makes the settings box appear */
 settings.addEventListener("click", function(){
     setTimeout(function(){ showSettingsBox(); }, 20);
+    setTimeout(function(){ settingsBoxShowElements(); }, 200);
+})
+
+function settingsBoxShowElements(){
+
+    settingsBox.style.zIndex = "100";
     console.log("Settings clicked");
     settingsBox.style.top = "30%";
     settingsBox.style.left = "39%";
     settingsBox.style.transitionTimingFunction = "ease-in";
-    settingsBox.style.transitionDuration = "0.5s";
+    settingsBox.style.transitionDuration = "0.2s";
     settingsBox.style.transitionDelay = "0s";
     settingsBox.style.opacity = "1";
-})
+
+}
 checkBoxBtn.addEventListener("click", function(){
     console.log("close button clicked");
     settingsBox.style.top = "80%";
     settingsBox.style.left = "39%";
     settingsBox.style.transitionTimingFunction = "ease-in";
-    settingsBox.style.transitionDuration = "0.5s";
+    settingsBox.style.transitionDuration = "0.2s";
     settingsBox.style.transitionDelay = "0s";
     settingsBox.style.opacity = "0";
-    setTimeout(function(){ hideSettinsBox(); }, 2000);
+    setTimeout(function(){ hideSettinsBox(); }, 500);
 });
 
 function showSettingsBox(){
@@ -314,6 +323,8 @@ checkbox.addEventListener('change', function(e){
         txtMiddle.style.color = "#eeeeee";
         settingsBox.style.backgroundColor = "#8A928A"
         document.body.style.background = "black";
+        taskitBlack.style.display = "none";
+        taskitBlue.style.display = "block";
 
     } else {
         console.log("Ikke huket av");
@@ -329,5 +340,7 @@ checkbox.addEventListener('change', function(e){
         txtMiddle.style.color = "black";
         settingsBox.style.backgroundColor = "#EEEEEE"
         document.body.style.background = "white";
+        taskitBlack.style.display = "block";
+        taskitBlue.style.display = "none";
     }
 })

@@ -48,13 +48,22 @@ body {
     height: 60px;
     border-radius: 50%;
 }
-#taskitCenter{
+#taskitBlack{
     position: absolute;
     top: 60px;
     width: 200px;
     height: 200px;
     margin-left: -100px;
     margin-top: -100px;
+}
+#taskitBlue{
+    position: absolute;
+    top: 60px;
+    width: 200px;
+    height: 200px;
+    margin-left: -100px;
+    margin-top: -100px;
+    display: none;
 }
 #txtMiddle:hover {
     opacity: 0.5;

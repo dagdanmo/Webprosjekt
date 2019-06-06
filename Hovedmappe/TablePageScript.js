@@ -772,6 +772,8 @@ checkbox.addEventListener('change', function(e){
         document.body.style.background = "#333333";
         txtAddCard.style.color = "#03acef";
         document.getElementById("newCardButton").style.color = "#03acef";
+        taskitBlack.style.display = "none";
+        taskitBlue.style.display = "block";
 
 
             //const card = document.getElementById("card"+i);
@@ -792,6 +794,8 @@ checkbox.addEventListener('change', function(e){
         document.body.style.background = "#CCF3FF";
         txtAddCard.style.color = "black";
         document.getElementById("newCardButton").style.color = "AAAAAA";
+        taskitBlack.style.display = "block";
+        taskitBlue.style.display = "none";
 
         document.getElementById("newCardButton").addEventListener("mouseover", mouseOver);
         document.getElementById("newCardButton").addEventListener("mouseout", mouseOut);
@@ -863,3 +867,5 @@ var users = [{
     email: "admin@taskit.com",
     password: "admin"
 }];
+
+console.log(users[1].username);
