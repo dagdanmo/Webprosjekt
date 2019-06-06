@@ -177,40 +177,6 @@ button:hover {
     padding: 0;
 }
 
-li a, .dropBtn {
-    display:inline-block;
-    color: white;
-    text-align: center;
-    padding: 20px 22px;
-    text-decoration: none;
-}
-li a:hover, .dropDown:hover .dropBtn {
-    background: #786BDE;
-
-}
-li.dropDown {
-    display: inline-block;
-}
-.dropDownContent
-{
-    display:none;
-    position: absolute;
-    background: #333;
-    min-width: 124px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-.dropDownContent a {
-    color: black;
-    padding: 20px 22px;
-    text-decoration: none;
-    display: block;
-}
-.dropDownContent a:hover {
-    background: #d7d2ff;
-}
-.dropDown:hover .dropDownContent {
-    display: block;
-}
 /* Header end */
 
 .text{
