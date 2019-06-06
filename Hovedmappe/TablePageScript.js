@@ -9,19 +9,19 @@ homeSign.addEventListener("click", function(){
 
     setTimeout(function () {
         window.location.href = "index.html"; //will redirect to your blog page (an ex: blog.html)
-     }, 1000);
+     }, 300);
 });
 txtMiddle.addEventListener("click", function(){
 
     setTimeout(function () {
         window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
-     }, 1000);
+     }, 300);
 });
 profileSign.addEventListener("click", function(){
 
     setTimeout(function () {
         window.location.href = "TablePage.html"; //will redirect to your blog page (an ex: blog.html)
-     }, 1000);
+     }, 300);
 });
 
 // init
@@ -55,11 +55,9 @@ profileSign.addEventListener("click", function(){
 
     // assigning ID to orders
     let orderI = 0;
-    let orderId;
     let orderDrag;
     let cardId;
     let currentStarCard;
-    let getParentID;
     
     // scores
     let orderScore = 0;
@@ -77,7 +75,6 @@ const newCardPopContainer = document.getElementById("newCardPopContainer");
 const popClose = document.getElementsByClassName("close")[0];
 popClose.addEventListener("click", popDown);
 const getCardName = document.getElementById("getCardName");
-getCardName.maxLength = "14";
 getCardName.addEventListener("keyup", function(){
     if(event.keyCode == 13){
         cardGenerator();
@@ -162,19 +159,24 @@ function cardGenerator(){
         orderEnter.id = "orderEnter"+tempId;
         orderEnter.innerHTML = "&plus;";
         orderEnter.addEventListener("click",function(){
-            createNewOrder();
-            getOrderName.value = "";
+            if(getOrderName.value.length <= 14){
+                createNewOrder();
+            } else {
+                getOrderName.value = "";
+                getOrderName.placeholder = "Max 14 letters";
+            }
         });
         
         const getOrderName = document.createElement("input");
         getOrderName.className = "orderInput";
         getOrderName.id = "orderInput"+tempId;
         getOrderName.placeholder = "Enter new order name....";
-        getOrderName.maxLength = "14";
         getOrderName.addEventListener("keyup", function(){
-            if(event.keyCode == 13){
+            if(event.keyCode == 13 && getOrderName.value.length <= 10){
                 createNewOrder();
+            } else if (event.keyCode == 13 && getOrderName.value.length > 10){
                 getOrderName.value = "";
+                getOrderName.placeholder = "Max 14 letters";
             }
         });
         
@@ -193,7 +195,6 @@ function cardGenerator(){
         alert("erroooor");
     }
 }
-
 // set starcard
 function setStarCard(e){
     cardId = e.target.id.substr(e.target.id.length -1);
@@ -227,14 +228,14 @@ function editCardPop(e){
     editWindow.className = "editPop";
     
     const editCardName = document.createElement("p");
-    editCardName.className = "editName";
+    editCardName.className = "editCardName";
     editCardName.innerHTML = document.getElementById("newCardName"+cardId).innerHTML;
     
     const editEnter = document.createElement("span");
     editEnter.className = "enter";
     editEnter.id = "editEnter";
     editEnter.innerHTML = "&plus;";
-    editEnter.addEventListener("click", editCardPopEnter);
+    editEnter.addEventListener("click", editPopEnter);
     
     const editClose = document.createElement("span");
     editClose.className = "close";
@@ -246,10 +247,9 @@ function editCardPop(e){
     editName.className = "editInput";
     editName.id = "editName";
     editName.placeholder = "Enter new cardname";
-    editName.maxLength = "14";
     editName.addEventListener("keyup", function(){
         if(event.keyCode == 13){
-            editCardPopEnter();
+            editPopEnter();
         }
     });
 
@@ -264,7 +264,6 @@ function editCardPop(e){
     const deleteCard = document.createElement("input");
     deleteCard.className = "editInput";
     deleteCard.id = "deleteCard";
-    deleteCard.maxLength = "10";
     deleteCard.placeholder = "Enter 'DELETE' to confirm";
     deleteCard.addEventListener("keyup", function(){
         if(event.keyCode == 13){
@@ -306,24 +305,11 @@ function deleteCardF(){
     }
 }
 
-// save edit card pop
-function editCardPopEnter(){
-    if(document.getElementById("editName").value != ""){
-        document.getElementById("newCardName"+cardId).innerHTML = document.getElementById("editName").value.toUpperCase();
-    }
-    body.removeChild(document.getElementById("editPopContainer"));
-}
-
-// close edit pop
-function editpopDown(){
-    body.removeChild(document.getElementById("editPopContainer"));
-}
-
 // Creating new order
 function createNewOrder(){
     
     //SCORE TESTING
-    /* orderScore = prompt("enter score"); */
+    orderScore = prompt("enter score");
 
     cardId = event.target.id.substr(event.target.id.length -1);
     const orderInput = document.getElementById("orderInput"+cardId);
@@ -336,14 +322,14 @@ function createNewOrder(){
 
     const orderName = document.createElement("div");
     orderName.className = "orderName";
-    orderName.id = "orderName"+orderI;
+    orderName.id = "orderName"+cardId;
     orderName.style.pointerEvents = "none";   
     
-    /* const orderScoreWeight = document.createElement("p");
+    const orderScoreWeight = document.createElement("p");
     orderScoreWeight.className = "orderScore";
     orderScoreWeight.id = "orderScore"+orderI;
     orderScoreWeight.style.pointerEvents = "none";
-    orderScoreWeight.innerHTML = "POINTS: " +orderScore; */
+    orderScoreWeight.innerHTML = "POINTS: " +orderScore;
     
     if(orderInput.value == ""){
         orderName.innerHTML = "NEW ORDER "+orderI;
@@ -353,10 +339,10 @@ function createNewOrder(){
     
     // Edit button for cards
     const editOrder = document.createElement("span");
-    editOrder.className = "orderEdit";
-    editOrder.id = "orderEdit"+orderI;
+    editOrder.className = "edit";
+    editOrder.id = "orderEdit"+cardI;
     editOrder.innerHTML = "&#9998;";
-    editOrder.addEventListener("click", editOrderPop);
+    //editOrder.addEventListener("click", editOrderPop);
     
     order.append(editOrder);
     
@@ -364,7 +350,7 @@ function createNewOrder(){
     order.addEventListener("dragend", dragEnd);
     
     order.append(orderName);
-    /* order.append(orderScoreWeight); */
+    order.append(orderScoreWeight);
     currentCard.append(order);
 
     orderI++;
@@ -553,15 +539,9 @@ function editOrderPopEnter(){
     body.removeChild(document.getElementById("editPopContainer"));
 }
 
-// delete card
-function deleteOrderF(){
-    // get input and check for 'DELETE' to confirm and activate button.
-    const deleteOrderInput = document.getElementById("deleteOrder");
-    if(deleteOrderInput.value == "DELETE"){
-        document.getElementById("card"+getParentID).removeChild(document.getElementById("order"+getOrderId));
-        // put back card ID to card i array and open up for new cards
-        editpopDown();
-    }
+// close edit pop
+function editpopDown(){
+    body.removeChild(document.getElementById("editPopContainer"));
 }
 
 // Dragging
@@ -631,25 +611,26 @@ function dragDrop(e){
     } else if ( e.target.className != "cards"){
         star = e.target.parentNode.id.substr(e.target.parentNode.id.length -1);
     }
-
+7
     if(currentStarCard == star){
 
         cardId = event.target.id.substr(event.target.id.length -1);
 
-        getOrderId = orderDrag.id.substr(5);
+        const getOrderId = orderDrag.id.substr(5);
         const getScoreId = document.getElementById("orderScore"+getOrderId);
-        if(getScoreId != null){
-            const getScore = getScoreId.innerHTML.substr(7);
-            pointsEarned = getScore;
-            pointsEarnedElement.innerText = pointsEarned;
-            userPointsElement.innerText = userPoints;
+        const getScore = getScoreId.innerHTML.substr(7);
+        pointsEarned = getScore;
+        pointsEarnedElement.innerText = pointsEarned;
+        userPointsElement.innerText = userPoints;
 
-            if(getScoreId.innerHTML != "DONE"){
-                scorePop();
-            }
-            getScoreId.innerHTML = "DONE";
+        if(getScoreId.innerHTML != "DONE"){
+            scorePop();
         }
+        getScoreId.innerHTML = "DONE";
     }
+
+    // Get orderID and the right score ammount
+
 }
 
 // get targeted div
@@ -664,7 +645,6 @@ function getDiv( target ) {
     }
 }
 
-
 var i = 0;
 
 var numberField = document.getElementById("number");
@@ -674,12 +654,10 @@ var pointsEarnedElement = document.getElementById("pointsEarned");
 var dropdownDisplay = document.getElementById("dropDown_Score");
 var tableContainer = document.getElementById("container");
 
+
+
 function scorePop(){
-    if(pointsEarned > 10){
-        pointsEarnedElement.style.left = "140px";
-    }else if(pointsEarned < 10){
-        pointsEarnedElement.style.left = "170px";
-    }
+
     setTimeout(function(){ dropdownDisplayBlock(); }, 20);
     setTimeout(function(){ dropdownTransitions(); }, 200);
     setTimeout(function(){ delayedCounter(); }, 1500);
@@ -699,6 +677,7 @@ function removeDropdown(){
     tableContainer.style.transition = "1s";
     dropdownDisplay.style.opacity = "0.0";
     dropdownDisplay.style.transition = "1s";
+    //HUSK Å ENDREEEEEE
 }
 
 function dropdownDisplayBlock(){
@@ -724,20 +703,22 @@ function delayedCounter () {                     //  create a loop function
         pointsEarned -= 1;
         pointsEarnedElement.innerText = pointsEarned;
         userPointsElement.innerText = userPoints;
-           
-        if(userPoints >= 100){
-            userPointsElement.style.left = "100px";
-        }else if(userPoints > 10){
-            userPointsElement.style.left = "140px";
-        }
-        
-        if(pointsEarned > 10){
-            pointsEarnedElement.style.left = "140px";
-        }else if(pointsEarned < 10){
-            pointsEarnedElement.style.left = "170px";
-        }
-        
-        //  ..  again which will trigger another 
+            if(userPoints >= 100){
+                userPointsElement.style.left = "100px";
+                
+            }else if(userPoints > 10){
+                userPointsElement.style.left = "140px";
+            }
+
+            if(pointsEarned > 100){
+                pointsEarnedElement.style.left = "100px";
+            }else if(pointsEarned > 10){
+                pointsEarnedElement.style.left = "140px";
+            }else if(pointsEarned < 10){
+                pointsEarnedElement.style.left = "170px";
+            }
+         
+            //  ..  again which will trigger another 
       }                        //  ..  setTimeout()
    }, 10)
 }
