@@ -473,14 +473,27 @@ function editOrderPop(e){
     const addUserText = document.createElement("p");
     addUserText.className = "addUser";
     addUserText.id = "addUserText";
-    addUserText.innerHTML = "ADD USER";
+    addUserText.innerHTML = "ADD<br>USER";
     addUser.append(addUserText);
+    
+    addUser.addEventListener("click", function(){
+        const userDropDown = document.createElement("select");
+        userDropDown.className = "userDropDown";
+        const userOption = document.createElement("option");
+        userOption.textContent = "USER";
+        userOption.value = "USER";
+        userDropDown.append(userOption);
+        
+        for(var i = 0; i < users.length; i++){
+            var temp = document.createElement("option");
+            temp.textContent = users[i];
+            temp.value = users[i];
+            userDropDown.append(temp);
+        }
+        userContainer.append(userDropDown);
+    });
 
-    const userDropDown = document.createElement("option");
-    userDropDown.className = "userDropDown";
-
-    userContainer.append(addUser);
-    userContainer.append(userDropDown);
+   
 
     // delete
     const deleteOrderContainer = document.createElement("div");
@@ -516,6 +529,7 @@ function editOrderPop(e){
     editWindow.append(orderDescription);
     editWindow.append(orderScoreInput);
     editWindow.append(orderScoreInfo);
+    editWindow.append(addUser);
     editWindow.append(userContainer);
     editWindow.append(deadLineHeader);
     editWindow.append(deadLine);
