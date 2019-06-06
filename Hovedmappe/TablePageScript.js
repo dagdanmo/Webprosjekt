@@ -823,6 +823,7 @@ checkBoxBtn.addEventListener("click", function(){
     settingsBox.style.transitionDuration = "0.5s";
     settingsBox.style.transitionDelay = "0s";
     settingsBox.style.opacity = "0";
+    
     setTimeout(function(){ hideSettinsBox(); }, 2000);
 });
 function showSettingsBox(){
