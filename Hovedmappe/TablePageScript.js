@@ -52,6 +52,7 @@ profileSign.addEventListener("click", function(){
     let cardI = [0, 1, 2, 3, 4];
     // Counting cards for star function
     let cardCounter = 0;
+
     // assigning ID to orders
     let orderI = 0;
     let orderDrag;
@@ -385,6 +386,7 @@ function editOrderPop(e){
     editClose.innerHTML = "&times;";
     editClose.addEventListener("click", editpopDown);
     
+    // Name
     const editName = document.createElement("input");
     editName.className = "editInput";
     editName.id = "editName";
@@ -395,6 +397,12 @@ function editOrderPop(e){
             editOrderPopEnter();
         }
     });
+    
+    // Description
+    const orderDescriptionHeader = document.createElement("p");
+    orderDescriptionHeader.className = "editHeaders";
+    orderDescriptionHeader.id = "orderDescriptionHeader";
+    orderDescriptionHeader.innerHTML = "DESCRIPTION";
 
     const orderDescription = document.createElement("textarea");
     orderDescription.className = "orderDescription";
@@ -405,28 +413,42 @@ function editOrderPop(e){
         orderDescription.value = document.getElementById("orderDescriptionSave"+getOrderId).value;
     }
 
+    // Score
     const orderScoreInput = document.createElement("input")
     orderScoreInput.className = "editInput";
     orderScoreInput.id = "orderScoreInput";
     orderScoreInput.maxLength = "2";
     orderScoreInput.placeholder = "score";
+    orderScoreInput.value = 0;
+    if(document.getElementById("orderScore"+getOrderId) != null){
+        if(document.getElementById("orderScore"+getOrderId).innerHTML == "DONE"){
+            orderScoreInput.value = "DONE";
+        } else {
+            orderScoreInput.value = document.getElementById("orderScore"+getOrderId).innerHTML.substr(8);
+        }
+    } 
     orderScoreInput.addEventListener("keyup", function(){
         if(event.keyCode == 13){
             editOrderPopEnter();
         }
     });
-
     const orderScoreInfo = document.createElement("p");
     orderScoreInfo.className = "orderScoreInfo";
     orderScoreInfo.innerHTML = "Type in score earned when completing task";
 
     // dato
+    const deadLineHeader = document.createElement("p");
+    deadLineHeader.className = "editHeaders";
+    deadLineHeader.id = "deadLineHeader";
+    deadLineHeader.innerHTML = "DEADLINE";
+
     const deadLine = document.createElement("input");
     deadLine.className = "editinput";
     deadLine.id = "deadLine";
     deadLine.type = "datetime-local";
     deadLine.value = fullDate;
 
+    // delete
     const deleteOrderContainer = document.createElement("div");
     deleteOrderContainer.className = "editInput";
     deleteOrderContainer.id = "deleteOrderContainer";
@@ -456,9 +478,11 @@ function editOrderPop(e){
     editWindow.append(editEnter);
     editWindow.append(editOrderName);
     editWindow.append(editName);
+    editWindow.append(orderDescriptionHeader);
     editWindow.append(orderDescription);
     editWindow.append(orderScoreInput);
     editWindow.append(orderScoreInfo);
+    editWindow.append(deadLineHeader);
     editWindow.append(deadLine);
     editWindow.append(deleteOrderContainer);
     
@@ -475,13 +499,19 @@ function editOrderPopEnter(){
     if(document.getElementById("orderScoreInput").value != ""){
         if(document.getElementById("orderScore"+getOrderId) !== null){
             currentOrder.removeChild(document.getElementById("orderScore"+getOrderId));
-        }    
-        const orderScoreWeight = document.createElement("p");
-        orderScoreWeight.className = "orderScore";
-        orderScoreWeight.id = "orderScore"+getOrderId;
-        orderScoreWeight.style.pointerEvents = "none";
-        orderScoreWeight.innerHTML = "POINTS: " +orderScoreInput.value;
-        currentOrder.append(orderScoreWeight);
+        }
+        if(document.getElementById("orderScoreInput").value != "" && document.getElementById("orderScore"+getOrderId) == null){
+            const orderScoreWeight = document.createElement("p");
+            orderScoreWeight.className = "orderScore";
+            orderScoreWeight.id = "orderScore"+getOrderId;
+            orderScoreWeight.style.pointerEvents = "none";
+            orderScoreWeight.innerHTML = "POINTS: " +orderScoreInput.value;
+            currentOrder.append(orderScoreWeight);
+        } else if (document.getElementById("orderScore"+getOrderId) != null){
+            if(document.getElementById("orderScoreInput").value != document.getElementById("orderScore"+getOrderId).value){
+                document.getElementById("orderScore".getOrderId).value = document.getElementById("orderScoreInput").value;
+            }
+        }
     }
     if(document.getElementById("deadLine").value != fullDate && document.getElementById("deadLine").value != document.getElementById("orderDeadLine"+getOrderId.value)){
         if(document.getElementById("orderDeadLine"+getOrderId) != null){
@@ -494,15 +524,17 @@ function editOrderPopEnter(){
         orderDeadLine.innerHTML = "Deadline: "+document.getElementById("deadLine").value.substr(0, 10)+"    "+document.getElementById("deadLine").value.substr(11);
         currentOrder.append(orderDeadLine);
     }
-    if(document.getElementById("orderDescription"+getOrderId).value != ""){
+    if(document.getElementById("orderDescription"+getOrderId).value != "" && document.getElementById("orderDescriptionSave"+getOrderId) == null){
         const orderDescriptionSave = document.createElement("textArea");
         orderDescriptionSave.className = "orderDescriptionSave";
         orderDescriptionSave.id = "orderDescriptionSave"+getOrderId;
         orderDescriptionSave.style.display = "none";
         orderDescriptionSave.value = document.getElementById("orderDescription"+getOrderId).value;
         currentOrder.append(orderDescriptionSave);
-    } else if (document.getElementById("orderDescription"+getOrderId).value == document.getElementById("orderDescriptionSave"+getOrderId).value){
-        document.getElementById("orderDescriptionSave"+getOrderId).value = document.getElementById("orderDescription"+getOrderId).value;
+    } else if (document.getElementById("orderDescriptionSave"+getOrderId) != null){
+        if(document.getElementById("orderDescription"+getOrderId).value != document.getElementById("orderDescriptionSave"+getOrderId).value){
+            document.getElementById("orderDescriptionSave"+getOrderId).value = document.getElementById("orderDescription"+getOrderId).value;
+        }
     }
     body.removeChild(document.getElementById("editPopContainer"));
 }
