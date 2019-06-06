@@ -181,7 +181,7 @@ var selectColor;
     homeSign.addEventListener("click", function(){
 
         setTimeout(function () {
-            window.location.href = "index.html"; //will redirect to your blog page (an ex: blog.html)
+            window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
          }, 300);
     });
     txtMiddle.addEventListener("click", function(){

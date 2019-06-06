@@ -8,7 +8,7 @@ var profileSign = document.getElementById("profileImgDiv");
 homeSign.addEventListener("click", function(){
 
     setTimeout(function () {
-        window.location.href = "index.html"; //will redirect to your blog page (an ex: blog.html)
+        window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
      }, 300);
 });
 txtMiddle.addEventListener("click", function(){
@@ -722,9 +722,8 @@ console.log(localStorage);
 var checkbox = document.getElementById("checkDarkMode"); // checkbox
 var txtMiddle = document.getElementById("txtMiddle"); // "TASK IT" text color (color)
 var container = document.getElementById("container"); // Main container color
-
-
 var txtAddCard = document.getElementById("txtAddCard"); // Add card text color
+var dropDownContent = document.getElementById("dropdown-content");
 
 
 var settings = document.getElementById("settings");
@@ -735,12 +734,12 @@ checkbox.addEventListener('change', function(e){
     console.log(checkbox.checked, checkbox.value);
     if(checkbox.checked){
         console.log("huket av");
+        dropDownContent.style.backgroundColor = "#AAAAAA";
         header.style.background = "#141414";
         txtMiddle.style.color = "#03acef";
         container.style.background = "#333333"
         document.body.style.background = "#333333";
         txtAddCard.style.color = "#03acef";
-        popCardEnter.style.color = "#03acef";
         document.getElementById("newCardButton").style.color = "#03acef";
 
         
@@ -753,11 +752,12 @@ checkbox.addEventListener('change', function(e){
             }  */
             
         
-        
+    
         
 
     } else {
         console.log("Ikke huket av");
+        dropDownContent.style.backgroundColor = "white";
         header.style.background = "#03acef";
         txtMiddle.style.color = "black";
         container.style.backgroundColor = "#CCF3FF";
