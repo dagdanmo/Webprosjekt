@@ -193,34 +193,8 @@ var selectColor;
             createNewTable.style.color = "#e0fbff";
 
            setTimeout(function () {
-                window.location.href = "TablePage.html"; //will redirect to your blog page (an ex: blog.html)
-             }, 300);
-
-            
-        }else{
-            console.log("Insert table name.")
-        }
-    });
-    inputTableName.addEventListener("keyup", function(){
-        if(event.keyCode == 13 && tableNamed != null && tableNamed != ""){
-            var newCard = document.createElement("div");
-            newCard.className = "newCard";
-            newCard.id = "newCard" + idIncrement;
-            var newCardName = document.createTextNode(inputTableName.value);
-            newCard.appendChild(newCardName);
-            document.getElementById("TeamBox").appendChild(newCard);
-            idIncrement++;
-            console.log(newCard.className, newCard.id);
-            inputTableName.value = "";
-            tableNamed = inputTableName.value;
-            newCard.style.backgroundColor = selectColor;
-
-            borderRemover();
-            createNewTable.style.color = "#e0fbff";
-
-           setTimeout(function () {
-                window.location.href = "TablePage.html"; //will redirect to your blog page (an ex: blog.html)
-             }, 300);
+                window.location.href = "TablePage.html";
+             }, 2000);
 
             
         }else{
@@ -231,19 +205,19 @@ var selectColor;
 
         setTimeout(function () {
             window.location.href = "index.html"; //will redirect to your blog page (an ex: blog.html)
-         }, 300);
+         }, 1000);
     });
     txtMiddle.addEventListener("click", function(){
 
         setTimeout(function () {
             window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
-         }, 300);
+         }, 1000);
     });
     logOut.addEventListener("click", function(){
 
         setTimeout(function () {
             window.location.href = "index.html"; //will redirect to your blog page (an ex: blog.html)
-         }, 300);
+         }, 1000);
     });
     
 
@@ -260,7 +234,7 @@ var confirmTableName = document.getElementById("confirmTableName"); // plus back
 var center = document.getElementById("center"); // center color (background color)
 var txtMiddle = document.getElementById("txtMiddle"); // "TASK IT" text color (color)
 var txtDarkMode = document.getElementById("txtDarkMode");
-
+var taskitLogo = document.getElementById("taskitCenter");
 
 var settings = document.getElementById("settings");
 var settingsBox = document.getElementById("settingsBox");
@@ -286,6 +260,7 @@ checkBoxBtn.addEventListener("click", function(){
     settingsBox.style.transitionDuration = "0.5s";
     settingsBox.style.transitionDelay = "0s";
     settingsBox.style.opacity = "0";
+
     setTimeout(function(){ hideSettinsBox(); }, 2000);
 });
 
@@ -314,6 +289,8 @@ checkbox.addEventListener('change', function(e){
         txtMiddle.style.color = "#eeeeee";
         settingsBox.style.backgroundColor = "#8A928A"
         document.body.style.background = "black";
+        taskitLogo.src = 
+
 
     } else {
         console.log("Ikke huket av");
