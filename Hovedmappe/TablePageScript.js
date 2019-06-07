@@ -790,7 +790,8 @@ var txtMiddle = document.getElementById("txtMiddle"); // "TASK IT" text color (c
 var container = document.getElementById("container"); // Main container color
 var txtAddCard = document.getElementById("txtAddCard"); // Add card text color
 var dropDownContent = document.getElementById("dropdown-content");
-
+var logoBlack = document.getElementById("logoBlack");
+var logoBlue = document.getElementById("logoBlue");
 
 var settings = document.getElementById("settings");
 var settingsBox = document.getElementById("settingsBox");
@@ -833,9 +834,21 @@ function hideSettingsBox(){
     settingsBox.style.display = "none";
 }
 
+if(localStorage.getItem("mode") == "darkMode"){
+    checkbox.checked = true;
+    enableDarkmode();
+}
+
 checkbox.addEventListener('change', function(e){
     console.log(checkbox.checked, checkbox.value);
+    enableDarkmode();
+});
+
+
+function enableDarkmode(){
+
     if(checkbox.checked){
+        localStorage.setItem("mode", "darkMode");
         console.log("huket av");
         dropDownContent.style.backgroundColor = "#AAAAAA";
         header.style.background = "#141414";
@@ -844,8 +857,8 @@ checkbox.addEventListener('change', function(e){
         document.body.style.background = "#333333";
         txtAddCard.style.color = "#03acef";
         document.getElementById("newCardButton").style.color = "#03acef";
-        taskitBlack.style.display = "none";
-        taskitBlue.style.display = "block";
+        logoBlack.style.display = "none";
+        logoBlue.style.display = "block";
 
         document.getElementById("newCardButton").addEventListener("mouseover", mouseOver);
         document.getElementById("newCardButton").addEventListener("mouseout", mouseOut);
@@ -869,6 +882,7 @@ checkbox.addEventListener('change', function(e){
 
     } else {
         console.log("Ikke huket av");
+        localStorage.setItem("mode", "lightMode");
         dropDownContent.style.backgroundColor = "white";
         header.style.background = "#03acef";
         txtMiddle.style.color = "black";
@@ -876,8 +890,8 @@ checkbox.addEventListener('change', function(e){
         document.body.style.background = "#CCF3FF";
         txtAddCard.style.color = "black";
         document.getElementById("newCardButton").style.color = "AAAAAA";
-        taskitBlack.style.display = "block";
-        taskitBlue.style.display = "none";
+        logoBlack.style.display = "block";
+        logoBlue.style.display = "none";
 
         document.getElementById("newCardButton").addEventListener("mouseover", mouseOver);
         document.getElementById("newCardButton").addEventListener("mouseout", mouseOut);
@@ -888,6 +902,6 @@ checkbox.addEventListener('change', function(e){
             document.getElementById("newCardButton").style.color = "#AAAAAA";
         }
     }
-});
 
 
+}

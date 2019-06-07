@@ -305,9 +305,22 @@ function hideSettingsBox(){
     settingsBox.style.display = "none";
 }
 
+if(localStorage.getItem("mode") == "darkMode"){
+    checkbox.checked = true;
+    enableDarkmode();
+}else if(localStorage.getItem("mode") == "lightMode"){
+    enableDarkmode();
+}
+
 
 checkbox.addEventListener('change', function(e){
     console.log(checkbox.checked, checkbox.value);
+    enableDarkmode();
+});
+
+
+function enableDarkmode(){
+
     if(checkbox.checked){
         console.log("huket av");
         dropDownContent.style.backgroundColor = "#AAAAAA";
@@ -326,6 +339,8 @@ checkbox.addEventListener('change', function(e){
         document.body.style.background = "black";
         logoBlack.style.display = "none";
         logoBlue.style.display = "block";
+        localStorage.setItem("mode", "darkMode");
+        console.log(localStorage);
 
     } else {
         console.log("Ikke huket av");
@@ -340,9 +355,13 @@ checkbox.addEventListener('change', function(e){
         confirmTableName.style.color = "black";
         center.style.backgroundcolor = "#03acef";
         txtMiddle.style.color = "black";
+        inputTableName.style.color = "black";
         settingsBox.style.backgroundColor = "#EEEEEE"
         document.body.style.background = "white";
         logoBlack.style.display = "block";
         logoBlue.style.display = "none";
+        localStorage.setItem("mode" , "lightMode");
     }
-});
+
+
+}

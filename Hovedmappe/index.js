@@ -4,22 +4,38 @@
 
     loginButtonTest.addEventListener("click", function(){
         
-        for(var i = 0; i < users.length; i++){
-            if(fetchUsername.value == users[i].username && fetchPassword.value == users[i].password){
-                setTimeout(function () {
-                    window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
-                 }, 300);
-                 localStorage.setItem("username", fetchUsername.value);
-            }else if(fetchUsername.value == users[i].email && fetchPassword.value == users[i].password){
-                setTimeout(function () {
-                    localStorage.setItem("username", fetchUsername.value);
-                    window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
-                 }, 300);
-            }else{
-                console.log("Feil brukernavn eller passord.");
-            }
-        };     
-});
+        loginLogic();
+    });
+
+    
+    fetchPassword.addEventListener("keyup", function(){
+        if(event.keyCode == 13){
+            loginLogic();
+        }
+    });
+
+
+function loginLogic(){
+
+    for(var i = 0; i < users.length; i++){
+        if(fetchUsername.value == users[i].username && fetchPassword.value == users[i].password){
+            setTimeout(function () {
+                window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
+             }, 300);
+             localStorage.setItem("username", fetchUsername.value);
+        }else if(fetchUsername.value == users[i].email && fetchPassword.value == users[i].password){
+            setTimeout(function () {
+                localStorage.setItem("username", fetchUsername.value);
+                window.location.href = "CreateTable.html"; //will redirect to your blog page (an ex: blog.html)
+             }, 300);
+        }else{
+            console.log("Feil brukernavn eller passord.");
+        }
+    };     
+
+
+}
+
 
 //Function for going from login to signup.
 var readSignup = document.getElementById("signUp");

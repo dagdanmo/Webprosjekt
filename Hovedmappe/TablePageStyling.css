@@ -55,6 +55,8 @@ body{
 #txtMiddle{
     width: 100px;
     height: 60px;
+    text-align: none;
+    align-self: none;
     border-radius: 50%;
 }
 #txtMiddle:hover{
@@ -62,15 +64,17 @@ body{
     cursor: pointer;
 }
 
-#taskitBlack{
+#logoBlack{
     position: absolute;
     top: 60px;
     width: 200px;
     height: 200px;
     margin-left: -100px;
     margin-top: -100px;
+    text-align: none;
+    align-self: none;
 }
-#taskitBlue{
+#logoBlue{
     position: absolute;
     top: 60px;
     width: 200px;
@@ -78,6 +82,8 @@ body{
     margin-left: -100px;
     margin-top: -100px;
     display: none;
+    text-align: none;
+    align-self: none;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -130,12 +136,12 @@ body{
 }
 @media (min-width: 450px) {
     .headerElements {
-      flex: 0 1 47.3%;
+      flex: 0 1 50%;
     }
 }
 @media (min-width: 1300px) {
     .headerElements {
-      flex: 0 1 47.3%;
+      flex: 0 1 50%;
     }
 }
 nav {
@@ -150,13 +156,13 @@ nav ul {
 }
 @media (min-width: 450px) {
     nav {
-      flex: 0 1 52.7%;
+      flex: 0 1 50%;
     }
     
 }
 @media (min-width: 1300px) {
     nav {
-      flex: 0 1 52.7%;
+      flex: 0 1 50%;
     }
 }
 button {
