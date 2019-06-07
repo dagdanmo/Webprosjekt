@@ -63,7 +63,7 @@ txtMiddle.addEventListener("click", function(){
     let pointsEarned = 0;
 
     // users
-    let users = ["Dag", "Daniel", "Mattis", "Martin", "Mathias"];
+    let users = ["Dag", "Daniel", "Mattis", "Martin", "Mathias", localStorage.getItem("username")];
     let setUsers = [];
 
 // main container
