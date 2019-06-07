@@ -948,16 +948,6 @@ function enableDarkmode(){
 
         }
 
-
-            //const card = document.getElementById("card"+i);
-            // ADD CHANGES BLABLA
-            /*
-            var card = document.querySelectorAll(".cards"), i;
-            for(i = 0; i < card.length; ++i){
-                card[i].style.backgroundColor = "#03acef";
-            }  */
-
-
     } else {
         console.log("Ikke huket av");
         localStorage.setItem("mode", "lightMode");
